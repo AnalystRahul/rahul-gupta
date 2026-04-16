@@ -73,6 +73,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
   const text       = document.getElementById('hero-text');
   const btnPrimary = document.getElementById('hero-btn-primary');
   const btnSec     = document.getElementById('hero-btn-secondary');
+  const exploreBtn = document.getElementById('hero-btn-explore');
   const prevBtn    = document.getElementById('hero-prev');
   const nextBtn    = document.getElementById('hero-next');
   const dots       = document.querySelectorAll('#hero-dots .dot');
@@ -85,7 +86,8 @@ mainNav?.querySelectorAll('a').forEach(link => {
       text: 'With Chambers in Newcastle, Middlesbrough and Leeds, the experienced and approachable barristers offer the most appropriate and cost-effective representation for your needs.',
       bg: "url('https://images.unsplash.com/photo-1555636222-cae831e670b3?w=1400&q=80') center/cover no-repeat",
       primaryLabel: 'LEARN MORE', primaryHref: 'about.html',
-      secLabel: 'GET IN TOUCH',  secHref: 'contact.html'
+      secLabel: 'GET IN TOUCH',  secHref: 'contact.html',
+      exploreHref: 'expertise.html'
     },
     {
       badge: 'TRUSTED',
@@ -93,7 +95,8 @@ mainNav?.querySelectorAll('a').forEach(link => {
       text: 'Regularly recommended in the Legal 500 and Chambers &amp; Partners, our silks and junior barristers handle cases of the highest complexity across the UK.',
       bg: "linear-gradient(135deg, #0d1a35 0%, #1a3a5c 100%)",
       primaryLabel: 'OUR BARRISTERS', primaryHref: 'barristers.html',
-      secLabel: 'OUR EXPERTISE',    secHref: 'expertise.html'
+      secLabel: 'OUR EXPERTISE',    secHref: 'expertise.html',
+      exploreHref: 'barristers.html'
     },
     {
       badge: 'ACROSS THE NORTH',
@@ -101,7 +104,8 @@ mainNav?.querySelectorAll('a').forEach(link => {
       text: 'From complex commercial disputes and serious crime to family matters and public law, Trinity Chambers has the depth and breadth to handle your case.',
       bg: "linear-gradient(135deg, #1a2744 0%, #1a5060 100%)",
       primaryLabel: 'OUR EXPERTISE', primaryHref: 'expertise.html',
-      secLabel: 'JOIN US',          secHref: 'join.html'
+      secLabel: 'JOIN US',          secHref: 'join.html',
+      exploreHref: 'knowledge.html'
     }
   ];
 
@@ -122,6 +126,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       btnPrimary.href         = s.primaryHref;
       btnSec.textContent      = s.secLabel;
       btnSec.href             = s.secHref;
+      if (exploreBtn) exploreBtn.href = s.exploreHref;
       dots.forEach((d, i) => d.classList.toggle('active', i === idx));
       current = idx;
       if (!skipAnim) content.classList.remove('fade');
