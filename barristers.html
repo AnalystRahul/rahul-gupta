@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barristers – Trinity Chambers</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Easter Banner -->
+  <div class="easter-banner">
+    <strong>Easter Opening Hours</strong>
+    Chambers will be closed from 5pm on Thursday 2 April until 9am on Tuesday 7 April. If your enquiry is extremely urgent, the out of hours number is 0191 245 0110.
+    <button class="banner-close" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">T</div>
+        <div class="logo-text">
+          <span class="logo-main">TRINITY</span>
+          <span class="logo-sub">CHAMBERS</span>
+        </div>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="barristers.html">Barristers</a></li>
+          <li><a href="knowledge.html">Knowledge</a></li>
+          <li><a href="contact.html">Clerks &amp; Contact</a></li>
+          <li><a href="join.html">Join Us</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Barristers</span>
+      </div>
+      <h1>Our <span style="color:var(--teal)">Barristers</span></h1>
+      <p>Search our directory of over 100 experienced barristers and King's Counsel across a wide range of practice areas.</p>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <div class="filter-controls">
+    <div class="container filter-inner">
+      <span class="search-label">Find a barrister</span>
+      <select class="search-select" id="filter-expertise" aria-label="Filter by expertise">
+        <option value="">All Expertise</option>
+        <option value="Administrative">Administrative &amp; Public Law</option>
+        <option value="Criminal">Criminal</option>
+        <option value="Employment">Employment</option>
+        <option value="Family">Family</option>
+        <option value="Personal Injury">Personal Injury &amp; Clinical Negligence</option>
+        <option value="Immigration">Immigration</option>
+        <option value="Commercial">Business &amp; Commercial</option>
+        <option value="Planning">Planning</option>
+        <option value="Property">Property</option>
+        <option value="Court of Protection">Court of Protection</option>
+        <option value="Education">Education</option>
+      </select>
+      <select class="search-select" id="filter-call" aria-label="Filter by year of call">
+        <option value="">All Years of Call</option>
+        <option value="2020-2025">2020–2025</option>
+        <option value="2010-2019">2010–2019</option>
+        <option value="2000-2009">2000–2009</option>
+        <option value="before-2000">Before 2000</option>
+      </select>
+      <input type="text" class="search-input" id="filter-name" placeholder="Search by name…" aria-label="Search by name" />
+      <label class="kc-check">
+        <input type="checkbox" id="filter-kc" /> Show K.C. Only
+      </label>
+      <button class="search-btn" id="reset-filters" title="Reset filters" aria-label="Reset filters">&#10005;</button>
+    </div>
+  </div>
+
+  <!-- Barristers Grid -->
+  <section class="barristers-section section">
+    <div class="container">
+      <div class="team-grid" id="barristers-grid">
+
+        <div class="barrister-card" data-name="Richard Blackwood" data-expertise="Administrative" data-call="before-2000" data-kc="true">
+          <div class="barrister-img">R</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Richard Blackwood KC</div>
+            <span class="barrister-kc">K.C.</span>
+            <div class="barrister-speciality">Administrative &amp; Public Law</div>
+            <div class="barrister-call">Called: 1990</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="David Morrison" data-expertise="Commercial" data-call="before-2000" data-kc="true">
+          <div class="barrister-img">D</div>
+          <div class="barrister-info">
+            <div class="barrister-name">David Morrison KC</div>
+            <span class="barrister-kc">K.C.</span>
+            <div class="barrister-speciality">Business &amp; Commercial Litigation</div>
+            <div class="barrister-call">Called: 1992</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="James Henderson" data-expertise="Employment" data-call="before-2000" data-kc="true">
+          <div class="barrister-img">J</div>
+          <div class="barrister-info">
+            <div class="barrister-name">James Henderson KC</div>
+            <span class="barrister-kc">K.C.</span>
+            <div class="barrister-speciality">Employment</div>
+            <div class="barrister-call">Called: 1995</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Michael Foster" data-expertise="Criminal" data-call="before-2000" data-kc="true">
+          <div class="barrister-img">M</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Michael Foster KC</div>
+            <span class="barrister-kc">K.C.</span>
+            <div class="barrister-speciality">Criminal</div>
+            <div class="barrister-call">Called: 1996</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Sarah Mitchell" data-expertise="Criminal" data-call="before-2000" data-kc="true">
+          <div class="barrister-img">S</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Sarah Mitchell KC</div>
+            <span class="barrister-kc">K.C.</span>
+            <div class="barrister-speciality">Criminal</div>
+            <div class="barrister-call">Called: 1998</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Thomas Clarke" data-expertise="Personal Injury" data-call="2000-2009" data-kc="true">
+          <div class="barrister-img">T</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Thomas Clarke KC</div>
+            <span class="barrister-kc">K.C.</span>
+            <div class="barrister-speciality">Personal Injury &amp; Clinical Negligence</div>
+            <div class="barrister-call">Called: 2000</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Helen Hogben" data-expertise="Employment" data-call="2000-2009" data-kc="false">
+          <div class="barrister-img">H</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Helen Hogben</div>
+            <div class="barrister-speciality">Employment</div>
+            <div class="barrister-call">Called: 2003</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Robert Davies" data-expertise="Planning" data-call="2000-2009" data-kc="false">
+          <div class="barrister-img">R</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Robert Davies</div>
+            <div class="barrister-speciality">Planning</div>
+            <div class="barrister-call">Called: 2005</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Andrew Patterson" data-expertise="Property" data-call="2000-2009" data-kc="false">
+          <div class="barrister-img">A</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Andrew Patterson</div>
+            <div class="barrister-speciality">Property</div>
+            <div class="barrister-call">Called: 2007</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Catherine Hughes" data-expertise="Family" data-call="2000-2009" data-kc="false">
+          <div class="barrister-img">C</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Catherine Hughes</div>
+            <div class="barrister-speciality">Family – Public Law &amp; Children</div>
+            <div class="barrister-call">Called: 2008</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Rebecca Walsh" data-expertise="Family" data-call="2010-2019" data-kc="false">
+          <div class="barrister-img">R</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Rebecca Walsh</div>
+            <div class="barrister-speciality">Family – Finance &amp; Property</div>
+            <div class="barrister-call">Called: 2010</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Laura Jenkins" data-expertise="Court of Protection" data-call="2010-2019" data-kc="false">
+          <div class="barrister-img">L</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Laura Jenkins</div>
+            <div class="barrister-speciality">Court of Protection &amp; Adult Care</div>
+            <div class="barrister-call">Called: 2012</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Priya Sharma" data-expertise="Employment" data-call="2010-2019" data-kc="false">
+          <div class="barrister-img">P</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Priya Sharma</div>
+            <div class="barrister-speciality">Employment</div>
+            <div class="barrister-call">Called: 2015</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Emma Thompson" data-expertise="Immigration" data-call="2010-2019" data-kc="false">
+          <div class="barrister-img">E</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Emma Thompson</div>
+            <div class="barrister-speciality">Immigration</div>
+            <div class="barrister-call">Called: 2015</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Jason Patel" data-expertise="Immigration" data-call="2010-2019" data-kc="false">
+          <div class="barrister-img">J</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Jason Patel</div>
+            <div class="barrister-speciality">Immigration</div>
+            <div class="barrister-call">Called: 2016</div>
+          </div>
+        </div>
+
+        <div class="barrister-card" data-name="Sophie Williams" data-expertise="Education" data-call="2020-2025" data-kc="false">
+          <div class="barrister-img">S</div>
+          <div class="barrister-info">
+            <div class="barrister-name">Sophie Williams</div>
+            <div class="barrister-speciality">Education</div>
+            <div class="barrister-call">Called: 2019</div>
+          </div>
+        </div>
+
+        <div class="no-results" id="no-results">No barristers found matching your search criteria.</div>
+      </div>
+
+      <p id="results-count" style="text-align:center; margin-top:30px; font-size:13px; color:var(--grey);"></p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <h2>Can't find who you're looking <span class="accent-teal">for?</span></h2>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-white-outline">CONTACT OUR CLERKS</a>
+        <a href="expertise.html" class="btn btn-white-outline">BROWSE BY EXPERTISE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">T</div>
+        <div class="logo-text">
+          <span class="logo-main">TRINITY</span>
+          <span class="logo-sub">CHAMBERS</span>
+        </div>
+      </a>
+      <div class="footer-nav-group">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="barristers.html">Barristers</a></li>
+        </ul>
+        <ul>
+          <li><a href="contact.html">Clerks &amp; Contact</a></li>
+          <li><a href="knowledge.html">Knowledge</a></li>
+          <li><a href="#">Direct Access</a></li>
+          <li><a href="join.html">Join Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-link" aria-label="Twitter/X">&#120143;</a>
+        <a href="#" class="social-link" aria-label="Instagram">&#9638;</a>
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="YouTube">&#9654;</a>
+      </div>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Disclaimers</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Regulatory Information</a>
+      </div>
+      <p class="footer-reg">Barristers regulated by the Bar Standards Board. Copyright &copy; Trinity Chambers 2025.</p>
+    </div>
+    <div class="footer-offices container">
+      <div class="office">
+        <h4>Newcastle</h4>
+        <p>The Custom House, Quayside, Newcastle upon Tyne, NE1 3DE</p>
+        <p><a href="mailto:info@trinitychambers.co.uk">info@trinitychambers.co.uk</a></p>
+        <p>Tel: <a href="tel:01912321927">0191 232 1927</a></p>
+      </div>
+      <div class="office">
+        <h4>Middlesbrough</h4>
+        <p>Cleveland Business Centre, Watson Street, Middlesbrough, TS1 2RQ</p>
+        <p><a href="mailto:info@trinitychambers.co.uk">info@trinitychambers.co.uk</a></p>
+        <p>Tel: <a href="tel:01642247589">01642 247 589</a></p>
+      </div>
+      <div class="office">
+        <h4>Leeds</h4>
+        <p>Syron House, 12 Park Place, Leeds, LS1 2RU</p>
+        <p><a href="mailto:info@trinitychambers.co.uk">info@trinitychambers.co.uk</a></p>
+        <p>Tel: <a href="tel:01132235105">0113 223 5105</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>Trinity Chambers Services Ltd t/a Trinity Chambers | Registered Office Address: The Custom House, 35 Quayside, Newcastle upon Tyne, England, NE1 3DE | Registered in England No 5344284 | Registered for VAT No 880660005</p>
+    </div>
+  </footer>
+
+  <button class="cookie-btn">COOKIE SETTINGS</button>
+  <script src="script.js"></script>
+</body>
+</html>
