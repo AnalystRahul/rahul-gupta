@@ -84,7 +84,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       badge: 'EXPERT',
       title: 'LEGAL ADVICE &amp;<br>REPRESENTATION',
       text: 'With Chambers in Newcastle, Middlesbrough and Leeds, the experienced and approachable barristers offer the most appropriate and cost-effective representation for your needs.',
-      bg: "url('https://images.unsplash.com/photo-1555636222-cae831e670b3?w=1400&q=80') center/cover no-repeat",
+      bg: "url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&q=80') center/cover no-repeat",
       primaryLabel: 'LEARN MORE', primaryHref: 'about.html',
       secLabel: 'GET IN TOUCH',  secHref: 'contact.html',
       exploreHref: 'expertise.html'
