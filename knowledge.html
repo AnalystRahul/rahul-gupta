@@ -44,16 +44,47 @@
 
   <!-- Page Hero -->
   <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span>Knowledge</span>
+    <div class="page-hero-photo" style="background-image: url('https://images.unsplash.com/photo-1555636222-cae831e670b3?w=1400&q=80');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-inner">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Knowledge</span>
+        </div>
+        <span class="page-hero-split">KNOWLEDGE</span>
+        <span class="page-hero-split"><span class="teal-block">&amp; INSIGHTS</span></span>
       </div>
-      <h1><span style="color:var(--teal)">Knowledge</span> &amp; Insights</h1>
-      <p>Legal updates, commentary and guidance from the barristers of Trinity Chambers.</p>
     </div>
   </section>
+
+  <!-- Supporting Our Clients -->
+  <section class="section" style="background:var(--white); text-align:center;">
+    <div class="container" style="max-width:720px;">
+      <h2 style="font-family:var(--font); font-size:clamp(1.5rem,2.8vw,2rem); color:var(--navy); margin-bottom:20px;">Supporting Our Clients</h2>
+      <p style="font-size:14.5px; color:var(--grey); line-height:1.78;">The combination of the large number of barristers and silks at Trinity and the diverse range of expertise they offer across Chambers' practice groups, means that they regularly provide insight and commentary on current legal matters. They also provide CPD accredited training and other resources, both on and offline through seminars, webinars and livestream events.</p>
+    </div>
+  </section>
+
+  <!-- Category Tiles -->
+  <div class="img-tiles img-tiles-3">
+    <a href="knowledge.html" class="img-tile">
+      <div class="img-tile-bg" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80');"></div>
+      <div class="img-tile-overlay"></div>
+      <span class="img-tile-label">News &amp; Insights</span>
+    </a>
+    <a href="knowledge.html" class="img-tile">
+      <div class="img-tile-bg" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80');"></div>
+      <div class="img-tile-overlay"></div>
+      <span class="img-tile-label">Events &amp; Training</span>
+    </a>
+    <a href="knowledge.html" class="img-tile">
+      <div class="img-tile-bg" style="background-image: url('https://images.unsplash.com/photo-1551817958-20204d6ab212?w=800&q=80');"></div>
+      <div class="img-tile-overlay"></div>
+      <span class="img-tile-label">Videos &amp; Resources</span>
+    </a>
+  </div>
 
   <!-- Knowledge Content -->
   <section class="knowledge-section section">
@@ -236,7 +267,7 @@
         <ul>
           <li><a href="contact.html">Clerks &amp; Contact</a></li>
           <li><a href="knowledge.html">Knowledge</a></li>
-          <li><a href="join.html">Direct Access</a></li>
+          <li><a href="direct-access.html">Direct Access</a></li>
           <li><a href="join.html">Join Us</a></li>
         </ul>
       </div>
@@ -252,9 +283,9 @@
         <a href="index.html">Sitemap</a>
         <a href="about.html">Regulatory Information</a>
       </div>
-      <p class="footer-reg">Barristers regulated by the Bar Standards Board. Copyright &copy; Trinity Chambers 2025.</p>
+      <p class="footer-reg">Barristers regulated by the Bar Standards Board. Copyright &copy; Trinity Chambers 2026.</p>
     </div>
-    <div class="footer-offices container">
+    <div class="footer-offices">
       <div class="office">
         <h4>Newcastle</h4>
         <p>The Custom House, Quayside, Newcastle upon Tyne, NE1 3DE</p>
@@ -274,19 +305,17 @@
         <p>Tel: <a href="tel:01132235105">0113 223 5105</a></p>
       </div>
     </div>
-    <div class="footer-badges container">
-      <span class="footer-badge gold"><span>★</span>Legal 500 Recommended</span>
-      <span class="footer-badge gold"><span>★</span>Chambers &amp; Partners Ranked</span>
-      <span class="footer-badge"><span>    <div class="footer-bottom container">#9646;</span>Bar Standards Board Regulated</span>
-      <span class="footer-badge"><span>    <div class="footer-bottom container">#9646;</span>North Eastern Circuit</span>
-      <span class="footer-badge"><span>    <div class="footer-bottom container">#9646;</span>Direct Access Barristers</span>
+    <div class="footer-badges">
+      <div class="accred-badge bsb"><span class="ab-icon">⚖</span>Bar Standards<br>Board</div>
+      <div class="accred-badge l500"><span class="ab-main">Legal<br>500</span>Top Set 2026</div>
+      <div class="accred-badge chambers"><span class="ab-icon">★</span>Top Ranked<br>Chambers UK Bar</div>
+      <div class="accred-badge cyber"><span class="ab-icon">✓</span>Cyber Essentials<br>Certified Plus</div>
     </div>
     <div class="footer-bottom container">
       <p>Trinity Chambers Services Ltd t/a Trinity Chambers | Registered Office Address: The Custom House, 35 Quayside, Newcastle upon Tyne, England, NE1 3DE | Registered in England No 5344284 | Registered for VAT No 880660005</p>
     </div>
   </footer>
 
-  <button class="cookie-btn">COOKIE SETTINGS</button>
   <!-- Cookie Settings Panel -->
   <div class="cookie-panel" id="cookie-panel">
     <div class="cookie-inner">
@@ -297,7 +326,7 @@
       <div class="cookie-btns">
         <button class="btn btn-primary" id="cookie-accept">Accept All</button>
         <button class="btn btn-outline" style="color:var(--white); border-color:rgba(255,255,255,0.4);" id="cookie-essential">Essential Only</button>
-        <button class="banner-close" style="position:static; transform:none; font-size:22px; color:rgba(255,255,255,0.5);" id="cookie-close" aria-label="Close cookie settings">  <script src="script.js"></script>times;</button>
+        <button class="banner-close" style="position:static; transform:none; font-size:22px; color:rgba(255,255,255,0.5);" id="cookie-close" aria-label="Close cookie settings">&times;</button>
       </div>
     </div>
   </div>
