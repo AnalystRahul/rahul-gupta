@@ -562,4 +562,38 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       target.scrollIntoView({ behavior: 'smooth' });
     }
   });
-});
+})();
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+(function () {
+  document.querySelectorAll('.accordion-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      const bodyId   = this.getAttribute('aria-controls');
+      const body     = bodyId ? document.getElementById(bodyId) : this.nextElementSibling;
+
+      // Close all siblings in same list
+      const list = this.closest('.accordion-list');
+      if (list) {
+        list.querySelectorAll('.accordion-btn').forEach(function (b) {
+          if (b !== btn) {
+            b.setAttribute('aria-expanded', 'false');
+            const id = b.getAttribute('aria-controls');
+            const sib = id ? document.getElementById(id) : b.nextElementSibling;
+            if (sib) sib.style.maxHeight = '0';
+          }
+        });
+      }
+
+      if (expanded) {
+        this.setAttribute('aria-expanded', 'false');
+        if (body) body.style.maxHeight = '0';
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+        if (body) body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+})();
