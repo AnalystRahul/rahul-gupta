@@ -3,7 +3,7 @@
    ============================================================ */
 
 /* ---- Easter banner close ---- */
-document.querySelector('.banner-close')?.addEventListener('click', function () {
+document.querySelector('.easter-banner .banner-close')?.addEventListener('click', function () {
   this.closest('.easter-banner').style.display = 'none';
 });
 
