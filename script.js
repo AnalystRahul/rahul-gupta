@@ -10,9 +10,18 @@ document.querySelector('.easter-banner .banner-close')?.addEventListener('click'
 /* ---- Mobile hamburger menu ---- */
 const hamburger = document.getElementById('hamburger');
 const mainNav   = document.getElementById('main-nav');
+const siteHeader = document.querySelector('.site-header');
+
+function setNavTop() {
+  if (mainNav && siteHeader) {
+    mainNav.style.top = siteHeader.getBoundingClientRect().bottom + 'px';
+  }
+}
+
 hamburger?.addEventListener('click', function () {
   const open = mainNav.classList.toggle('open');
   hamburger.setAttribute('aria-expanded', String(open));
+  if (open) setNavTop();
 });
 mainNav?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => mainNav.classList.remove('open'));

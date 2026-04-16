@@ -662,7 +662,7 @@ img { max-width: 100%; display: block; }
   .main-nav.open {
     display: flex;
     position: fixed;
-    top: 70px;
+    top: 70px; /* overridden by JS to account for Easter banner height */
     left: 0; right: 0;
     background: var(--navy);
     flex-direction: column;
