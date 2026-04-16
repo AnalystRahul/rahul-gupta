@@ -266,6 +266,27 @@ img { max-width: 100%; display: block; }
 }
 .arrow-btn:hover { background: rgba(255,255,255,0.3); }
 
+.hero-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+.hero-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.hero-dots .dot.active { background: var(--teal); }
+.hero-content { transition: opacity 0.4s; }
+.hero-content.fade { opacity: 0; }
+
 /* ========================================
    SEARCH BAR
    ======================================== */
@@ -1328,3 +1349,164 @@ img { max-width: 100%; display: block; }
   .clerks-grid { grid-template-columns: 1fr 1fr; }
   .vacancy-card { flex-direction: column; align-items: flex-start; }
 }
+
+/* ========================================
+   MODAL (Barrister detail)
+   ======================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s;
+}
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-box {
+  background: var(--white);
+  border-radius: 3px;
+  max-width: 560px;
+  width: 100%;
+  overflow: hidden;
+  transform: translateY(24px);
+  transition: transform 0.3s;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-overlay.open .modal-box { transform: translateY(0); }
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.7);
+  line-height: 1;
+  z-index: 1;
+  padding: 0;
+}
+.modal-close:hover { color: var(--white); }
+.modal-header {
+  background: var(--navy);
+  padding: 28px 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.modal-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--white);
+  font-family: var(--font);
+  font-style: italic;
+  flex-shrink: 0;
+}
+.modal-header-info h2 {
+  font-family: var(--font);
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.modal-body { padding: 26px 30px; }
+.modal-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+}
+.modal-meta-item strong {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 3px;
+}
+.modal-meta-item span { font-size: 14px; color: var(--navy); font-weight: 600; }
+.modal-body p { font-size: 13.5px; color: var(--grey); line-height: 1.7; margin-bottom: 16px; }
+.modal-footer {
+  padding: 0 30px 26px;
+  display: flex;
+  gap: 12px;
+}
+
+/* ========================================
+   COOKIE SETTINGS PANEL
+   ======================================== */
+.cookie-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--navy);
+  z-index: 1500;
+  border-top: 3px solid var(--teal);
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+.cookie-panel.open { transform: translateY(0); }
+.cookie-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cookie-text {
+  flex: 1;
+  min-width: 200px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.55;
+}
+.cookie-text strong { color: var(--white); display: block; margin-bottom: 3px; font-size: 13.5px; }
+.cookie-btns { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.cookie-btns .banner-close {
+  position: static;
+  transform: none;
+  font-size: 24px;
+  color: rgba(255,255,255,0.5);
+  padding: 4px 8px;
+}
+.cookie-btns .banner-close:hover { color: var(--white); }
+
+/* ========================================
+   SUBSCRIBE SUCCESS
+   ======================================== */
+.subscribe-success {
+  display: none;
+  background: #e8f9f0;
+  color: #1a7a45;
+  padding: 10px 14px;
+  border-radius: 2px;
+  font-size: 13px;
+  margin-top: 10px;
+  border-left: 3px solid #1a7a45;
+}
+
+/* ========================================
+   NEWS DOTS clickable
+   ======================================== */
+.news-dots .dot, .card-dots .dot { cursor: pointer; }
+.news-dots .dot:hover, .card-dots .dot:hover { background: var(--teal); opacity: 0.7; }
