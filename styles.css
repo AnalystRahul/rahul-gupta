@@ -206,6 +206,7 @@ img { max-width: 100%; display: block; }
 .hero-overlay {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background: rgba(15, 25, 55, 0.68);
 }
 .hero-content {
@@ -702,11 +703,13 @@ img { max-width: 100%; display: block; }
   inset: 0;
   background: center center / cover no-repeat;
   background-color: var(--navy);
+  pointer-events: none;
 }
 .page-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(10,20,48,0.4) 0%, rgba(10,20,48,0.78) 100%);
+  pointer-events: none;
 }
 .page-hero-inner {
   position: relative;
@@ -796,6 +799,7 @@ img { max-width: 100%; display: block; }
 .img-tile-overlay {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 60%);
 }
 .img-tile-label {

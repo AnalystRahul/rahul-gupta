@@ -571,7 +571,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       target.scrollIntoView({ behavior: 'smooth' });
     }
   });
-})();
+});
 
 /* ============================================================
    ACCORDION
