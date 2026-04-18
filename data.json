@@ -273,5 +273,127 @@
       "category": "planning",
       "href": "knowledge.html"
     }
-  ]
+  ],
+  "pages": {
+    "home": {
+      "heroSlides": [
+        {
+          "badge": "EXPERT",
+          "title": "LEGAL ADVICE &amp;<br>REPRESENTATION",
+          "text": "With Chambers in Newcastle, Middlesbrough and Leeds, the experienced and approachable barristers offer the most appropriate and cost-effective representation for your needs.",
+          "bg": "url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&q=80') center/cover no-repeat",
+          "primaryLabel": "LEARN MORE", "primaryHref": "about.html",
+          "secLabel": "GET IN TOUCH", "secHref": "contact.html",
+          "exploreHref": "expertise.html"
+        },
+        {
+          "badge": "TRUSTED",
+          "title": "BARRISTERS OF<br>THE HIGHEST CALIBRE",
+          "text": "Regularly recommended in the Legal 500 and Chambers &amp; Partners, our silks and junior barristers handle cases of the highest complexity across the UK.",
+          "bg": "linear-gradient(135deg, #0d1a35 0%, #1a3a5c 100%)",
+          "primaryLabel": "OUR BARRISTERS", "primaryHref": "barristers.html",
+          "secLabel": "OUR EXPERTISE", "secHref": "expertise.html",
+          "exploreHref": "barristers.html"
+        },
+        {
+          "badge": "ACROSS THE NORTH",
+          "title": "SERVING CLIENTS<br>ACROSS THE UK",
+          "text": "From complex commercial disputes and serious crime to family matters and public law, Trinity Chambers has the depth and breadth to handle your case.",
+          "bg": "linear-gradient(135deg, #1a2744 0%, #1a5060 100%)",
+          "primaryLabel": "OUR EXPERTISE", "primaryHref": "expertise.html",
+          "secLabel": "JOIN US", "secHref": "join.html",
+          "exploreHref": "knowledge.html"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "\"An excellent chambers and clerking service: they are always attentive and can offer a very wide range of expertise. The clients are very approachable and user-friendly, readily available and efficient with invoicing. You really feel you know where you stand with them.\"",
+          "source": "Chambers &amp; Partners"
+        },
+        {
+          "quote": "\"Trinity Chambers is a genuinely impressive set. The clerking is excellent and the barristers are consistently of the highest calibre. Instructing them is always a pleasure — they are responsive, commercial and thoroughly prepared.\"",
+          "source": "Legal 500, 2025"
+        }
+      ]
+    },
+    "about": {
+      "introParas": [
+        "Trinity Chambers is proud of its reputation as being one of the leading sets of barristers' chambers in the North of England.",
+        "Endorsed by the leading legal directories:",
+        "This is a reputation we have won by investing in staff, services and facilities, by implementing a robust administration and clerking structure, and crucially, by supplying high quality legal advice and advocacy.",
+        "Trinity was the first chambers north of London, and only the fourth in the country, to be awarded the General Council of the Bar's BarMark involving an annual review of all aspects of practice management, client care and regulatory compliance as assessed and reported upon by the Bar Standards Institution. Trinity Chambers has the Cyber Essentials Plus accreditation.",
+        "Since our establishment in 1954, we have consistently grown so that we now offer a broad spectrum of specialisation, expertise and experience, with consistently high quality across the board.",
+        "Trinity Chambers is a trading name of Trinity Chambers Services Ltd, a Private Company Limited by Guarantee Registered in England No: 15846284. Registered Office Address: The Custom House, 39 Quayside, Newcastle Upon Tyne, England, NE1 3DE."
+      ],
+      "quotes": [
+        {
+          "text": "All clients within the Chambers are extremely friendly and will try to accommodate any specific requests. There is often a wide selection of Counsel available and they are happy to take the time to discuss the needs of individual cases and advise on Counsel they consider most suited. They are prompt in responding to communications and will forward on information which they consider may be of interest.",
+          "source": "Legal 500"
+        },
+        {
+          "text": "An excellent chambers and clerking service: they are always attentive and can offer a very wide range of expertise. The clients are very approachable and user-friendly, readily available and efficient with invoicing. You really feel you know where you stand with them.",
+          "source": "Chambers &amp; Partners"
+        }
+      ],
+      "facilities": [
+        "In Trinity (Newcastle) there are 7 conference rooms with a capacity of 4 to 12 people that are available in and out of published working hours. All rooms have internet access and telephone. Trinity (Teesside) has 1 conference room. These rooms, subject to availability, can be hired at a nominal rate through Chambers' Chief Executive.",
+        "Conferences can be arranged through the clerks at an appropriate venue and time.",
+        "Trinity's premises in Newcastle, Teesside and Leeds have audio conferencing facilities. Trinity (Newcastle) also has a video conferencing suite with seating for either 8 or 30 people. These facilities can be hired through the clerks (info@trinitychambers.co.uk) or 0191 232 1927.",
+        "Trinity (Newcastle) has seminar rooms with a capacity for 40 people."
+      ],
+      "policies": [
+        { "title": "Equality & Diversity", "content": "Trinity Chambers is committed to equality and diversity in all aspects of its work. We do not discriminate on the grounds of age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, or sexual orientation. Our Equality and Diversity policy is reviewed annually and applies to all members of Chambers, pupils, employees and those seeking to join Chambers." },
+        { "title": "Race Equality Statement", "content": "Trinity Chambers is opposed to all forms of unlawful discrimination. We are committed to promoting racial equality and diversity within Chambers. We recognise that discrimination may be direct or indirect, conscious or unconscious, and we take all reasonable steps to ensure that our practices do not disadvantage individuals from any racial group." },
+        { "title": "Legal Services", "content": "All barristers at Trinity Chambers are regulated by the Bar Standards Board and are subject to the Code of Conduct of the Bar of England and Wales. Our barristers provide independent, specialist legal advice and advocacy. We are committed to providing high quality, cost-effective legal services to all clients, whether instructed by solicitors or directly under the Direct Access scheme." },
+        { "title": "General Services", "content": "Trinity Chambers provides a wide range of general services to instructing solicitors and direct access clients. Our clerks team is available Monday to Friday, 8:30am to 6:00pm, to assist with all aspects of instructing counsel, including obtaining quotes, managing listings, and arranging conferences. Out-of-hours urgent assistance is available on 0191 245 0110." },
+        { "title": "Response Times", "content": "We aim to respond to all enquiries within 24 hours on business days. For urgent matters, our clerks team will endeavour to respond as quickly as possible. Written advice and settled documents will be delivered within the agreed timescale. If any delay is anticipated, the instructing solicitor or client will be informed as soon as possible." },
+        { "title": "Clerking", "content": "Trinity Chambers operates a professional clerking service with dedicated senior clerks for each of our three offices. Our clerks have extensive experience matching the right barrister to your case and ensuring the efficient running of your matter. All clerks are trained to the highest professional standards and are committed to providing an outstanding service." },
+        { "title": "Fees, Billing & Price Transparency", "content": "Trinity Chambers is committed to transparency in all matters relating to fees and billing. Fee quotes are provided before work commences wherever possible. Fees are agreed with the relevant barrister and Chambers' clerks before instructions are accepted. Where fees cannot be fixed in advance, an estimate will be given. Invoices are issued promptly following the completion of work. Full details of our pricing structure are available from the clerks." },
+        { "title": "Complaints", "content": "Trinity Chambers has a formal complaints procedure. If you are unhappy with any aspect of the service you have received, please contact our Chief Executive in the first instance. All complaints are investigated thoroughly and we aim to resolve them within 28 days. If you remain dissatisfied, you may refer your complaint to the Bar Standards Board or the Legal Ombudsman." }
+      ]
+    },
+    "expertise": {
+      "cards": [
+        { "title": "Administrative & Public Law", "description": "We advise and represent clients in judicial review proceedings, statutory appeals and all matters involving public bodies and government decision-making.", "link": "contact.html" },
+        { "title": "Agriculture & Rural Affairs", "description": "Our barristers handle disputes and regulatory matters involving farming, land use, rural tenancies and agri-environment schemes.", "link": "contact.html" },
+        { "title": "Alternative Dispute Resolution", "description": "We offer experienced advocates for mediation, arbitration and adjudication across all commercial and civil disputes, providing cost-effective resolution.", "link": "contact.html" },
+        { "title": "Business & Commercial Litigation", "description": "From contract disputes to shareholder conflicts and professional negligence, our commercial barristers deliver incisive and strategic advocacy.", "link": "contact.html" },
+        { "title": "Civil Liberties & Human Rights", "description": "We represent individuals whose fundamental rights have been infringed, including cases under the Human Rights Act and before the European courts.", "link": "contact.html" },
+        { "title": "Consumer Law & Professional Negligence", "description": "Our team handles claims against professionals — solicitors, doctors, accountants and others — as well as consumer protection disputes.", "link": "contact.html" },
+        { "title": "Costs", "description": "Specialist costs barristers advise on costs budgeting, detailed assessments and appeals in both civil and family proceedings.", "link": "contact.html" },
+        { "title": "Court of Protection & Adult Care", "description": "We act in proceedings relating to adults who lack mental capacity, including deputyship, welfare and serious medical treatment cases.", "link": "contact.html" },
+        { "title": "Criminal", "description": "Our criminal barristers represent defendants and prosecution in the most serious and complex cases, from fraud to serious violence.", "link": "contact.html" },
+        { "title": "Education", "description": "We advise schools, local authorities, parents and pupils on exclusions, admissions, special educational needs, and employment in the education sector.", "link": "contact.html" },
+        { "title": "Employment", "description": "Our employment team is ranked in the top tier by the Legal 500, covering unfair dismissal, discrimination, TUPE, whistleblowing and complex injunctions.", "link": "contact.html" },
+        { "title": "Family – Finance & Property", "description": "Experienced in all aspects of financial remedy proceedings on divorce, including big money cases, trusts, business assets and international elements.", "link": "contact.html" },
+        { "title": "Family – Public Law & Children", "description": "We represent local authorities, parents and children in care proceedings, adoption, and all matters relating to the welfare of children.", "link": "contact.html" },
+        { "title": "Immigration", "description": "Comprehensive immigration advice including asylum, human rights claims, deportation appeals, and complex nationality issues.", "link": "contact.html" },
+        { "title": "Inheritance, Probate & Trusts", "description": "Disputes over wills, contested estates, trust litigation and claims under the Inheritance Act, including complex multi-jurisdictional matters.", "link": "contact.html" },
+        { "title": "Inquests", "description": "We represent bereaved families, public bodies and commercial organisations at inquests and public inquiries, including Article 2 inquests.", "link": "contact.html" },
+        { "title": "Insolvency & Restructuring", "description": "Advisory and advocacy work across corporate and personal insolvency, including administration, liquidation and bankruptcy proceedings.", "link": "contact.html" },
+        { "title": "International & Offshore", "description": "Cross-border disputes, international arbitration, offshore trusts and asset tracing with a global dimension.", "link": "contact.html" },
+        { "title": "Licensing", "description": "Applications, reviews and appeals for alcohol, entertainment, gambling and taxi licences before licensing authorities and courts.", "link": "contact.html" },
+        { "title": "Personal Injury & Clinical Negligence", "description": "From catastrophic injury claims to complex clinical negligence, our barristers have an outstanding record in maximising compensation for clients.", "link": "contact.html" },
+        { "title": "Planning", "description": "Planning appeals, inquiries, enforcement, judicial review and infrastructure projects including nationally significant infrastructure projects.", "link": "contact.html" },
+        { "title": "Private Prosecutions", "description": "We advise and represent clients bringing private prosecutions in cases ranging from fraud and theft to regulatory breaches.", "link": "contact.html" },
+        { "title": "Property", "description": "Landlord and tenant disputes, boundary disputes, easements, covenants and all aspects of real property litigation.", "link": "contact.html" },
+        { "title": "Regulatory", "description": "Professional disciplinary proceedings, health and safety prosecutions, environmental regulation and financial services regulation.", "link": "contact.html" },
+        { "title": "Social Housing", "description": "Acting for social landlords, local authorities and tenants in possession proceedings, anti-social behaviour matters and homelessness appeals.", "link": "contact.html" },
+        { "title": "Sports Law", "description": "Disciplinary hearings, contract disputes, regulatory matters and employment issues across professional and amateur sport.", "link": "contact.html" }
+      ]
+    },
+    "knowledge": {
+      "supportingText": "The combination of the large number of barristers and silks at Trinity and the diverse range of expertise they offer across Chambers' practice groups, means that they regularly provide insight and commentary on current legal matters. They also provide CPD accredited training and other resources, both on and offline through seminars, webinars and livestream events.",
+      "articles": [
+        { "title": "Managing Cancer in the Workplace: A Legal Guide for Employers", "category": "Employment", "date": "1st Apr 2025", "excerpt": "Helen Hogben examines the legal obligations employers face when an employee receives a cancer diagnosis, including reasonable adjustments and disability discrimination.", "author": "Helen Hogben" },
+        { "title": "Changes to Financial Remedy Proceedings in 2025", "category": "Family", "date": "27th Mar 2025", "excerpt": "Rebecca Walsh outlines the key procedural changes affecting financial remedy proceedings following the Family Procedure (Amendment) Rules 2025.", "author": "Rebecca Walsh" },
+        { "title": "The Sentencing Council: New Guidelines for Serious Violence Offences", "category": "Criminal", "date": "18th Mar 2025", "excerpt": "Michael Foster KC reviews the Sentencing Council's updated guidelines for serious violence, exploring their impact on sentencing outcomes across the Northern Circuit.", "author": "Michael Foster KC" },
+        { "title": "Asylum Seekers and the Safety of Third Countries: Post-Rwanda Update", "category": "Immigration", "date": "10th Mar 2025", "excerpt": "Emma Thompson provides an update on the legal landscape for asylum seekers following the Supreme Court's Rwanda ruling and subsequent legislative changes.", "author": "Emma Thompson" },
+        { "title": "Fundamental Dishonesty: Recent Developments and Practical Implications", "category": "Personal Injury", "date": "5th Mar 2025", "excerpt": "Thomas Clarke KC analyses recent court decisions on fundamental dishonesty under s.57 of the Criminal Justice and Courts Act 2015 and their impact on personal injury claims.", "author": "Thomas Clarke KC" },
+        { "title": "The Planning and Infrastructure Bill: Key Changes for Developers", "category": "Planning", "date": "28th Feb 2025", "excerpt": "Robert Davies examines the most significant provisions of the Planning and Infrastructure Bill 2025 and what they mean for developers and local authorities.", "author": "Robert Davies" },
+        { "title": "AI in the Workplace: Discrimination Risks Employers Must Know", "category": "Employment", "date": "20th Feb 2025", "excerpt": "Priya Sharma examines the discrimination and data protection risks arising from the use of AI tools in recruitment, performance management and redundancy processes.", "author": "Priya Sharma" },
+        { "title": "Trinity Chambers Pupil Barristers Start Second Six of Pupillage", "category": "Family", "date": "27th Mar 2025", "excerpt": "Trinity Chambers' current pupil barristers will shortly be accepting instructions on their own cases as they commence the second half of their pupillage.", "author": "Trinity Chambers" }
+      ]
+    }
+  }
 }

@@ -82,6 +82,14 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
 .btn-confirm{background:#2abed4;border:none;color:#fff;padding:9px 20px;border-radius:5px;font-weight:700;font-size:12px;cursor:pointer}
 .btn-cancel{background:none;border:1px solid #1e3456;color:#6a85a8;padding:9px 16px;border-radius:5px;font-size:12px;cursor:pointer}
 .btn-cancel:hover{border-color:#6a85a8}
+/* SUB TABS */
+.sub-tabs{display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap}
+.sub-btn{background:#0d1b2e;border:1px solid #1e3456;color:#6a85a8;padding:7px 16px;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer}
+.sub-btn:hover{border-color:#2abed4;color:#d0dae8}
+.sub-btn.active{background:#132540;border-color:#2abed4;color:#2abed4}
+.sub-panel{display:none}
+.sub-panel.active{display:block}
+.sub-heading{font-size:13px;font-weight:700;color:#d0dae8;margin:20px 0 12px;display:flex;align-items:center;gap:10px}
 /* TOAST */
 .toast{position:fixed;bottom:24px;right:24px;background:#132540;border:1px solid #2abed4;color:#d0dae8;padding:12px 20px;border-radius:8px;font-size:13px;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
 .toast.show{opacity:1}
@@ -121,6 +129,7 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
     <button class="tab-btn" data-tab="barristers">Barristers</button>
     <button class="tab-btn" data-tab="clerks">Clerks</button>
     <button class="tab-btn" data-tab="news">News Articles</button>
+    <button class="tab-btn" data-tab="pages">Pages</button>
   </nav>
 
   <main>
@@ -183,6 +192,68 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
         <tbody id="news-tbody"></tbody>
       </table>
     </section>
+    <!-- PAGES -->
+    <section id="tab-pages" class="tab-panel">
+      <div class="panel-header"><h2>Page Content</h2></div>
+      <div class="sub-tabs">
+        <button class="sub-btn active" data-sub="home">Home</button>
+        <button class="sub-btn" data-sub="about">About</button>
+        <button class="sub-btn" data-sub="expertise">Expertise</button>
+        <button class="sub-btn" data-sub="knowledge">Knowledge</button>
+      </div>
+
+      <!-- HOME -->
+      <div id="sub-home" class="sub-panel active">
+        <h3 class="sub-heading">Hero Slides <button class="btn-add" id="add-slide-btn" style="font-size:11px;padding:5px 12px;">+ Add Slide</button></h3>
+        <div id="slide-form-wrap" class="form-wrap" hidden></div>
+        <table class="data-table"><thead><tr><th>Badge</th><th>Title</th><th>Primary Btn</th><th>Actions</th></tr></thead>
+          <tbody id="slides-tbody"></tbody></table>
+        <h3 class="sub-heading" style="margin-top:28px;">Testimonials <button class="btn-add" id="add-test-btn" style="font-size:11px;padding:5px 12px;">+ Add</button></h3>
+        <div id="test-form-wrap" class="form-wrap" hidden></div>
+        <table class="data-table"><thead><tr><th>Quote (truncated)</th><th>Source</th><th>Actions</th></tr></thead>
+          <tbody id="tests-tbody"></tbody></table>
+      </div>
+
+      <!-- ABOUT -->
+      <div id="sub-about" class="sub-panel">
+        <div class="field-group">
+          <label>Intro Paragraphs <small style="text-transform:none;font-size:11px;color:#4a6080;">(one paragraph per line — blank line = new paragraph)</small></label>
+          <textarea id="about-paras" rows="10"></textarea>
+        </div>
+        <div class="field-group">
+          <label>Facilities List <small style="text-transform:none;font-size:11px;color:#4a6080;">(one item per line)</small></label>
+          <textarea id="about-fac" rows="6"></textarea>
+        </div>
+        <h3 class="sub-heading">Policies Accordion <button class="btn-add" id="add-policy-btn" style="font-size:11px;padding:5px 12px;">+ Add Policy</button></h3>
+        <div id="policy-form-wrap" class="form-wrap" hidden></div>
+        <table class="data-table"><thead><tr><th>Title</th><th>Actions</th></tr></thead>
+          <tbody id="policies-tbody"></tbody></table>
+      </div>
+
+      <!-- EXPERTISE -->
+      <div id="sub-expertise" class="sub-panel">
+        <div class="panel-header" style="margin-bottom:16px;">
+          <span style="color:#8aa0be;font-size:13px;">Edit expertise area cards shown on the Expertise page.</span>
+          <button class="btn-add" id="add-exp-btn">+ Add Card</button>
+        </div>
+        <div id="exp-form-wrap" class="form-wrap" hidden></div>
+        <table class="data-table"><thead><tr><th>Title</th><th>Description</th><th>Actions</th></tr></thead>
+          <tbody id="exp-tbody"></tbody></table>
+      </div>
+
+      <!-- KNOWLEDGE -->
+      <div id="sub-knowledge" class="sub-panel">
+        <div class="field-group">
+          <label>"Supporting Our Clients" Intro Text</label>
+          <textarea id="know-support" rows="4"></textarea>
+        </div>
+        <h3 class="sub-heading">Articles Grid <button class="btn-add" id="add-art-btn" style="font-size:11px;padding:5px 12px;">+ Add Article</button></h3>
+        <div id="art-form-wrap" class="form-wrap" hidden></div>
+        <table class="data-table"><thead><tr><th>Title</th><th>Category</th><th>Author</th><th>Actions</th></tr></thead>
+          <tbody id="art-tbody"></tbody></table>
+      </div>
+    </section>
+
   </main>
 </div>
 
@@ -536,6 +607,298 @@ function deleteNews(i)  {
   siteData.news.splice(i, 1);
   renderNews();
   toast('Article removed. Remember to Save All Changes.');
+}
+
+/* ================================================================
+   SUB-TABS (Pages tab)
+================================================================ */
+document.querySelectorAll('.sub-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.sub-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.sub-panel').forEach(function(p) { p.classList.remove('active'); });
+    this.classList.add('active');
+    document.getElementById('sub-' + this.dataset.sub).classList.add('active');
+  });
+});
+
+/* Populate Pages tab when initDashboard runs */
+var _origInit = initDashboard;
+initDashboard = function() {
+  _origInit();
+  renderSlides();
+  renderTestimonials();
+  renderAbout();
+  renderExpertise();
+  renderKnowledge();
+};
+
+/* ================================================================
+   HOME — Hero Slides
+================================================================ */
+function renderSlides() {
+  var list = (siteData.pages && siteData.pages.home && siteData.pages.home.heroSlides) || [];
+  document.getElementById('slides-tbody').innerHTML = list.map(function(s, i) {
+    return '<tr><td>' + esc(s.badge) + '</td><td>' + esc(s.title).replace(/<br>/g,' ') + '</td><td>' + esc(s.primaryLabel) + '</td><td>' +
+      '<button class="btn-edit" onclick="editSlide(' + i + ')">Edit</button>' +
+      '<button class="btn-del" onclick="deleteSlide(' + i + ')">Delete</button>' +
+      '</td></tr>';
+  }).join('');
+}
+
+document.getElementById('add-slide-btn').addEventListener('click', function() { openSlideForm(-1); });
+
+function openSlideForm(idx) {
+  var wrap = document.getElementById('slide-form-wrap');
+  var s = idx >= 0 ? siteData.pages.home.heroSlides[idx] : {};
+  wrap.hidden = false;
+  wrap.innerHTML = '<h3>' + (idx >= 0 ? 'Edit' : 'Add') + ' Hero Slide</h3>' +
+    '<div class="form-row"><div class="field-group"><label>Badge Text</label><input type="text" id="sf-badge" value="' + esc(s.badge||'') + '"/></div>' +
+    '<div class="field-group"><label>Background (CSS)</label><input type="text" id="sf-bg" value="' + esc(s.bg||'') + '"/></div></div>' +
+    '<div class="field-group"><label>Title (HTML allowed, use &lt;br&gt; for line breaks)</label><input type="text" id="sf-title" value="' + esc(s.title||'') + '"/></div>' +
+    '<div class="field-group"><label>Body Text</label><textarea id="sf-text" rows="3">' + esc(s.text||'') + '</textarea></div>' +
+    '<div class="form-row"><div class="field-group"><label>Primary Button Label</label><input type="text" id="sf-pl" value="' + esc(s.primaryLabel||'') + '"/></div>' +
+    '<div class="field-group"><label>Primary Button Link</label><input type="text" id="sf-ph" value="' + esc(s.primaryHref||'') + '"/></div></div>' +
+    '<div class="form-row"><div class="field-group"><label>Secondary Button Label</label><input type="text" id="sf-sl" value="' + esc(s.secLabel||'') + '"/></div>' +
+    '<div class="field-group"><label>Secondary Button Link</label><input type="text" id="sf-sh" value="' + esc(s.secHref||'') + '"/></div></div>' +
+    '<div class="form-actions"><button class="btn-confirm" onclick="saveSlide(' + idx + ')">SAVE SLIDE</button><button class="btn-cancel" onclick="document.getElementById(\'slide-form-wrap\').hidden=true">Cancel</button></div>';
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function saveSlide(idx) {
+  if (!siteData.pages) siteData.pages = {};
+  if (!siteData.pages.home) siteData.pages.home = {};
+  if (!siteData.pages.home.heroSlides) siteData.pages.home.heroSlides = [];
+  var obj = {
+    badge: document.getElementById('sf-badge').value.trim(),
+    title: document.getElementById('sf-title').value.trim(),
+    text:  document.getElementById('sf-text').value.trim(),
+    bg:    document.getElementById('sf-bg').value.trim(),
+    primaryLabel: document.getElementById('sf-pl').value.trim(),
+    primaryHref:  document.getElementById('sf-ph').value.trim(),
+    secLabel: document.getElementById('sf-sl').value.trim(),
+    secHref:  document.getElementById('sf-sh').value.trim(),
+    exploreHref: 'expertise.html'
+  };
+  if (idx >= 0) siteData.pages.home.heroSlides[idx] = obj;
+  else siteData.pages.home.heroSlides.push(obj);
+  document.getElementById('slide-form-wrap').hidden = true;
+  renderSlides();
+  toast(idx >= 0 ? 'Slide updated.' : 'Slide added. Remember to Save All Changes.');
+}
+function editSlide(i) { openSlideForm(i); }
+function deleteSlide(i) {
+  if (!confirm('Delete this slide?')) return;
+  siteData.pages.home.heroSlides.splice(i, 1);
+  renderSlides();
+  toast('Slide removed. Remember to Save All Changes.');
+}
+
+/* ================================================================
+   HOME — Testimonials
+================================================================ */
+function renderTestimonials() {
+  var list = (siteData.pages && siteData.pages.home && siteData.pages.home.testimonials) || [];
+  document.getElementById('tests-tbody').innerHTML = list.map(function(t, i) {
+    return '<tr><td style="max-width:380px">' + esc(t.quote).substring(0,80) + '…</td><td>' + esc(t.source) + '</td><td>' +
+      '<button class="btn-edit" onclick="editTest(' + i + ')">Edit</button>' +
+      '<button class="btn-del" onclick="deleteTest(' + i + ')">Delete</button>' +
+      '</td></tr>';
+  }).join('');
+}
+
+document.getElementById('add-test-btn').addEventListener('click', function() { openTestForm(-1); });
+
+function openTestForm(idx) {
+  var wrap = document.getElementById('test-form-wrap');
+  var t = idx >= 0 ? siteData.pages.home.testimonials[idx] : {};
+  wrap.hidden = false;
+  wrap.innerHTML = '<h3>' + (idx >= 0 ? 'Edit' : 'Add') + ' Testimonial</h3>' +
+    '<div class="field-group"><label>Quote Text</label><textarea id="tf-quote" rows="4">' + esc(t.quote||'') + '</textarea></div>' +
+    '<div class="field-group"><label>Source (e.g. Legal 500, 2025)</label><input type="text" id="tf-src" value="' + esc(t.source||'') + '"/></div>' +
+    '<div class="form-actions"><button class="btn-confirm" onclick="saveTest(' + idx + ')">SAVE</button><button class="btn-cancel" onclick="document.getElementById(\'test-form-wrap\').hidden=true">Cancel</button></div>';
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function saveTest(idx) {
+  if (!siteData.pages) siteData.pages = {};
+  if (!siteData.pages.home) siteData.pages.home = {};
+  if (!siteData.pages.home.testimonials) siteData.pages.home.testimonials = [];
+  var obj = { quote: document.getElementById('tf-quote').value.trim(), source: document.getElementById('tf-src').value.trim() };
+  if (idx >= 0) siteData.pages.home.testimonials[idx] = obj;
+  else siteData.pages.home.testimonials.push(obj);
+  document.getElementById('test-form-wrap').hidden = true;
+  renderTestimonials();
+  toast('Testimonial saved. Remember to Save All Changes.');
+}
+function editTest(i) { openTestForm(i); }
+function deleteTest(i) {
+  if (!confirm('Delete this testimonial?')) return;
+  siteData.pages.home.testimonials.splice(i, 1);
+  renderTestimonials();
+  toast('Removed. Remember to Save All Changes.');
+}
+
+/* ================================================================
+   ABOUT
+================================================================ */
+function renderAbout() {
+  var ab = (siteData.pages && siteData.pages.about) || {};
+  document.getElementById('about-paras').value = (ab.introParas || []).join('\n\n');
+  document.getElementById('about-fac').value   = (ab.facilities  || []).join('\n');
+  renderPolicies();
+}
+function renderPolicies() {
+  var list = (siteData.pages && siteData.pages.about && siteData.pages.about.policies) || [];
+  document.getElementById('policies-tbody').innerHTML = list.map(function(p, i) {
+    return '<tr><td>' + esc(p.title) + '</td><td>' +
+      '<button class="btn-edit" onclick="editPolicy(' + i + ')">Edit</button>' +
+      '<button class="btn-del" onclick="deletePolicy(' + i + ')">Delete</button>' +
+      '</td></tr>';
+  }).join('');
+}
+document.getElementById('add-policy-btn').addEventListener('click', function() { openPolicyForm(-1); });
+function openPolicyForm(idx) {
+  var wrap = document.getElementById('policy-form-wrap');
+  var p = idx >= 0 ? siteData.pages.about.policies[idx] : {};
+  wrap.hidden = false;
+  wrap.innerHTML = '<h3>' + (idx >= 0 ? 'Edit' : 'Add') + ' Policy</h3>' +
+    '<div class="field-group"><label>Title *</label><input type="text" id="pf-title" value="' + esc(p.title||'') + '"/></div>' +
+    '<div class="field-group"><label>Content *</label><textarea id="pf-content" rows="5">' + esc(p.content||'') + '</textarea></div>' +
+    '<div class="form-actions"><button class="btn-confirm" onclick="savePolicy(' + idx + ')">SAVE POLICY</button><button class="btn-cancel" onclick="document.getElementById(\'policy-form-wrap\').hidden=true">Cancel</button></div>';
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function savePolicy(idx) {
+  if (!siteData.pages) siteData.pages = {};
+  if (!siteData.pages.about) siteData.pages.about = {};
+  if (!siteData.pages.about.policies) siteData.pages.about.policies = [];
+  var title   = document.getElementById('pf-title').value.trim();
+  var content = document.getElementById('pf-content').value.trim();
+  if (!title || !content) { toast('Title and content are required.', true); return; }
+  if (idx >= 0) siteData.pages.about.policies[idx] = { title, content };
+  else siteData.pages.about.policies.push({ title, content });
+  document.getElementById('policy-form-wrap').hidden = true;
+  renderPolicies();
+  toast('Policy saved. Remember to Save All Changes.');
+}
+function editPolicy(i) { openPolicyForm(i); }
+function deletePolicy(i) {
+  if (!confirm('Delete this policy?')) return;
+  siteData.pages.about.policies.splice(i, 1);
+  renderPolicies();
+  toast('Removed. Remember to Save All Changes.');
+}
+/* Sync about textareas into siteData before save */
+var _origSaveAll = saveAll;
+saveAll = async function() {
+  /* Sync about page text fields */
+  if (siteData.pages && siteData.pages.about) {
+    var parasRaw = document.getElementById('about-paras').value;
+    siteData.pages.about.introParas = parasRaw.split(/\n{2,}/).map(function(s) { return s.trim(); }).filter(Boolean);
+    var facRaw = document.getElementById('about-fac').value;
+    siteData.pages.about.facilities = facRaw.split('\n').map(function(s) { return s.trim(); }).filter(Boolean);
+  }
+  /* Sync knowledge supporting text */
+  if (siteData.pages && siteData.pages.knowledge) {
+    siteData.pages.knowledge.supportingText = document.getElementById('know-support').value.trim();
+  }
+  await _origSaveAll();
+};
+
+/* ================================================================
+   EXPERTISE
+================================================================ */
+function renderExpertise() {
+  var list = (siteData.pages && siteData.pages.expertise && siteData.pages.expertise.cards) || [];
+  document.getElementById('exp-tbody').innerHTML = list.map(function(c, i) {
+    return '<tr><td><strong>' + esc(c.title) + '</strong></td><td style="max-width:300px;color:#8aa0be;font-size:12px;">' + esc(c.description).substring(0,60) + '…</td><td>' +
+      '<button class="btn-edit" onclick="editExp(' + i + ')">Edit</button>' +
+      '<button class="btn-del" onclick="deleteExp(' + i + ')">Delete</button>' +
+      '</td></tr>';
+  }).join('');
+  document.getElementById('exp-tbody').parentElement.querySelector('thead th:nth-child(2)').textContent = 'Description';
+}
+document.getElementById('add-exp-btn').addEventListener('click', function() { openExpForm(-1); });
+function openExpForm(idx) {
+  var wrap = document.getElementById('exp-form-wrap');
+  var c = idx >= 0 ? siteData.pages.expertise.cards[idx] : {};
+  wrap.hidden = false;
+  wrap.innerHTML = '<h3>' + (idx >= 0 ? 'Edit' : 'Add') + ' Expertise Card</h3>' +
+    '<div class="field-group"><label>Title *</label><input type="text" id="ef-title" value="' + esc(c.title||'') + '"/></div>' +
+    '<div class="field-group"><label>Description *</label><textarea id="ef-desc" rows="3">' + esc(c.description||'') + '</textarea></div>' +
+    '<div class="field-group"><label>Link</label><input type="text" id="ef-link" value="' + esc(c.link||'contact.html') + '"/></div>' +
+    '<div class="form-actions"><button class="btn-confirm" onclick="saveExp(' + idx + ')">SAVE CARD</button><button class="btn-cancel" onclick="document.getElementById(\'exp-form-wrap\').hidden=true">Cancel</button></div>';
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function saveExp(idx) {
+  if (!siteData.pages) siteData.pages = {};
+  if (!siteData.pages.expertise) siteData.pages.expertise = {};
+  if (!siteData.pages.expertise.cards) siteData.pages.expertise.cards = [];
+  var title = document.getElementById('ef-title').value.trim();
+  var desc  = document.getElementById('ef-desc').value.trim();
+  if (!title || !desc) { toast('Title and description are required.', true); return; }
+  var obj = { title, description: desc, link: document.getElementById('ef-link').value.trim() || 'contact.html' };
+  if (idx >= 0) siteData.pages.expertise.cards[idx] = obj;
+  else siteData.pages.expertise.cards.push(obj);
+  document.getElementById('exp-form-wrap').hidden = true;
+  renderExpertise();
+  toast('Card saved. Remember to Save All Changes.');
+}
+function editExp(i) { openExpForm(i); }
+function deleteExp(i) {
+  if (!confirm('Delete this expertise card?')) return;
+  siteData.pages.expertise.cards.splice(i, 1);
+  renderExpertise();
+  toast('Removed. Remember to Save All Changes.');
+}
+
+/* ================================================================
+   KNOWLEDGE
+================================================================ */
+function renderKnowledge() {
+  var kn = (siteData.pages && siteData.pages.knowledge) || {};
+  document.getElementById('know-support').value = kn.supportingText || '';
+  var list = kn.articles || [];
+  document.getElementById('art-tbody').innerHTML = list.map(function(a, i) {
+    return '<tr><td style="max-width:280px">' + esc(a.title).substring(0,60) + '…</td><td>' + esc(a.category) + '</td><td>' + esc(a.author) + '</td><td>' +
+      '<button class="btn-edit" onclick="editArt(' + i + ')">Edit</button>' +
+      '<button class="btn-del" onclick="deleteArt(' + i + ')">Delete</button>' +
+      '</td></tr>';
+  }).join('');
+}
+const ART_CATS = ['Employment','Criminal','Family','Immigration','Personal Injury','Planning','Administrative','Commercial','Other'];
+document.getElementById('add-art-btn').addEventListener('click', function() { openArtForm(-1); });
+function openArtForm(idx) {
+  var wrap = document.getElementById('art-form-wrap');
+  var a = idx >= 0 ? siteData.pages.knowledge.articles[idx] : {};
+  wrap.hidden = false;
+  wrap.innerHTML = '<h3>' + (idx >= 0 ? 'Edit' : 'Add') + ' Article</h3>' +
+    '<div class="field-group"><label>Title *</label><input type="text" id="artf-title" value="' + esc(a.title||'') + '"/></div>' +
+    '<div class="form-row"><div class="field-group"><label>Date</label><input type="text" id="artf-date" value="' + esc(a.date||'') + '" placeholder="e.g. 1st Apr 2025"/></div>' +
+    '<div class="field-group"><label>Author</label><input type="text" id="artf-author" value="' + esc(a.author||'') + '"/></div></div>' +
+    '<div class="field-group"><label>Category</label><select id="artf-cat">' + ART_CATS.map(function(c){ return '<option value="' + c + '"' + (a.category===c?' selected':'') + '>' + c + '</option>'; }).join('') + '</select></div>' +
+    '<div class="field-group"><label>Excerpt</label><textarea id="artf-exc" rows="3">' + esc(a.excerpt||'') + '</textarea></div>' +
+    '<div class="form-actions"><button class="btn-confirm" onclick="saveArt(' + idx + ')">SAVE ARTICLE</button><button class="btn-cancel" onclick="document.getElementById(\'art-form-wrap\').hidden=true">Cancel</button></div>';
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function saveArt(idx) {
+  if (!siteData.pages) siteData.pages = {};
+  if (!siteData.pages.knowledge) siteData.pages.knowledge = {};
+  if (!siteData.pages.knowledge.articles) siteData.pages.knowledge.articles = [];
+  var title = document.getElementById('artf-title').value.trim();
+  if (!title) { toast('Title is required.', true); return; }
+  var obj = { title, date: document.getElementById('artf-date').value.trim(), author: document.getElementById('artf-author').value.trim(), category: document.getElementById('artf-cat').value, excerpt: document.getElementById('artf-exc').value.trim() };
+  if (idx >= 0) siteData.pages.knowledge.articles[idx] = obj;
+  else siteData.pages.knowledge.articles.push(obj);
+  document.getElementById('art-form-wrap').hidden = true;
+  renderKnowledge();
+  toast('Article saved. Remember to Save All Changes.');
+}
+function editArt(i) { openArtForm(i); }
+function deleteArt(i) {
+  if (!confirm('Delete this article?')) return;
+  siteData.pages.knowledge.articles.splice(i, 1);
+  renderKnowledge();
+  toast('Removed. Remember to Save All Changes.');
 }
 
 /* ---- AUTO RESTORE SESSION ---- */

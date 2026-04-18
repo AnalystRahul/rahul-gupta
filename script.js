@@ -75,6 +75,83 @@
 
   /* News items — expose for carousel */
   if (d.news && d.news.length) window._tcNewsData = d.news;
+
+  /* ---- HOME: hero slides + testimonials ---- */
+  if (d.pages && d.pages.home) {
+    if (d.pages.home.heroSlides) {
+      window._tcHeroSlides = d.pages.home.heroSlides;
+      if (window._tcHeroRefresh) window._tcHeroRefresh();
+    }
+    if (d.pages.home.testimonials) {
+      window._tcTestimonials = d.pages.home.testimonials;
+      if (window._tcTestimonialsRefresh) window._tcTestimonialsRefresh();
+    }
+  }
+
+  /* ---- ABOUT page ---- */
+  if (d.pages && d.pages.about) {
+    var ab = d.pages.about;
+    /* Intro paragraphs */
+    var aboutIntro = document.getElementById('about-intro');
+    if (aboutIntro && ab.introParas) {
+      aboutIntro.innerHTML = ab.introParas.map(function(p) { return '<p>' + p + '</p>'; }).join('');
+    }
+    /* Facilities list */
+    var facList = document.getElementById('about-facilities');
+    if (facList && ab.facilities) {
+      facList.innerHTML = ab.facilities.map(function(f) { return '<li>' + f + '</li>'; }).join('');
+    }
+    /* Policies accordion */
+    var acc = document.getElementById('policies-accordion');
+    if (acc && ab.policies) {
+      acc.innerHTML = ab.policies.map(function(p, i) {
+        var id = 'policy-' + (i + 1);
+        return '<div class="accordion-item">' +
+          '<button class="accordion-btn" aria-expanded="false" aria-controls="' + id + '">' +
+            p.title + '<span class="acc-icon">+</span>' +
+          '</button>' +
+          '<div class="accordion-body" id="' + id + '" role="region">' +
+            '<div class="accordion-body-inner">' + p.content + '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+  }
+
+  /* ---- EXPERTISE page ---- */
+  if (d.pages && d.pages.expertise && d.pages.expertise.cards) {
+    var expGrid = document.getElementById('expertise-cards');
+    if (expGrid) {
+      expGrid.innerHTML = d.pages.expertise.cards.map(function(c) {
+        return '<div class="expertise-card">' +
+          '<h3>' + c.title + '</h3>' +
+          '<p>' + c.description + '</p>' +
+          '<a href="' + (c.link || 'contact.html') + '" class="expertise-card-link">FIND A BARRISTER &rsaquo;</a>' +
+        '</div>';
+      }).join('');
+    }
+  }
+
+  /* ---- KNOWLEDGE page ---- */
+  if (d.pages && d.pages.knowledge) {
+    var kn = d.pages.knowledge;
+    var supEl = document.getElementById('knowledge-support-text');
+    if (supEl && kn.supportingText) supEl.textContent = kn.supportingText;
+    var artGrid = document.getElementById('article-grid');
+    if (artGrid && kn.articles && kn.articles.length) {
+      artGrid.innerHTML = kn.articles.map(function(a) {
+        return '<article class="article-card" data-category="' + a.category + '">' +
+          '<div class="article-img" style="background:linear-gradient(135deg,#1a2744 40%,#2abed4 100%);"></div>' +
+          '<div class="article-body">' +
+            '<span class="article-tag">' + a.category + '</span>' +
+            '<h3>' + a.title + '</h3>' +
+            '<p>' + a.excerpt + '</p>' +
+            '<div class="article-meta">' + a.date + ' &bull; ' + a.author + '</div>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+    }
+  }
 })();
 
 /* ---- Easter banner close ---- */
@@ -163,7 +240,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
   const dots       = document.querySelectorAll('#hero-dots .dot');
   const content    = heroSection.querySelector('.hero-content');
 
-  const slides = [
+  const slides = (window._tcHeroSlides || [
     {
       badge: 'EXPERT',
       title: 'LEGAL ADVICE &amp;<br>REPRESENTATION',
@@ -191,7 +268,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       secLabel: 'JOIN US',          secHref: 'join.html',
       exploreHref: 'knowledge.html'
     }
-  ];
+  ]);
 
   let current = 0;
   let timer;
@@ -231,6 +308,16 @@ mainNav?.querySelectorAll('a').forEach(link => {
 
   goTo(0, true);
   startTimer();
+
+  window._tcHeroRefresh = function () {
+    var ns = window._tcHeroSlides;
+    if (!ns) return;
+    slides.splice(0, slides.length);
+    ns.forEach(function (s) { slides.push(s); });
+    clearInterval(timer);
+    goTo(0, true);
+    startTimer();
+  };
 })();
 
 /* ============================================================
@@ -339,7 +426,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
   const dots = document.querySelectorAll('#testimonial-dots .dot');
   if (!dots.length) return;
 
-  const testimonials = [
+  const testimonials = (window._tcTestimonials || [
     {
       quote:  '"An excellent chambers and clerking service: they are always attentive and can offer a very wide range of expertise. The clients are very approachable and user-friendly, readily available and efficient with invoicing. You really feel you know where you stand with them."',
       source: 'Chambers &amp; Partners'
@@ -348,7 +435,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       quote:  '"Trinity Chambers is a genuinely impressive set. The clerking is excellent and the barristers are consistently of the highest calibre. Instructing them is always a pleasure — they are responsive, commercial and thoroughly prepared."',
       source: 'Legal 500, 2025'
     }
-  ];
+  ]);
 
   const quoteEl  = document.getElementById('testimonial-quote');
   const sourceEl = document.getElementById('testimonial-source');
@@ -361,6 +448,14 @@ mainNav?.querySelectorAll('a').forEach(link => {
   }
 
   dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+  window._tcTestimonialsRefresh = function () {
+    var nt = window._tcTestimonials;
+    if (!nt) return;
+    testimonials.splice(0, testimonials.length);
+    nt.forEach(function (t) { testimonials.push(t); });
+    goTo(0);
+  };
 })();
 
 /* ============================================================
