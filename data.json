@@ -3,6 +3,12 @@
     "active": true,
     "html": "<strong>Easter Opening Hours</strong> Chambers will be closed from 5pm on Thursday 2 April until 9am on Tuesday 7 April. If your enquiry is extremely urgent, the out of hours number is 0191 245 0110."
   },
+  "contactForm": {
+    "endpoint": "",
+    "recipientEmail": "info@trinitychambers.co.uk",
+    "successMessage": "Thank you for your message. A member of our clerks team will be in touch shortly.",
+    "provider": "formspree"
+  },
   "barristers": [
     {
       "name": "Richard Blackwood",

@@ -130,6 +130,7 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
     <button class="tab-btn" data-tab="clerks">Clerks</button>
     <button class="tab-btn" data-tab="news">News Articles</button>
     <button class="tab-btn" data-tab="pages">Pages</button>
+    <button class="tab-btn" data-tab="contact">Contact Form</button>
   </nav>
 
   <main>
@@ -251,6 +252,30 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
         <div id="art-form-wrap" class="form-wrap" hidden></div>
         <table class="data-table"><thead><tr><th>Title</th><th>Category</th><th>Author</th><th>Actions</th></tr></thead>
           <tbody id="art-tbody"></tbody></table>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM SETTINGS -->
+    <section id="tab-contact" class="tab-panel">
+      <div class="panel-header"><h2>Contact Form Settings</h2></div>
+      <p style="color:#6a85a8;font-size:13px;margin-bottom:24px;line-height:1.7;">
+        The contact form submits to <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> (free, no server needed).
+        Create a free account, create a form there, and paste its endpoint URL below.
+        The free plan allows 50 submissions/month.
+      </p>
+      <div class="field-group">
+        <label>Formspree Endpoint URL</label>
+        <input type="text" id="cf2-endpoint" placeholder="https://formspree.io/f/xxxxxxxxxxx"/>
+        <small>From your Formspree dashboard. Example: https://formspree.io/f/xabcdefg</small>
+      </div>
+      <div class="field-group">
+        <label>Success Message</label>
+        <textarea id="cf2-success" rows="3"></textarea>
+        <small>Shown to the visitor after their message is submitted successfully.</small>
+      </div>
+      <div class="field-group">
+        <label>Recipient Email <small style="text-transform:none;font-size:11px;color:#4a6080;">(reference only — set actual recipient in Formspree)</small></label>
+        <input type="text" id="cf2-recipient" placeholder="info@trinitychambers.co.uk"/>
       </div>
     </section>
 
@@ -621,7 +646,7 @@ document.querySelectorAll('.sub-btn').forEach(function(btn) {
   });
 });
 
-/* Populate Pages tab when initDashboard runs */
+/* Populate Pages + Contact tabs when initDashboard runs */
 var _origInit = initDashboard;
 initDashboard = function() {
   _origInit();
@@ -630,6 +655,7 @@ initDashboard = function() {
   renderAbout();
   renderExpertise();
   renderKnowledge();
+  renderContactForm();
 };
 
 /* ================================================================
@@ -787,7 +813,7 @@ function deletePolicy(i) {
   renderPolicies();
   toast('Removed. Remember to Save All Changes.');
 }
-/* Sync about textareas into siteData before save */
+/* Sync textareas into siteData before save */
 var _origSaveAll = saveAll;
 saveAll = async function() {
   /* Sync about page text fields */
@@ -801,6 +827,13 @@ saveAll = async function() {
   if (siteData.pages && siteData.pages.knowledge) {
     siteData.pages.knowledge.supportingText = document.getElementById('know-support').value.trim();
   }
+  /* Sync contact form settings */
+  siteData.contactForm = {
+    endpoint:        document.getElementById('cf2-endpoint').value.trim(),
+    successMessage:  document.getElementById('cf2-success').value.trim(),
+    recipientEmail:  document.getElementById('cf2-recipient').value.trim(),
+    provider:        'formspree'
+  };
   await _origSaveAll();
 };
 
@@ -899,6 +932,16 @@ function deleteArt(i) {
   siteData.pages.knowledge.articles.splice(i, 1);
   renderKnowledge();
   toast('Removed. Remember to Save All Changes.');
+}
+
+/* ================================================================
+   CONTACT FORM SETTINGS
+================================================================ */
+function renderContactForm() {
+  var cf = siteData.contactForm || {};
+  document.getElementById('cf2-endpoint').value  = cf.endpoint        || '';
+  document.getElementById('cf2-success').value   = cf.successMessage  || '';
+  document.getElementById('cf2-recipient').value = cf.recipientEmail  || '';
 }
 
 /* ---- AUTO RESTORE SESSION ---- */

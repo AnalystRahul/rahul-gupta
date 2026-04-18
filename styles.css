@@ -1571,6 +1571,7 @@ img { max-width: 100%; display: block; }
 .form-group select:focus,
 .form-group textarea:focus { border-color: var(--teal); }
 .form-group textarea { resize: vertical; min-height: 120px; }
+.field-error { display: block; color: #e74c3c; font-size: 11.5px; margin-top: 4px; min-height: 16px; }
 .form-success {
   display: none;
   background: #e8f9f0;

@@ -73,6 +73,9 @@
     }
   }
 
+  /* Contact form config */
+  if (d.contactForm) window._tcContactConfig = d.contactForm;
+
   /* News items — expose for carousel */
   if (d.news && d.news.length) window._tcNewsData = d.news;
 
@@ -682,49 +685,114 @@ mainNav?.querySelectorAll('a').forEach(link => {
    CONTACT PAGE – Form Submission
    ============================================================ */
 (function () {
-  const form    = document.getElementById('contact-form');
-  const success = document.getElementById('form-success');
+  var form        = document.getElementById('contact-form');
+  var successEl   = document.getElementById('form-success');
+  var errorBanner = document.getElementById('form-error-banner');
+  var submitBtn   = document.getElementById('form-submit-btn');
   if (!form) return;
 
-  /* Highlight invalid fields on blur */
-  form.querySelectorAll('[required]').forEach(field => {
-    field.addEventListener('blur', function () {
-      this.style.borderColor = this.value.trim() ? '' : '#e74c3c';
-    });
-    field.addEventListener('input', function () {
-      if (this.value.trim()) this.style.borderColor = '';
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setErr(id, msg) {
+    var el = document.getElementById('err-' + id);
+    if (el) el.textContent = msg;
+  }
+
+  function validateField(field) {
+    var val = field.value.trim();
+    var id  = field.id;
+    if (field.required && !val) {
+      field.style.borderColor = '#e74c3c';
+      setErr(id, 'This field is required.');
+      return false;
+    }
+    if (field.type === 'email' && val && !EMAIL_RE.test(val)) {
+      field.style.borderColor = '#e74c3c';
+      setErr(id, 'Please enter a valid email address.');
+      return false;
+    }
+    field.style.borderColor = '';
+    setErr(id, '');
+    return true;
+  }
+
+  form.querySelectorAll('input,select,textarea').forEach(function (f) {
+    f.addEventListener('blur', function () { validateField(this); });
+    f.addEventListener('input', function () {
+      if (this.style.borderColor) validateField(this);
     });
   });
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    let valid = true;
-    form.querySelectorAll('[required]').forEach(field => {
-      if (!field.value.trim()) {
-        field.style.borderColor = '#e74c3c';
-        valid = false;
-      }
+
+    var valid = true;
+    form.querySelectorAll('[required]').forEach(function (f) {
+      if (!validateField(f)) valid = false;
     });
+    var emailField = document.getElementById('email');
+    if (emailField && !validateField(emailField)) valid = false;
+
     if (!valid) {
-      form.querySelector('[required]').focus();
+      var firstBad = form.querySelector('[style*="e74c3c"]');
+      if (firstBad) firstBad.focus();
       return;
     }
 
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'SENDING…';
-    btn.disabled = true;
+    var replyto = document.getElementById('form-replyto');
+    if (replyto && emailField) replyto.value = emailField.value.trim();
 
-    setTimeout(function () {
-      form.reset();
-      form.querySelectorAll('input,select,textarea').forEach(f => f.style.borderColor = '');
-      btn.textContent = 'SEND MESSAGE';
-      btn.disabled = false;
-      if (success) {
-        success.style.display = 'block';
-        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        setTimeout(() => { success.style.display = 'none'; }, 6000);
+    var cfg      = window._tcContactConfig || {};
+    var endpoint = (cfg.endpoint || '').trim();
+
+    if (!endpoint) {
+      if (errorBanner) {
+        errorBanner.textContent = 'The contact form is not yet configured. Please call us directly on 0191 232 1927.';
+        errorBanner.style.display = 'block';
       }
-    }, 900);
+      return;
+    }
+
+    submitBtn.textContent = 'SENDING\u2026';
+    submitBtn.disabled    = true;
+    if (errorBanner) errorBanner.style.display = 'none';
+
+    try {
+      var res = await fetch(endpoint, {
+        method:  'POST',
+        headers: { 'Accept': 'application/json' },
+        body:    new FormData(form)
+      });
+
+      if (res.ok) {
+        var msg = (cfg.successMessage || 'Thank you for your message. A member of our clerks team will be in touch shortly.');
+        form.reset();
+        form.querySelectorAll('input,select,textarea').forEach(function (f) { f.style.borderColor = ''; });
+        form.querySelectorAll('.field-error').forEach(function (s) { s.textContent = ''; });
+        if (successEl) {
+          successEl.textContent   = msg;
+          successEl.style.display = 'block';
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          setTimeout(function () { successEl.style.display = 'none'; }, 8000);
+        }
+        submitBtn.textContent = 'SEND MESSAGE';
+        submitBtn.disabled    = false;
+      } else {
+        var body = await res.json().catch(function () { return {}; });
+        var errMsg = (body.errors && body.errors.map(function (x) { return x.message; }).join(', '))
+                    || 'Submission failed. Please try again or call us directly.';
+        if (errorBanner) { errorBanner.textContent = errMsg; errorBanner.style.display = 'block'; }
+        submitBtn.textContent = 'SEND MESSAGE';
+        submitBtn.disabled    = false;
+      }
+    } catch (err) {
+      if (errorBanner) {
+        errorBanner.textContent = 'Network error. Please check your connection and try again, or call us on 0191 232 1927.';
+        errorBanner.style.display = 'block';
+      }
+      submitBtn.textContent = 'SEND MESSAGE';
+      submitBtn.disabled    = false;
+    }
   });
 })();
 
