@@ -2,6 +2,81 @@
    Trinity Chambers – Main JavaScript
    ============================================================ */
 
+/* ============================================================
+   DATA LOADER — fetches data.json and injects dynamic content
+   ============================================================ */
+(async function () {
+  let d;
+  try {
+    const r = await fetch('data.json?v=' + Date.now());
+    if (r.ok) d = await r.json();
+  } catch (e) { return; }
+  if (!d) return;
+
+  /* Announcement banner */
+  if (d.announcement) {
+    const banner = document.querySelector('.easter-banner');
+    if (banner) {
+      if (!d.announcement.active) {
+        banner.style.display = 'none';
+      } else if (d.announcement.html) {
+        const closeBtn = banner.querySelector('.banner-close');
+        banner.innerHTML = d.announcement.html;
+        if (closeBtn) banner.appendChild(closeBtn);
+      }
+    }
+  }
+
+  /* Barristers grid */
+  if (d.barristers && document.getElementById('barristers-grid')) {
+    const grid      = document.getElementById('barristers-grid');
+    const noResults = document.getElementById('no-results');
+    grid.querySelectorAll('.barrister-card,.barristers-loading').forEach(function (c) { c.remove(); });
+    d.barristers.forEach(function (b) {
+      const card = document.createElement('div');
+      card.className = 'barrister-card';
+      card.dataset.name      = b.name;
+      card.dataset.expertise = b.expertise;
+      card.dataset.call      = b.callRange;
+      card.dataset.kc        = String(b.kc);
+      card.innerHTML =
+        '<div class="barrister-img">' + b.name.charAt(0) + '</div>' +
+        '<div class="barrister-info">' +
+          '<div class="barrister-name">' + b.name + (b.kc ? ' KC' : '') + '</div>' +
+          (b.kc ? '<span class="barrister-kc">K.C.</span>' : '') +
+          '<div class="barrister-speciality">' + b.speciality + '</div>' +
+          '<div class="barrister-call">Called: ' + b.yearCalled + '</div>' +
+        '</div>';
+      if (noResults) grid.insertBefore(card, noResults);
+      else grid.appendChild(card);
+    });
+    window._tcBios     = {};
+    window._tcChambers = {};
+    d.barristers.forEach(function (b) {
+      window._tcBios[b.name]     = b.bio;
+      window._tcChambers[b.name] = b.chambers;
+    });
+  }
+
+  /* Clerks grid */
+  if (d.clerks) {
+    const grid = document.querySelector('.clerks-grid');
+    if (grid) {
+      grid.innerHTML = d.clerks.map(function (c) {
+        return '<div class="clerk-card">' +
+          '<div class="clerk-avatar">' + c.initial + '</div>' +
+          '<h4>' + c.name + '</h4>' +
+          '<p>' + c.title + '</p>' +
+          '<a href="tel:' + c.tel + '">' + c.phone + '</a>' +
+          '</div>';
+      }).join('');
+    }
+  }
+
+  /* News items — expose for carousel */
+  if (d.news && d.news.length) window._tcNewsData = d.news;
+})();
+
 /* ---- Easter banner close ---- */
 document.querySelector('.easter-banner .banner-close')?.addEventListener('click', function () {
   this.closest('.easter-banner').style.display = 'none';
@@ -189,7 +264,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
   const dots    = document.querySelectorAll('#news-dots .dot');
   if (!dots.length) return;
 
-  const newsItems = [
+  const newsItems = (window._tcNewsData || [
     {
       date:    '27th Mar 2025',
       title:   "Trinity's Pupil Barristers Start Second Six of Pupillage",
@@ -226,7 +301,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       excerpt: 'Robert Davies examines the most significant provisions of the Planning and Infrastructure Bill 2025 and what they mean for developers.',
       href:    'knowledge.html'
     }
-  ];
+  ]);
 
   let current = 0;
   let timer;
@@ -419,8 +494,8 @@ mainNav?.querySelectorAll('a').forEach(link => {
     modal.querySelector('#modal-kc-badge').innerHTML   = kc ? '<span class="barrister-kc">K.C.</span>' : '';
     modal.querySelector('#modal-spec').textContent     = spec;
     modal.querySelector('#modal-call').textContent     = call;
-    modal.querySelector('#modal-chambers').textContent = chambers[name] || 'Newcastle';
-    modal.querySelector('#modal-bio').textContent      = bios[name] || 'Profile details available on request. Please contact our clerks for further information.';
+    modal.querySelector('#modal-chambers').textContent = (window._tcChambers || chambers)[name] || 'Newcastle';
+    modal.querySelector('#modal-bio').textContent      = (window._tcBios || bios)[name] || 'Profile details available on request. Please contact our clerks for further information.';
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Admin – Trinity Chambers</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1b2e;color:#d0dae8;font-size:14px;min-height:100vh}
+a{color:#2abed4}
+/* LOGIN */
+#login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.login-box{background:#132540;border:1px solid #1e3456;border-radius:10px;padding:44px 40px;width:100%;max-width:420px;text-align:center}
+.login-logo{width:56px;height:56px;background:#2abed4;border-radius:50%;font-size:26px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.login-box h1{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
+.login-box h1 span{font-size:0.85rem;font-weight:400;color:#6a85a8;display:block;margin-top:4px}
+.login-box>p{color:#6a85a8;margin-bottom:26px;font-size:13px}
+.login-box input[type=password]{width:100%;padding:11px 14px;background:#0d1b2e;border:1px solid #1e3456;border-radius:6px;color:#d0dae8;font-size:14px;margin-bottom:12px;outline:none}
+.login-box input[type=password]:focus{border-color:#2abed4}
+.login-box button[type=submit]{width:100%;padding:12px;background:#2abed4;border:none;border-radius:6px;color:#fff;font-weight:700;font-size:14px;letter-spacing:.05em;cursor:pointer}
+.login-box button[type=submit]:hover{background:#24a8be}
+.error-msg{color:#e74c3c;font-size:12px;margin-top:8px;min-height:18px}
+.help-text{font-size:11px;color:#4a6080;margin-top:18px}
+.help-text code{background:#0d1b2e;padding:1px 4px;border-radius:3px}
+/* DASHBOARD */
+#dashboard{display:flex;flex-direction:column;min-height:100vh}
+header{background:#0a1525;border-bottom:1px solid #1e3456;padding:0 24px;height:54px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.hdr-logo{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;font-size:15px}
+.hdr-t{background:#2abed4;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900}
+.hdr-right{display:flex;align-items:center;gap:10px}
+#save-status{font-size:12px;color:#2abed4;min-width:200px;text-align:right}
+.btn-save{background:#2abed4;border:none;color:#fff;padding:8px 20px;border-radius:5px;font-weight:700;font-size:12px;letter-spacing:.05em;cursor:pointer}
+.btn-save:hover{background:#24a8be}
+.btn-save:disabled{background:#1e3456;color:#4a6080;cursor:default}
+.btn-logout{background:none;border:1px solid #1e3456;color:#6a85a8;padding:7px 14px;border-radius:5px;font-size:12px;cursor:pointer}
+.btn-logout:hover{border-color:#2abed4;color:#2abed4}
+/* TABS */
+.tab-bar{background:#0d1b2e;border-bottom:1px solid #1e3456;padding:0 24px;display:flex;gap:0;flex-shrink:0}
+.tab-btn{background:none;border:none;border-bottom:2px solid transparent;color:#6a85a8;padding:14px 18px;font-size:13px;font-weight:600;cursor:pointer;transition:color .15s,border-color .15s}
+.tab-btn:hover{color:#d0dae8}
+.tab-btn.active{color:#2abed4;border-bottom-color:#2abed4}
+/* MAIN */
+main{flex:1;padding:28px 28px 60px;overflow-y:auto}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.panel-header h2{font-size:1.15rem;color:#fff;font-weight:700;display:flex;align-items:center;gap:10px}
+.count-badge{background:#1e3456;color:#2abed4;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:700}
+.btn-add{background:#132540;border:1px dashed #2abed4;color:#2abed4;padding:8px 16px;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer}
+.btn-add:hover{background:#1e3456}
+/* ANNOUNCEMENT */
+.field-group{margin-bottom:20px}
+.field-group label:not(.toggle-label){display:block;font-size:12px;font-weight:600;color:#8aa0be;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.field-group input[type=text],.field-group input[type=password],.field-group input[type=number],.field-group select,.field-group textarea{width:100%;background:#0d1b2e;border:1px solid #1e3456;border-radius:5px;color:#d0dae8;padding:9px 12px;font-size:13px;outline:none;font-family:inherit}
+.field-group input:focus,.field-group select:focus,.field-group textarea:focus{border-color:#2abed4}
+.field-group select option{background:#132540}
+.field-group small{color:#4a6080;font-size:11px;margin-top:5px;display:block}
+.toggle-label{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;color:#d0dae8}
+.toggle-switch{width:40px;height:22px;background:#1e3456;border-radius:11px;position:relative;flex-shrink:0;transition:background .2s}
+.toggle-label input[type=checkbox]{display:none}
+.toggle-label input[type=checkbox]:checked+.toggle-switch{background:#2abed4}
+.toggle-switch::after{content:'';position:absolute;width:16px;height:16px;background:#fff;border-radius:50%;top:3px;left:3px;transition:left .2s}
+.toggle-label input[type=checkbox]:checked+.toggle-switch::after{left:21px}
+.ann-preview-wrap{background:#1a2744;border-radius:6px;padding:14px 16px;margin-top:8px;font-size:13px;line-height:1.6}
+/* TABLES */
+.data-table{width:100%;border-collapse:collapse;background:#132540;border-radius:8px;overflow:hidden}
+.data-table th{background:#0d1b2e;color:#6a85a8;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:10px 14px;text-align:left;border-bottom:1px solid #1e3456}
+.data-table td{padding:10px 14px;border-bottom:1px solid #1e3456;vertical-align:middle;font-size:13px}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:#0f2040}
+.kc-tag{background:#2abed4;color:#fff;font-size:10px;font-weight:800;padding:2px 6px;border-radius:3px}
+.btn-edit{background:#1e3456;border:none;color:#2abed4;padding:5px 10px;border-radius:4px;font-size:11px;font-weight:600;cursor:pointer;margin-right:4px}
+.btn-edit:hover{background:#2a4570}
+.btn-del{background:#2d0e0e;border:none;color:#e74c3c;padding:5px 10px;border-radius:4px;font-size:11px;font-weight:600;cursor:pointer}
+.btn-del:hover{background:#3d1a1a}
+/* FORM WRAP */
+.form-wrap{background:#0d1b2e;border:1px solid #2abed4;border-radius:8px;padding:22px 22px 14px;margin-bottom:22px}
+.form-wrap h3{color:#2abed4;font-size:13px;font-weight:700;margin-bottom:18px;text-transform:uppercase;letter-spacing:.06em}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.form-actions{display:flex;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid #1e3456}
+.btn-confirm{background:#2abed4;border:none;color:#fff;padding:9px 20px;border-radius:5px;font-weight:700;font-size:12px;cursor:pointer}
+.btn-cancel{background:none;border:1px solid #1e3456;color:#6a85a8;padding:9px 16px;border-radius:5px;font-size:12px;cursor:pointer}
+.btn-cancel:hover{border-color:#6a85a8}
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;background:#132540;border:1px solid #2abed4;color:#d0dae8;padding:12px 20px;border-radius:8px;font-size:13px;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+.toast.error{border-color:#e74c3c;color:#e74c3c}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">T</div>
+    <h1>Trinity Chambers<span>Content Admin Panel</span></h1>
+    <p>Enter your GitHub Personal Access Token to manage site content.</p>
+    <form id="login-form">
+      <input type="password" id="pat-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" required />
+      <button type="submit" id="login-btn">SIGN IN</button>
+      <div class="error-msg" id="login-error"></div>
+    </form>
+    <p class="help-text">Token needs <code>repo</code> scope &mdash; <a href="https://github.com/settings/tokens/new?scopes=repo&description=Trinity+Chambers+Admin" target="_blank" rel="noopener">create one here</a>.</p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" hidden>
+  <header>
+    <div class="hdr-logo"><span class="hdr-t">T</span> Trinity Chambers Admin</div>
+    <div class="hdr-right">
+      <span id="save-status"></span>
+      <button class="btn-save" id="save-btn">SAVE ALL CHANGES</button>
+      <button class="btn-logout" id="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="announcement">Announcement</button>
+    <button class="tab-btn" data-tab="barristers">Barristers</button>
+    <button class="tab-btn" data-tab="clerks">Clerks</button>
+    <button class="tab-btn" data-tab="news">News Articles</button>
+  </nav>
+
+  <main>
+    <!-- ANNOUNCEMENT -->
+    <section id="tab-announcement" class="tab-panel active">
+      <div class="panel-header"><h2>Site Announcement Banner</h2></div>
+      <div class="field-group">
+        <label class="toggle-label">
+          <input type="checkbox" id="ann-active" />
+          <span class="toggle-switch"></span>
+          Show announcement banner on all pages
+        </label>
+      </div>
+      <div class="field-group">
+        <label>Banner HTML Content</label>
+        <textarea id="ann-html" rows="3"></textarea>
+        <small>Use &lt;strong&gt; for bold. Example: &lt;strong&gt;Notice&lt;/strong&gt; Your message here.</small>
+      </div>
+      <div class="field-group">
+        <label>Preview</label>
+        <div class="ann-preview-wrap" id="ann-preview"></div>
+      </div>
+    </section>
+
+    <!-- BARRISTERS -->
+    <section id="tab-barristers" class="tab-panel">
+      <div class="panel-header">
+        <h2>Barristers <span class="count-badge" id="barristers-count">0</span></h2>
+        <button class="btn-add" id="add-barrister-btn">+ Add Barrister</button>
+      </div>
+      <div id="barrister-form-wrap" class="form-wrap" hidden></div>
+      <table class="data-table">
+        <thead><tr><th>Name</th><th>Speciality</th><th>Year Called</th><th>KC</th><th>Chambers</th><th>Actions</th></tr></thead>
+        <tbody id="barristers-tbody"></tbody>
+      </table>
+    </section>
+
+    <!-- CLERKS -->
+    <section id="tab-clerks" class="tab-panel">
+      <div class="panel-header">
+        <h2>Clerks <span class="count-badge" id="clerks-count">0</span></h2>
+        <button class="btn-add" id="add-clerk-btn">+ Add Clerk</button>
+      </div>
+      <div id="clerk-form-wrap" class="form-wrap" hidden></div>
+      <table class="data-table">
+        <thead><tr><th>Initial</th><th>Name</th><th>Title</th><th>Phone</th><th>Actions</th></tr></thead>
+        <tbody id="clerks-tbody"></tbody>
+      </table>
+    </section>
+
+    <!-- NEWS -->
+    <section id="tab-news" class="tab-panel">
+      <div class="panel-header">
+        <h2>News Articles <span class="count-badge" id="news-count">0</span></h2>
+        <button class="btn-add" id="add-news-btn">+ Add Article</button>
+      </div>
+      <div id="news-form-wrap" class="form-wrap" hidden></div>
+      <table class="data-table">
+        <thead><tr><th>Title</th><th>Date</th><th>Category</th><th>Actions</th></tr></thead>
+        <tbody id="news-tbody"></tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const REPO = 'AnalystRahul/rahul-gupta';
+const API  = 'https://api.github.com';
+
+let token = '', fileSha = '', siteData = null;
+
+/* ---- UTILS ---- */
+function b64decode(str) {
+  return decodeURIComponent(escape(atob(str.replace(/\n/g, ''))));
+}
+function b64encode(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+function toast(msg, isError) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast show' + (isError ? ' error' : '');
+  clearTimeout(el._t);
+  el._t = setTimeout(() => el.classList.remove('show'), 3500);
+}
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ---- LOGIN ---- */
+document.getElementById('login-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('login-btn');
+  const errEl = document.getElementById('login-error');
+  const pat = document.getElementById('pat-input').value.trim();
+  btn.textContent = 'Signing in…'; btn.disabled = true; errEl.textContent = '';
+  try {
+    const res = await fetch(`${API}/repos/${REPO}/contents/data.json`, {
+      headers: { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github+json' }
+    });
+    if (res.status === 401 || res.status === 403) { errEl.textContent = 'Invalid token or insufficient permissions.'; return; }
+    if (!res.ok) { errEl.textContent = 'Error ' + res.status + '. Check the token and try again.'; return; }
+    const json = await res.json();
+    token   = pat;
+    fileSha = json.sha;
+    siteData = JSON.parse(b64decode(json.content));
+    sessionStorage.setItem('tc_token', token);
+    initDashboard();
+  } catch(err) {
+    errEl.textContent = 'Network error: ' + err.message;
+  } finally {
+    btn.textContent = 'SIGN IN'; btn.disabled = false;
+  }
+});
+
+/* ---- LOGOUT ---- */
+document.getElementById('logout-btn').addEventListener('click', function() {
+  sessionStorage.removeItem('tc_token');
+  token = ''; fileSha = ''; siteData = null;
+  document.getElementById('dashboard').hidden = true;
+  document.getElementById('login-screen').style.display = '';
+  document.getElementById('pat-input').value = '';
+});
+
+/* ---- TABS ---- */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---- INIT ---- */
+function initDashboard() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('dashboard').hidden = false;
+  renderAnnouncement();
+  renderBarristers();
+  renderClerks();
+  renderNews();
+}
+
+/* ---- ANNOUNCEMENT ---- */
+function renderAnnouncement() {
+  const ann = siteData.announcement || {};
+  document.getElementById('ann-active').checked = !!ann.active;
+  document.getElementById('ann-html').value = ann.html || '';
+  document.getElementById('ann-preview').innerHTML = ann.html || '<em style="color:#4a6080">No content</em>';
+}
+document.getElementById('ann-html').addEventListener('input', function() {
+  document.getElementById('ann-preview').innerHTML = this.value || '<em style="color:#4a6080">No content</em>';
+});
+
+/* ---- SAVE ---- */
+document.getElementById('save-btn').addEventListener('click', saveAll);
+async function saveAll() {
+  const btn = document.getElementById('save-btn');
+  const status = document.getElementById('save-status');
+  // Collect announcement
+  siteData.announcement = {
+    active: document.getElementById('ann-active').checked,
+    html:   document.getElementById('ann-html').value.trim()
+  };
+  btn.disabled = true; btn.textContent = 'SAVING…'; status.textContent = '';
+  try {
+    const content = b64encode(JSON.stringify(siteData, null, 2));
+    const res = await fetch(`${API}/repos/${REPO}/contents/data.json`, {
+      method:  'PUT',
+      headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: 'Update site data via admin panel', content, sha: fileSha })
+    });
+    if (!res.ok) { const err = await res.json(); throw new Error(err.message || res.status); }
+    const json = await res.json();
+    fileSha = json.content.sha;
+    status.textContent = '✓ Saved — site updates in ~1 min';
+    toast('Changes saved to GitHub.');
+  } catch(err) {
+    toast('Save failed: ' + err.message, true);
+  } finally {
+    btn.disabled = false; btn.textContent = 'SAVE ALL CHANGES';
+  }
+}
+
+/* ================================================================
+   BARRISTERS
+================================================================ */
+const EXPERTISE_OPTS = ['Administrative','Criminal','Employment','Family','Personal Injury','Immigration','Commercial','Planning','Property','Court of Protection','Education'];
+const CALL_RANGES    = ['before-2000','2000-2009','2010-2019','2020-2025'];
+const CHAMBERS_OPTS  = ['Newcastle','Middlesbrough','Leeds'];
+
+function renderBarristers() {
+  const tbody = document.getElementById('barristers-tbody');
+  const list  = siteData.barristers || [];
+  document.getElementById('barristers-count').textContent = list.length;
+  tbody.innerHTML = list.map((b, i) => `
+    <tr>
+      <td><strong>${esc(b.name)}</strong></td>
+      <td>${esc(b.speciality)}</td>
+      <td>${esc(b.yearCalled)}</td>
+      <td>${b.kc ? '<span class="kc-tag">KC</span>' : '—'}</td>
+      <td>${esc(b.chambers)}</td>
+      <td>
+        <button class="btn-edit" onclick="editBarrister(${i})">Edit</button>
+        <button class="btn-del"  onclick="deleteBarrister(${i})">Delete</button>
+      </td>
+    </tr>`).join('');
+}
+
+document.getElementById('add-barrister-btn').addEventListener('click', () => openBarristerForm(-1));
+
+function openBarristerForm(idx) {
+  const wrap = document.getElementById('barrister-form-wrap');
+  const b    = idx >= 0 ? siteData.barristers[idx] : {};
+  wrap.hidden = false;
+  wrap.innerHTML = `
+    <h3>${idx >= 0 ? 'Edit' : 'Add'} Barrister</h3>
+    <div class="form-row">
+      <div class="field-group"><label>Full Name *</label><input type="text" id="bf-name" value="${esc(b.name||'')}"/></div>
+      <div class="field-group"><label>Speciality *</label><input type="text" id="bf-spec" value="${esc(b.speciality||'')}"/></div>
+    </div>
+    <div class="form-row-3">
+      <div class="field-group"><label>Year Called *</label><input type="number" id="bf-year" value="${b.yearCalled||''}"/></div>
+      <div class="field-group"><label>Call Range</label>
+        <select id="bf-range">${CALL_RANGES.map(r=>`<option value="${r}"${b.callRange===r?' selected':''}>${r}</option>`).join('')}</select>
+      </div>
+      <div class="field-group"><label>Chambers</label>
+        <select id="bf-chambers">${CHAMBERS_OPTS.map(c=>`<option value="${c}"${b.chambers===c?' selected':''}>${c}</option>`).join('')}</select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field-group"><label>Expertise (filter key)</label>
+        <select id="bf-exp">${EXPERTISE_OPTS.map(e=>`<option value="${e}"${b.expertise===e?' selected':''}>${e}</option>`).join('')}</select>
+      </div>
+      <div class="field-group" style="display:flex;align-items:center;padding-top:22px">
+        <label class="toggle-label"><input type="checkbox" id="bf-kc" ${b.kc?'checked':''}/><span class="toggle-switch"></span> King's Counsel (KC)</label>
+      </div>
+    </div>
+    <div class="field-group"><label>Biography</label><textarea id="bf-bio" rows="4">${esc(b.bio||'')}</textarea></div>
+    <div class="form-actions">
+      <button class="btn-confirm" onclick="saveBarrister(${idx})">SAVE BARRISTER</button>
+      <button class="btn-cancel"  onclick="closeBarristerForm()">Cancel</button>
+    </div>`;
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function saveBarrister(idx) {
+  const name = document.getElementById('bf-name').value.trim();
+  const spec = document.getElementById('bf-spec').value.trim();
+  const year = parseInt(document.getElementById('bf-year').value, 10);
+  if (!name || !spec || !year) { toast('Name, Speciality and Year Called are required.', true); return; }
+  const obj = {
+    name, kc: document.getElementById('bf-kc').checked,
+    speciality: spec, expertise: document.getElementById('bf-exp').value,
+    yearCalled: year, callRange: document.getElementById('bf-range').value,
+    chambers: document.getElementById('bf-chambers').value,
+    bio: document.getElementById('bf-bio').value.trim()
+  };
+  if (idx >= 0) siteData.barristers[idx] = obj;
+  else siteData.barristers.push(obj);
+  closeBarristerForm();
+  renderBarristers();
+  toast(idx >= 0 ? 'Barrister updated.' : 'Barrister added. Remember to Save All Changes.');
+}
+
+function closeBarristerForm() { document.getElementById('barrister-form-wrap').hidden = true; }
+function editBarrister(i)    { openBarristerForm(i); }
+function deleteBarrister(i)  {
+  if (!confirm('Delete ' + siteData.barristers[i].name + '?')) return;
+  siteData.barristers.splice(i, 1);
+  renderBarristers();
+  toast('Barrister removed. Remember to Save All Changes.');
+}
+
+/* ================================================================
+   CLERKS
+================================================================ */
+function renderClerks() {
+  const tbody = document.getElementById('clerks-tbody');
+  const list  = siteData.clerks || [];
+  document.getElementById('clerks-count').textContent = list.length;
+  tbody.innerHTML = list.map((c, i) => `
+    <tr>
+      <td><strong>${esc(c.initial)}</strong></td>
+      <td>${esc(c.name)}</td>
+      <td>${esc(c.title)}</td>
+      <td>${esc(c.phone)}</td>
+      <td>
+        <button class="btn-edit" onclick="editClerk(${i})">Edit</button>
+        <button class="btn-del"  onclick="deleteClerk(${i})">Delete</button>
+      </td>
+    </tr>`).join('');
+}
+
+document.getElementById('add-clerk-btn').addEventListener('click', () => openClerkForm(-1));
+
+function openClerkForm(idx) {
+  const wrap = document.getElementById('clerk-form-wrap');
+  const c    = idx >= 0 ? siteData.clerks[idx] : {};
+  wrap.hidden = false;
+  wrap.innerHTML = `
+    <h3>${idx >= 0 ? 'Edit' : 'Add'} Clerk</h3>
+    <div class="form-row">
+      <div class="field-group"><label>Full Name *</label><input type="text" id="cf-name" value="${esc(c.name||'')}"/></div>
+      <div class="field-group"><label>Job Title *</label><input type="text" id="cf-title" value="${esc(c.title||'')}"/></div>
+    </div>
+    <div class="form-row">
+      <div class="field-group"><label>Phone (display)</label><input type="text" id="cf-phone" value="${esc(c.phone||'')}"/></div>
+      <div class="field-group"><label>Phone (tel: link, digits only)</label><input type="text" id="cf-tel" value="${esc(c.tel||'')}"/></div>
+    </div>
+    <div class="field-group" style="max-width:120px"><label>Avatar Initial *</label><input type="text" id="cf-initial" maxlength="2" value="${esc(c.initial||'')}"/></div>
+    <div class="form-actions">
+      <button class="btn-confirm" onclick="saveClerk(${idx})">SAVE CLERK</button>
+      <button class="btn-cancel"  onclick="closeClerkForm()">Cancel</button>
+    </div>`;
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function saveClerk(idx) {
+  const name  = document.getElementById('cf-name').value.trim();
+  const title = document.getElementById('cf-title').value.trim();
+  const init  = document.getElementById('cf-initial').value.trim();
+  if (!name || !title || !init) { toast('Name, Title and Initial are required.', true); return; }
+  const obj = { initial: init, name, title, phone: document.getElementById('cf-phone').value.trim(), tel: document.getElementById('cf-tel').value.trim() };
+  if (idx >= 0) siteData.clerks[idx] = obj;
+  else siteData.clerks.push(obj);
+  closeClerkForm();
+  renderClerks();
+  toast(idx >= 0 ? 'Clerk updated.' : 'Clerk added. Remember to Save All Changes.');
+}
+
+function closeClerkForm() { document.getElementById('clerk-form-wrap').hidden = true; }
+function editClerk(i)    { openClerkForm(i); }
+function deleteClerk(i)  {
+  if (!confirm('Delete ' + siteData.clerks[i].name + '?')) return;
+  siteData.clerks.splice(i, 1);
+  renderClerks();
+  toast('Clerk removed. Remember to Save All Changes.');
+}
+
+/* ================================================================
+   NEWS ARTICLES
+================================================================ */
+const NEWS_CATS = ['news','employment','criminal','immigration','personal-injury','planning','family','commercial','other'];
+
+function renderNews() {
+  const tbody = document.getElementById('news-tbody');
+  const list  = siteData.news || [];
+  document.getElementById('news-count').textContent = list.length;
+  tbody.innerHTML = list.map((n, i) => `
+    <tr>
+      <td style="max-width:320px">${esc(n.title)}</td>
+      <td>${esc(n.date)}</td>
+      <td>${esc(n.category)}</td>
+      <td>
+        <button class="btn-edit" onclick="editNews(${i})">Edit</button>
+        <button class="btn-del"  onclick="deleteNews(${i})">Delete</button>
+      </td>
+    </tr>`).join('');
+}
+
+document.getElementById('add-news-btn').addEventListener('click', () => openNewsForm(-1));
+
+function openNewsForm(idx) {
+  const wrap = document.getElementById('news-form-wrap');
+  const n    = idx >= 0 ? siteData.news[idx] : {};
+  wrap.hidden = false;
+  wrap.innerHTML = `
+    <h3>${idx >= 0 ? 'Edit' : 'Add'} News Article</h3>
+    <div class="field-group"><label>Title *</label><input type="text" id="nf-title" value="${esc(n.title||'')}"/></div>
+    <div class="form-row">
+      <div class="field-group"><label>Date (display)</label><input type="text" id="nf-date" placeholder="e.g. 1st Apr 2025" value="${esc(n.date||'')}"/></div>
+      <div class="field-group"><label>Category</label>
+        <select id="nf-cat">${NEWS_CATS.map(c=>`<option value="${c}"${n.category===c?' selected':''}>${c}</option>`).join('')}</select>
+      </div>
+    </div>
+    <div class="field-group"><label>Excerpt / Summary</label><textarea id="nf-excerpt" rows="3">${esc(n.excerpt||'')}</textarea></div>
+    <div class="field-group"><label>Link (href)</label><input type="text" id="nf-href" value="${esc(n.href||'knowledge.html')}"/></div>
+    <div class="form-actions">
+      <button class="btn-confirm" onclick="saveNews(${idx})">SAVE ARTICLE</button>
+      <button class="btn-cancel"  onclick="closeNewsForm()">Cancel</button>
+    </div>`;
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function saveNews(idx) {
+  const title = document.getElementById('nf-title').value.trim();
+  if (!title) { toast('Title is required.', true); return; }
+  const list = siteData.news || [];
+  const obj  = {
+    id:       idx >= 0 ? list[idx].id : Date.now(),
+    date:     document.getElementById('nf-date').value.trim(),
+    title,
+    excerpt:  document.getElementById('nf-excerpt').value.trim(),
+    category: document.getElementById('nf-cat').value,
+    href:     document.getElementById('nf-href').value.trim() || 'knowledge.html'
+  };
+  if (idx >= 0) list[idx] = obj;
+  else list.push(obj);
+  siteData.news = list;
+  closeNewsForm();
+  renderNews();
+  toast(idx >= 0 ? 'Article updated.' : 'Article added. Remember to Save All Changes.');
+}
+
+function closeNewsForm() { document.getElementById('news-form-wrap').hidden = true; }
+function editNews(i)    { openNewsForm(i); }
+function deleteNews(i)  {
+  if (!confirm('Delete this article?')) return;
+  siteData.news.splice(i, 1);
+  renderNews();
+  toast('Article removed. Remember to Save All Changes.');
+}
+
+/* ---- AUTO RESTORE SESSION ---- */
+(function() {
+  const saved = sessionStorage.getItem('tc_token');
+  if (saved) {
+    document.getElementById('pat-input').value = saved;
+    document.getElementById('login-form').dispatchEvent(new Event('submit'));
+  }
+})();
+</script>
+</body>
+</html>
