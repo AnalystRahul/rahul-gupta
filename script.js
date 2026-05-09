@@ -56,6 +56,7 @@
       window._tcBios[b.name]     = b.bio;
       window._tcChambers[b.name] = b.chambers;
     });
+    if (window._tcBarristersRefresh) window._tcBarristersRefresh();
   }
 
   /* Clerks grid */
@@ -77,7 +78,10 @@
   if (d.contactForm) window._tcContactConfig = d.contactForm;
 
   /* News items — expose for carousel */
-  if (d.news && d.news.length) window._tcNewsData = d.news;
+  if (d.news && d.news.length) {
+    window._tcNewsData = d.news;
+    if (window._tcNewsRefresh) window._tcNewsRefresh();
+  }
 
   /* ---- HOME: hero slides + testimonials ---- */
   if (d.pages && d.pages.home) {
@@ -153,6 +157,7 @@
           '</div>' +
         '</article>';
       }).join('');
+      if (window._tcKnowledgeRefresh) window._tcKnowledgeRefresh();
     }
   }
 })();
@@ -354,7 +359,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
   const dots    = document.querySelectorAll('#news-dots .dot');
   if (!dots.length) return;
 
-  const newsItems = (window._tcNewsData || [
+  const newsItems = (window._tcNewsData ? window._tcNewsData.slice() : [
     {
       date:    '27th Mar 2025',
       title:   "Trinity's Pupil Barristers Start Second Six of Pupillage",
@@ -402,24 +407,40 @@ mainNav?.querySelectorAll('a').forEach(link => {
   const linkEl    = document.getElementById('news-link');
 
   function goTo(idx) {
+    if (!newsItems.length) return;
+    idx = ((idx % newsItems.length) + newsItems.length) % newsItems.length;
     const item = newsItems[idx];
-    if (dateEl)    dateEl.textContent    = item.date;
-    if (titleEl)   titleEl.textContent   = item.title;
-    if (excerptEl) excerptEl.textContent = item.excerpt;
-    if (linkEl)    linkEl.href           = item.href;
+    if (dateEl)    dateEl.textContent    = item.date    || '';
+    if (titleEl)   titleEl.textContent   = item.title   || '';
+    if (excerptEl) excerptEl.textContent = item.excerpt || '';
+    if (linkEl)    linkEl.href           = item.href    || 'knowledge.html';
     dots.forEach((d, i) => d.classList.toggle('active', i === idx));
     current = idx;
+  }
+
+  function startNewsTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo((current + 1) % newsItems.length), 4000);
   }
 
   dots.forEach((d, i) => {
     d.addEventListener('click', function () {
       goTo(i);
-      clearInterval(timer);
-      timer = setInterval(() => goTo((current + 1) % newsItems.length), 4000);
+      startNewsTimer();
     });
   });
 
-  timer = setInterval(() => goTo((current + 1) % newsItems.length), 4000);
+  goTo(0);
+  startNewsTimer();
+
+  window._tcNewsRefresh = function () {
+    var nd = window._tcNewsData;
+    if (!nd) return;
+    newsItems.splice(0, newsItems.length);
+    nd.forEach(function (n) { newsItems.push(n); });
+    goTo(0);
+    startNewsTimer();
+  };
 })();
 
 /* ============================================================
@@ -468,7 +489,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
   const grid = document.getElementById('barristers-grid');
   if (!grid) return;
 
-  const cards     = Array.from(grid.querySelectorAll('.barrister-card'));
+  let cards       = Array.from(grid.querySelectorAll('.barrister-card'));
   const noResults = document.getElementById('no-results');
   const countEl   = document.getElementById('results-count');
   const selExp    = document.getElementById('filter-expertise');
@@ -506,7 +527,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       if (show) visible++;
     });
 
-    noResults.style.display = visible === 0 ? 'block' : 'none';
+    if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
     if (countEl) countEl.textContent = visible + ' barrister' + (visible !== 1 ? 's' : '') + ' found';
   }
 
@@ -520,6 +541,12 @@ mainNav?.querySelectorAll('a').forEach(link => {
     filterCards();
   });
   filterCards();
+
+  /* Refresh hook — called by data loader after injecting cards */
+  window._tcBarristersRefresh = function () {
+    cards = Array.from(grid.querySelectorAll('.barrister-card'));
+    filterCards();
+  };
 
   /* --- Barrister Modal --- */
   const bios = {
@@ -603,7 +630,11 @@ mainNav?.querySelectorAll('a').forEach(link => {
     document.body.style.overflow = '';
   }
 
-  cards.forEach(card => card.addEventListener('click', () => openModal(card)));
+  /* Event delegation — works even after cards are injected dynamically */
+  grid.addEventListener('click', function (e) {
+    const card = e.target.closest('.barrister-card');
+    if (card) openModal(card);
+  });
   modal.querySelector('#modal-close').addEventListener('click', closeModal);
   modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
@@ -613,16 +644,22 @@ mainNav?.querySelectorAll('a').forEach(link => {
    KNOWLEDGE PAGE – Category Tabs + Subscribe
    ============================================================ */
 (function () {
-  const tabBtns  = document.querySelectorAll('.knowledge-tabs .tab-btn');
-  const articles = document.querySelectorAll('#article-grid .article-card');
+  const tabBtns = document.querySelectorAll('.knowledge-tabs .tab-btn');
   if (!tabBtns.length) return;
 
+  let activeTab = 'all';
+
   function filterByTab(tab) {
+    activeTab = tab;
+    const articles = document.querySelectorAll('#article-grid .article-card');
     articles.forEach(art => {
       art.style.display = (tab === 'all' || art.dataset.category === tab) ? '' : 'none';
     });
     tabBtns.forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
   }
+
+  /* Re-apply current tab filter after dynamic articles are injected */
+  window._tcKnowledgeRefresh = function () { filterByTab(activeTab); };
 
   tabBtns.forEach(btn => btn.addEventListener('click', () => filterByTab(btn.dataset.tab)));
 
@@ -753,7 +790,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       return;
     }
 
-    submitBtn.textContent = 'SENDING\u2026';
+    submitBtn.textContent = 'SENDING…';
     submitBtn.disabled    = true;
     if (errorBanner) errorBanner.style.display = 'none';
 
