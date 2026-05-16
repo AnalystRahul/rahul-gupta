@@ -160,6 +160,90 @@
       if (window._tcKnowledgeRefresh) window._tcKnowledgeRefresh();
     }
   }
+
+  /* ---- SITE SETTINGS ---- */
+  if (d.siteSettings) {
+    var ss = d.siteSettings;
+    if (ss.social) {
+      document.querySelectorAll('.social-link[aria-label="Twitter/X"]').forEach(function(el) { if (ss.social.twitter) el.href = ss.social.twitter; });
+      document.querySelectorAll('.social-link[aria-label="Instagram"]').forEach(function(el) { if (ss.social.instagram) el.href = ss.social.instagram; });
+      document.querySelectorAll('.social-link[aria-label="LinkedIn"]').forEach(function(el) { if (ss.social.linkedin) el.href = ss.social.linkedin; });
+      document.querySelectorAll('.social-link[aria-label="YouTube"]').forEach(function(el) { if (ss.social.youtube) el.href = ss.social.youtube; });
+    }
+    if (ss.footerCopyright) {
+      document.querySelectorAll('.footer-reg').forEach(function(el) { el.textContent = ss.footerCopyright; });
+    }
+    if (ss.footerLegal) {
+      document.querySelectorAll('.footer-bottom p').forEach(function(el) { el.textContent = ss.footerLegal; });
+    }
+  }
+
+  /* ---- FOOTER OFFICES ---- */
+  if (d.offices && d.offices.length) {
+    var footerOfficesEl = document.querySelector('.footer-offices');
+    if (footerOfficesEl) {
+      footerOfficesEl.innerHTML = d.offices.map(function(o) {
+        var addr = o.address.replace('\n', ', ');
+        return '<div class="office">' +
+          '<h4>' + o.city + '</h4>' +
+          '<p>' + addr + '</p>' +
+          '<p><a href="mailto:' + o.email + '">' + o.email + '</a></p>' +
+          '<p>Tel: <a href="tel:' + o.tel + '">' + o.phone + '</a></p>' +
+          '</div>';
+      }).join('');
+    }
+  }
+
+  /* ---- CONTACT PAGE OFFICE CARDS ---- */
+  if (d.offices && d.offices.length) {
+    var officesWrap = document.querySelector('.offices-wrap');
+    if (officesWrap) {
+      var oohCard = officesWrap.querySelector('.office-card:last-child');
+      officesWrap.innerHTML = '';
+      d.offices.forEach(function(o) {
+        var addrParts = o.address.split('\n');
+        var card = document.createElement('div');
+        card.className = 'office-card';
+        card.innerHTML =
+          '<h4>' + o.city + '</h4>' +
+          '<p>' + addrParts[0] + '<br>' + (addrParts[1] || '') + '</p>' +
+          '<p>Tel: <a href="tel:' + o.tel + '">' + o.phone + '</a></p>' +
+          (o.fax ? '<p>Fax: ' + o.fax + '</p>' : '') +
+          '<p><a href="mailto:' + o.email + '">' + o.email + '</a></p>' +
+          (o.hours ? '<p style="margin-top:10px;font-size:12.5px;color:#999;">' + o.hours + '</p>' : '');
+        officesWrap.appendChild(card);
+      });
+      if (oohCard) officesWrap.appendChild(oohCard);
+    }
+  }
+
+  /* ---- JOIN US PAGE ---- */
+  if (d.pages && d.pages.join) {
+    var jn = d.pages.join;
+    var joinIntroEl = document.getElementById('join-intro');
+    if (joinIntroEl && jn.introText) {
+      joinIntroEl.innerHTML = jn.introText.split('\n\n').map(function(p) { return '<p>' + p + '</p>'; }).join('');
+    }
+    var pupIntroEl = document.getElementById('pupillage-intro');
+    if (pupIntroEl && jn.pupillageIntro) pupIntroEl.textContent = jn.pupillageIntro;
+    var tenIntroEl = document.getElementById('tenancy-intro');
+    if (tenIntroEl && jn.tenancyIntro) tenIntroEl.textContent = jn.tenancyIntro;
+    var vacListEl = document.getElementById('vacancy-list');
+    if (vacListEl && jn.vacancies && jn.vacancies.length) {
+      vacListEl.innerHTML = jn.vacancies.map(function(v) {
+        return '<div class="vacancy-card">' +
+          '<div class="vacancy-info">' +
+            '<h4>' + v.title + '</h4>' +
+            '<p>' + v.description + '</p>' +
+            '<div class="vacancy-tags">' +
+              (v.tags || []).map(function(t) { return '<span class="vacancy-tag">' + t + '</span>'; }).join('') +
+            '</div>' +
+          '</div>' +
+          '<a href="' + v.btnHref + '"' + (v.btnExternal ? ' target="_blank" rel="noopener"' : '') + ' class="btn btn-dark">' + v.btnLabel + '</a>' +
+        '</div>';
+      }).join('');
+    }
+  }
 })();
 
 /* ---- Easter banner close ---- */
