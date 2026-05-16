@@ -9,6 +9,18 @@
     "successMessage": "Thank you for your message. A member of our clerks team will be in touch shortly.",
     "provider": "formspree"
   },
+  "siteSettings": {
+    "outOfHoursPhone": "0191 245 0110",
+    "outOfHoursTel": "01912450110",
+    "social": {
+      "twitter": "https://twitter.com",
+      "instagram": "https://instagram.com",
+      "linkedin": "https://linkedin.com",
+      "youtube": "https://youtube.com"
+    },
+    "footerCopyright": "Barristers regulated by the Bar Standards Board. Copyright © Trinity Chambers 2026.",
+    "footerLegal": "Trinity Chambers Services Ltd t/a Trinity Chambers | Registered Office Address: The Custom House, 35 Quayside, Newcastle upon Tyne, England, NE1 3DE | Registered in England No 5344284 | Registered for VAT No 880660005"
+  },
   "barristers": [
     {
       "name": "Richard Blackwood",
@@ -399,6 +411,48 @@
         { "title": "The Planning and Infrastructure Bill: Key Changes for Developers", "category": "Planning", "date": "28th Feb 2025", "excerpt": "Robert Davies examines the most significant provisions of the Planning and Infrastructure Bill 2025 and what they mean for developers and local authorities.", "author": "Robert Davies" },
         { "title": "AI in the Workplace: Discrimination Risks Employers Must Know", "category": "Employment", "date": "20th Feb 2025", "excerpt": "Priya Sharma examines the discrimination and data protection risks arising from the use of AI tools in recruitment, performance management and redundancy processes.", "author": "Priya Sharma" },
         { "title": "Trinity Chambers Pupil Barristers Start Second Six of Pupillage", "category": "Family", "date": "27th Mar 2025", "excerpt": "Trinity Chambers' current pupil barristers will shortly be accepting instructions on their own cases as they commence the second half of their pupillage.", "author": "Trinity Chambers" }
+      ]
+    },
+    "join": {
+      "introText": "As a progressive and growing set, Trinity Chambers always welcomes applications from barristers and Q.C.s. For those at the early stages of their career at the Bar, we have a formal Pupillage application process and also regularly welcome mini-pupillage applications.\n\nWith an expanding presence across the North Eastern Circuit in Newcastle, Leeds and Middlesbrough, there are also opportunities to join Trinity's busy staffing teams.\n\nPlease see links below for further details.\n\nTrinity Chambers abides by its Equality and Diversity policies.",
+      "pupillageIntro": "Trinity Chambers offers a rewarding and challenging pupillage. We are committed to developing the next generation of barristers and invest significantly in training and support.",
+      "pupillageCta": "Applications open in January 2026 via the Pupillage Gateway. We typically offer two pupillages per year.",
+      "tenancyIntro": "We welcome applications from established barristers at all levels of seniority, whether seeking to transfer from another set or returning to the Bar.",
+      "tenancyCta": "If you are interested in a tenancy at Trinity Chambers, we would be delighted to hear from you. Please contact our Senior Clerk in confidence.",
+      "vacanciesIntro": "We are currently recruiting in the following areas. If you don't see a suitable vacancy, please register your interest for future opportunities.",
+      "vacancies": [
+        {
+          "title": "Pupillage 2026/27 – Two Positions",
+          "description": "Applications via the Pupillage Gateway. Open January 2026.",
+          "tags": ["Pupillage", "Newcastle / Leeds", "Full-time"],
+          "btnLabel": "APPLY",
+          "btnHref": "https://www.pupillagegateway.com",
+          "btnExternal": true
+        },
+        {
+          "title": "Experienced Barrister – Employment (5–10 years' call)",
+          "description": "We are seeking an experienced employment barrister to join our highly-regarded employment team.",
+          "tags": ["Tenancy", "Employment", "Newcastle or Leeds"],
+          "btnLabel": "ENQUIRE",
+          "btnHref": "contact.html",
+          "btnExternal": false
+        },
+        {
+          "title": "Family Barrister – Finance & Property (2–8 years' call)",
+          "description": "An opportunity to join our busy family finance team handling high-value and complex financial remedy work.",
+          "tags": ["Tenancy", "Family", "Newcastle"],
+          "btnLabel": "ENQUIRE",
+          "btnHref": "contact.html",
+          "btnExternal": false
+        },
+        {
+          "title": "Chambers Administrator – Leeds Office",
+          "description": "We are looking for a proactive and organised administrator to support our Leeds clerks team.",
+          "tags": ["Administration", "Leeds", "Full-time"],
+          "btnLabel": "APPLY",
+          "btnHref": "contact.html",
+          "btnExternal": false
+        }
       ]
     }
   }
