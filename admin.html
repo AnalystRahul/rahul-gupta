@@ -131,6 +131,7 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
     <button class="tab-btn" data-tab="news">News Articles</button>
     <button class="tab-btn" data-tab="pages">Pages</button>
     <button class="tab-btn" data-tab="contact">Contact Form</button>
+    <button class="tab-btn" data-tab="settings">Site Settings</button>
   </nav>
 
   <main>
@@ -201,6 +202,7 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
         <button class="sub-btn" data-sub="about">About</button>
         <button class="sub-btn" data-sub="expertise">Expertise</button>
         <button class="sub-btn" data-sub="knowledge">Knowledge</button>
+        <button class="sub-btn" data-sub="join">Join Us</button>
       </div>
 
       <!-- HOME -->
@@ -218,7 +220,7 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
       <!-- ABOUT -->
       <div id="sub-about" class="sub-panel">
         <div class="field-group">
-          <label>Intro Paragraphs <small style="text-transform:none;font-size:11px;color:#4a6080;">(one paragraph per line — blank line = new paragraph)</small></label>
+          <label>Intro Paragraphs <small style="text-transform:none;font-size:11px;color:#4a6080;">(one paragraph per line &mdash; blank line = new paragraph)</small></label>
           <textarea id="about-paras" rows="10"></textarea>
         </div>
         <div class="field-group">
@@ -245,13 +247,37 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
       <!-- KNOWLEDGE -->
       <div id="sub-knowledge" class="sub-panel">
         <div class="field-group">
-          <label>"Supporting Our Clients" Intro Text</label>
+          <label>&ldquo;Supporting Our Clients&rdquo; Intro Text</label>
           <textarea id="know-support" rows="4"></textarea>
         </div>
         <h3 class="sub-heading">Articles Grid <button class="btn-add" id="add-art-btn" style="font-size:11px;padding:5px 12px;">+ Add Article</button></h3>
         <div id="art-form-wrap" class="form-wrap" hidden></div>
         <table class="data-table"><thead><tr><th>Title</th><th>Category</th><th>Author</th><th>Actions</th></tr></thead>
           <tbody id="art-tbody"></tbody></table>
+      </div>
+
+      <!-- JOIN US -->
+      <div id="sub-join" class="sub-panel">
+        <div class="field-group">
+          <label>&ldquo;Working With Us&rdquo; Intro Text <small style="text-transform:none;font-size:11px;color:#4a6080;">(blank line = new paragraph)</small></label>
+          <textarea id="join-intro-text" rows="6"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="field-group">
+            <label>Pupillage Tab Intro</label>
+            <textarea id="join-pup-intro" rows="3"></textarea>
+          </div>
+          <div class="field-group">
+            <label>Tenancy Tab Intro</label>
+            <textarea id="join-ten-intro" rows="3"></textarea>
+          </div>
+        </div>
+        <h3 class="sub-heading">Vacancies <button class="btn-add" id="add-vac-btn" style="font-size:11px;padding:5px 12px;">+ Add Vacancy</button></h3>
+        <div id="vac-form-wrap" class="form-wrap" hidden></div>
+        <table class="data-table">
+          <thead><tr><th>Title</th><th>Tags</th><th>Button</th><th>Actions</th></tr></thead>
+          <tbody id="vac-tbody"></tbody>
+        </table>
       </div>
     </section>
 
@@ -274,8 +300,60 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
         <small>Shown to the visitor after their message is submitted successfully.</small>
       </div>
       <div class="field-group">
-        <label>Recipient Email <small style="text-transform:none;font-size:11px;color:#4a6080;">(reference only — set actual recipient in Formspree)</small></label>
+        <label>Recipient Email <small style="text-transform:none;font-size:11px;color:#4a6080;">(reference only &mdash; set actual recipient in Formspree)</small></label>
         <input type="text" id="cf2-recipient" placeholder="info@trinitychambers.co.uk"/>
+      </div>
+    </section>
+
+    <!-- SITE SETTINGS -->
+    <section id="tab-settings" class="tab-panel">
+      <div class="panel-header"><h2>Site Settings</h2></div>
+      <p style="color:#6a85a8;font-size:13px;margin-bottom:24px;">Global settings applied across all pages. Remember to Save All Changes after editing.</p>
+
+      <h3 class="sub-heading">Social Media Links</h3>
+      <div class="form-row">
+        <div class="field-group">
+          <label>Twitter / X URL</label>
+          <input type="text" id="ss-twitter" placeholder="https://twitter.com/..."/>
+        </div>
+        <div class="field-group">
+          <label>LinkedIn URL</label>
+          <input type="text" id="ss-linkedin" placeholder="https://linkedin.com/company/..."/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field-group">
+          <label>Instagram URL</label>
+          <input type="text" id="ss-instagram" placeholder="https://instagram.com/..."/>
+        </div>
+        <div class="field-group">
+          <label>YouTube URL</label>
+          <input type="text" id="ss-youtube" placeholder="https://youtube.com/..."/>
+        </div>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:24px;">Footer Text</h3>
+      <div class="field-group">
+        <label>Copyright / Regulatory Line</label>
+        <input type="text" id="ss-copyright"/>
+        <small>Shown in the footer top section. Example: Barristers regulated by the Bar Standards Board. Copyright &copy; Trinity Chambers 2026.</small>
+      </div>
+      <div class="field-group">
+        <label>Legal / Registration Notice</label>
+        <textarea id="ss-legal" rows="3"></textarea>
+        <small>Shown in the footer bottom bar. Company registration details.</small>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:24px;">Out of Hours Contact</h3>
+      <div class="form-row">
+        <div class="field-group">
+          <label>Out of Hours Phone (display)</label>
+          <input type="text" id="ss-ooh-phone" placeholder="0191 245 0110"/>
+        </div>
+        <div class="field-group">
+          <label>Out of Hours Phone (tel: digits only)</label>
+          <input type="text" id="ss-ooh-tel" placeholder="01912450110"/>
+        </div>
       </div>
     </section>
 
@@ -646,7 +724,7 @@ document.querySelectorAll('.sub-btn').forEach(function(btn) {
   });
 });
 
-/* Populate Pages + Contact tabs when initDashboard runs */
+/* Populate all tabs when initDashboard runs */
 var _origInit = initDashboard;
 initDashboard = function() {
   _origInit();
@@ -656,6 +734,8 @@ initDashboard = function() {
   renderExpertise();
   renderKnowledge();
   renderContactForm();
+  renderSiteSettings();
+  renderJoinUs();
 };
 
 /* ================================================================
@@ -834,6 +914,24 @@ saveAll = async function() {
     recipientEmail:  document.getElementById('cf2-recipient').value.trim(),
     provider:        'formspree'
   };
+  /* Sync site settings */
+  if (!siteData.siteSettings) siteData.siteSettings = {};
+  siteData.siteSettings.social = {
+    twitter:   document.getElementById('ss-twitter').value.trim(),
+    instagram: document.getElementById('ss-instagram').value.trim(),
+    linkedin:  document.getElementById('ss-linkedin').value.trim(),
+    youtube:   document.getElementById('ss-youtube').value.trim()
+  };
+  siteData.siteSettings.footerCopyright = document.getElementById('ss-copyright').value.trim();
+  siteData.siteSettings.footerLegal     = document.getElementById('ss-legal').value.trim();
+  siteData.siteSettings.outOfHoursPhone = document.getElementById('ss-ooh-phone').value.trim();
+  siteData.siteSettings.outOfHoursTel   = document.getElementById('ss-ooh-tel').value.trim();
+  /* Sync join us text */
+  if (!siteData.pages) siteData.pages = {};
+  if (!siteData.pages.join) siteData.pages.join = {};
+  siteData.pages.join.introText      = document.getElementById('join-intro-text').value.trim();
+  siteData.pages.join.pupillageIntro = document.getElementById('join-pup-intro').value.trim();
+  siteData.pages.join.tenancyIntro   = document.getElementById('join-ten-intro').value.trim();
   await _origSaveAll();
 };
 
@@ -931,6 +1029,91 @@ function deleteArt(i) {
   if (!confirm('Delete this article?')) return;
   siteData.pages.knowledge.articles.splice(i, 1);
   renderKnowledge();
+  toast('Removed. Remember to Save All Changes.');
+}
+
+/* ================================================================
+   SITE SETTINGS
+================================================================ */
+function renderSiteSettings() {
+  var ss = siteData.siteSettings || {};
+  var soc = ss.social || {};
+  document.getElementById('ss-twitter').value   = soc.twitter   || '';
+  document.getElementById('ss-linkedin').value  = soc.linkedin  || '';
+  document.getElementById('ss-instagram').value = soc.instagram || '';
+  document.getElementById('ss-youtube').value   = soc.youtube   || '';
+  document.getElementById('ss-copyright').value = ss.footerCopyright || '';
+  document.getElementById('ss-legal').value     = ss.footerLegal     || '';
+  document.getElementById('ss-ooh-phone').value = ss.outOfHoursPhone || '';
+  document.getElementById('ss-ooh-tel').value   = ss.outOfHoursTel   || '';
+}
+
+/* ================================================================
+   JOIN US VACANCIES
+================================================================ */
+function renderJoinUs() {
+  var j = (siteData.pages && siteData.pages.join) || {};
+  document.getElementById('join-intro-text').value = j.introText      || '';
+  document.getElementById('join-pup-intro').value  = j.pupillageIntro || '';
+  document.getElementById('join-ten-intro').value  = j.tenancyIntro   || '';
+  renderVacancies();
+}
+function renderVacancies() {
+  var list = (siteData.pages && siteData.pages.join && siteData.pages.join.vacancies) || [];
+  document.getElementById('vac-tbody').innerHTML = list.map(function(v, i) {
+    return '<tr><td style="max-width:280px"><strong>' + esc(v.title) + '</strong></td>' +
+      '<td style="font-size:12px;color:#8aa0be;">' + esc((v.tags||[]).join(', ')) + '</td>' +
+      '<td style="font-size:12px;color:#8aa0be;">' + esc(v.btnLabel||'') + '</td><td>' +
+      '<button class="btn-edit" onclick="editVac(' + i + ')">Edit</button>' +
+      '<button class="btn-del" onclick="deleteVac(' + i + ')">Delete</button>' +
+      '</td></tr>';
+  }).join('');
+}
+document.getElementById('add-vac-btn').addEventListener('click', function() { openVacForm(-1); });
+function openVacForm(idx) {
+  var wrap = document.getElementById('vac-form-wrap');
+  var v = idx >= 0 ? siteData.pages.join.vacancies[idx] : {};
+  wrap.hidden = false;
+  wrap.innerHTML = '<h3>' + (idx >= 0 ? 'Edit' : 'Add') + ' Vacancy</h3>' +
+    '<div class="field-group"><label>Title *</label><input type="text" id="vf-title" value="' + esc(v.title||'') + '"/></div>' +
+    '<div class="field-group"><label>Description</label><textarea id="vf-desc" rows="2">' + esc(v.description||'') + '</textarea></div>' +
+    '<div class="field-group"><label>Tags (comma separated)</label><input type="text" id="vf-tags" value="' + esc((v.tags||[]).join(', ')) + '"/></div>' +
+    '<div class="form-row">' +
+      '<div class="field-group"><label>Button Label</label><input type="text" id="vf-btn" value="' + esc(v.btnLabel||'APPLY') + '"/></div>' +
+      '<div class="field-group"><label>Button Link</label><input type="text" id="vf-href" value="' + esc(v.btnHref||'contact.html') + '"/></div>' +
+    '</div>' +
+    '<div class="field-group" style="display:flex;align-items:center;gap:10px;">' +
+      '<label class="toggle-label"><input type="checkbox" id="vf-ext" ' + (v.btnExternal ? 'checked' : '') + '/><span class="toggle-switch"></span> Opens in new tab (external link)</label>' +
+    '</div>' +
+    '<div class="form-actions"><button class="btn-confirm" onclick="saveVac(' + idx + ')">SAVE VACANCY</button><button class="btn-cancel" onclick="document.getElementById(\'vac-form-wrap\').hidden=true">Cancel</button></div>';
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function saveVac(idx) {
+  if (!siteData.pages) siteData.pages = {};
+  if (!siteData.pages.join) siteData.pages.join = {};
+  if (!siteData.pages.join.vacancies) siteData.pages.join.vacancies = [];
+  var title = document.getElementById('vf-title').value.trim();
+  if (!title) { toast('Title is required.', true); return; }
+  var tags = document.getElementById('vf-tags').value.split(',').map(function(t) { return t.trim(); }).filter(Boolean);
+  var obj = {
+    title:       title,
+    description: document.getElementById('vf-desc').value.trim(),
+    tags:        tags,
+    btnLabel:    document.getElementById('vf-btn').value.trim() || 'APPLY',
+    btnHref:     document.getElementById('vf-href').value.trim() || 'contact.html',
+    btnExternal: document.getElementById('vf-ext').checked
+  };
+  if (idx >= 0) siteData.pages.join.vacancies[idx] = obj;
+  else siteData.pages.join.vacancies.push(obj);
+  document.getElementById('vac-form-wrap').hidden = true;
+  renderVacancies();
+  toast(idx >= 0 ? 'Vacancy updated.' : 'Vacancy added. Remember to Save All Changes.');
+}
+function editVac(i) { openVacForm(i); }
+function deleteVac(i) {
+  if (!confirm('Delete this vacancy?')) return;
+  siteData.pages.join.vacancies.splice(i, 1);
+  renderVacancies();
   toast('Removed. Remember to Save All Changes.');
 }
 
