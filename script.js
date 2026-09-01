@@ -337,7 +337,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       badge: 'EXPERT',
       title: 'LEGAL ADVICE &amp;<br>REPRESENTATION',
       text: 'With Chambers in Jaipur and Kotputali, the experienced advocates at RSA Chambers offer expert legal advice and representation across Rajasthan.',
-      bg: "url('https://images.unsplash.com/photo-LgQoL6eOdHs?w=1400&q=80') center/cover no-repeat, linear-gradient(135deg, #0b1628 0%, #1a2e55 55%, #1a4a6e 100%)",
+      bg: "linear-gradient(160deg, #0b1628 0%, #1a2744 45%, #7A2E18 100%)",
       primaryLabel: 'LEARN MORE', primaryHref: 'about.html',
       secLabel: 'GET IN TOUCH',  secHref: 'contact.html',
       exploreHref: 'expertise.html'
@@ -346,7 +346,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       badge: 'TRUSTED',
       title: 'ADVOCATES OF<br>THE HIGHEST CALIBRE',
       text: 'RSA Chambers provides skilled and dedicated legal representation, with a proven track record across civil, criminal, family and constitutional matters.',
-      bg: "url('https://images.unsplash.com/photo-gQ2HORZRuoU?w=1400&q=80') center/cover no-repeat, linear-gradient(135deg, #0d1a35 0%, #1a3a5c 100%)",
+      bg: "linear-gradient(160deg, #0d1a35 0%, #1a2744 40%, #B86A1A 100%)",
       primaryLabel: 'OUR ADVOCATES', primaryHref: 'barristers.html',
       secLabel: 'OUR EXPERTISE',    secHref: 'expertise.html',
       exploreHref: 'barristers.html'
@@ -355,7 +355,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       badge: 'ACROSS RAJASTHAN',
       title: 'SERVING CLIENTS<br>ACROSS INDIA',
       text: 'From Jaipur to Kotputali and beyond, RSA Chambers has the depth and breadth of experience to handle your case with diligence and integrity.',
-      bg: "url('https://images.unsplash.com/photo-fxVo2GBD7FA?w=1400&q=80') center/cover no-repeat, linear-gradient(135deg, #1a2744 0%, #1a5060 100%)",
+      bg: "linear-gradient(160deg, #1a2744 0%, #2C1A0A 50%, #0d3d3d 100%)",
       primaryLabel: 'OUR EXPERTISE', primaryHref: 'expertise.html',
       secLabel: 'JOIN US',          secHref: 'join.html',
       exploreHref: 'knowledge.html'
