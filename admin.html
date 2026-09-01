@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Admin – Trinity Chambers</title>
+<title>Admin – RSA Chambers</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1b2e;color:#d0dae8;font-size:14px;min-height:100vh}
@@ -102,7 +102,7 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
 <div id="login-screen">
   <div class="login-box">
     <div class="login-logo">T</div>
-    <h1>Trinity Chambers<span>Content Admin Panel</span></h1>
+    <h1>RSA Chambers<span>Content Admin Panel</span></h1>
     <p>Enter your GitHub Personal Access Token to manage site content.</p>
     <form id="login-form">
       <input type="password" id="pat-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" required />
@@ -116,7 +116,7 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
 <!-- DASHBOARD -->
 <div id="dashboard" hidden>
   <header>
-    <div class="hdr-logo"><span class="hdr-t">T</span> Trinity Chambers Admin</div>
+    <div class="hdr-logo"><span class="hdr-t">T</span> RSA Chambers Admin</div>
     <div class="hdr-right">
       <span id="save-status"></span>
       <button class="btn-save" id="save-btn">SAVE ALL CHANGES</button>
@@ -301,7 +301,7 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
       </div>
       <div class="field-group">
         <label>Recipient Email <small style="text-transform:none;font-size:11px;color:#4a6080;">(reference only — set actual recipient in Formspree)</small></label>
-        <input type="text" id="cf2-recipient" placeholder="info@trinitychambers.co.uk"/>
+        <input type="text" id="cf2-recipient" placeholder="info@rsachambers.in"/>
       </div>
     </section>
 
@@ -336,7 +336,7 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
       <div class="field-group">
         <label>Copyright / Regulatory Line</label>
         <input type="text" id="ss-copyright"/>
-        <small>Shown in the footer top section. Example: Barristers regulated by the Bar Standards Board. Copyright &copy; Trinity Chambers 2026.</small>
+        <small>Shown in the footer top section. Example: Advocates regulated by the Bar Council of India. Copyright &copy; RSA Chambers 2026.</small>
       </div>
       <div class="field-group">
         <label>Legal / Registration Notice</label>
@@ -348,11 +348,11 @@ main{flex:1;padding:28px 28px 60px;overflow-y:auto}
       <div class="form-row">
         <div class="field-group">
           <label>Out of Hours Phone (display)</label>
-          <input type="text" id="ss-ooh-phone" placeholder="0191 245 0110"/>
+          <input type="text" id="ss-ooh-phone" placeholder="[RSA — fill OOH]"/>
         </div>
         <div class="field-group">
           <label>Out of Hours Phone (tel: digits only)</label>
-          <input type="text" id="ss-ooh-tel" placeholder="01912450110"/>
+          <input type="text" id="ss-ooh-tel" placeholder=""/>
         </div>
       </div>
     </section>
@@ -487,7 +487,7 @@ async function saveAll() {
 ================================================================ */
 const EXPERTISE_OPTS = ['Administrative','Criminal','Employment','Family','Personal Injury','Immigration','Commercial','Planning','Property','Court of Protection','Education'];
 const CALL_RANGES    = ['before-2000','2000-2009','2010-2019','2020-2025'];
-const CHAMBERS_OPTS  = ['Newcastle','Middlesbrough','Leeds'];
+const CHAMBERS_OPTS  = ['Jaipur','Kotputali','Jaipur'];
 
 function renderBarristers() {
   const tbody = document.getElementById('barristers-tbody');
