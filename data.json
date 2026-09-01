@@ -1,282 +1,127 @@
 {
   "announcement": {
-    "active": true,
-    "html": "<strong>Easter Opening Hours</strong> Chambers will be closed from 5pm on Thursday 2 April until 9am on Tuesday 7 April. If your enquiry is extremely urgent, the out of hours number is 0191 245 0110."
+    "active": false,
+    "html": "<strong>Notice</strong> [RSA — add announcement text here if needed]"
   },
   "contactForm": {
     "endpoint": "",
-    "recipientEmail": "info@trinitychambers.co.uk",
-    "successMessage": "Thank you for your message. A member of our clerks team will be in touch shortly.",
+    "recipientEmail": "info@rsachambers.in",
+    "successMessage": "Thank you for your message. We will be in touch shortly.",
     "provider": "formspree"
+  },
+  "siteSettings": {
+    "outOfHoursPhone": "[RSA — fill OOH number]",
+    "outOfHoursTel": "",
+    "social": {
+      "twitter": "https://twitter.com",
+      "instagram": "https://instagram.com",
+      "linkedin": "https://linkedin.com",
+      "youtube": "https://youtube.com"
+    },
+    "footerCopyright": "Advocates regulated by the Bar Council of India. Copyright © RSA Chambers 2026.",
+    "footerLegal": "RSA Chambers | Jaipur & Kotputali, Rajasthan, India | [RSA — fill registration details]"
   },
   "barristers": [
     {
-      "name": "Richard Blackwood",
-      "kc": true,
-      "speciality": "Administrative & Public Law",
-      "expertise": "Administrative",
-      "yearCalled": 1990,
-      "callRange": "before-2000",
-      "chambers": "Newcastle",
-      "bio": "Richard is one of the leading silks on the Northern Circuit in Administrative and Public Law. He has appeared in the Supreme Court, Court of Appeal and High Court in numerous landmark judicial review cases. His practice covers all aspects of public law including local government, planning, education, and human rights."
-    },
-    {
-      "name": "David Morrison",
-      "kc": true,
-      "speciality": "Business & Commercial Litigation",
-      "expertise": "Commercial",
-      "yearCalled": 1992,
-      "callRange": "before-2000",
-      "chambers": "Leeds",
-      "bio": "David is a highly regarded silk with a broad commercial practice encompassing company law, shareholder disputes, banking and finance, insolvency and professional negligence. He is known for his strategic approach and tenacious advocacy."
-    },
-    {
-      "name": "James Henderson",
-      "kc": true,
-      "speciality": "Employment",
-      "expertise": "Employment",
-      "yearCalled": 1995,
-      "callRange": "before-2000",
-      "chambers": "Newcastle",
-      "bio": "James is recognised as one of the leading employment silks in the North of England. He acts for both employers and employees in the Employment Tribunal, EAT and appellate courts, with particular expertise in discrimination, whistleblowing and injunctive relief."
-    },
-    {
-      "name": "Michael Foster",
-      "kc": true,
-      "speciality": "Criminal",
+      "name": "Ravindra Saini",
+      "kc": false,
+      "speciality": "[RSA — fill speciality]",
       "expertise": "Criminal",
-      "yearCalled": 1996,
-      "callRange": "before-2000",
-      "chambers": "Newcastle",
-      "bio": "Michael is a highly experienced criminal silk with over 25 years of practice in the most serious and complex criminal cases. He is regularly instructed in murder, serious fraud, drug conspiracies and cases of national importance."
-    },
-    {
-      "name": "Sarah Mitchell",
-      "kc": true,
-      "speciality": "Criminal",
-      "expertise": "Criminal",
-      "yearCalled": 1998,
-      "callRange": "before-2000",
-      "chambers": "Leeds",
-      "bio": "Sarah is a leading criminal silk with particular expertise in cases involving serious sexual offences, historic abuse, and complex multi-defendant cases. She is known for her careful preparation and commanding court presence."
-    },
-    {
-      "name": "Thomas Clarke",
-      "kc": true,
-      "speciality": "Personal Injury & Clinical Negligence",
-      "expertise": "Personal Injury",
       "yearCalled": 2000,
       "callRange": "2000-2009",
-      "chambers": "Middlesbrough",
-      "bio": "Thomas is one of the most experienced personal injury and clinical negligence silks on the circuit. He is regularly instructed in catastrophic injury claims and complex clinical negligence cases involving significant financial value."
+      "chambers": "Jaipur",
+      "bio": "[RSA — fill bio for Ravindra Saini]"
     },
     {
-      "name": "Helen Hogben",
+      "name": "Rahul Gupta",
       "kc": false,
-      "speciality": "Employment",
-      "expertise": "Employment",
-      "yearCalled": 2003,
-      "callRange": "2000-2009",
-      "chambers": "Newcastle",
-      "bio": "Helen has a busy employment law practice acting predominantly for claimants in cases of discrimination, whistleblowing and unfair dismissal. She is particularly known for her expertise in disability discrimination and equality law."
-    },
-    {
-      "name": "Robert Davies",
-      "kc": false,
-      "speciality": "Planning",
-      "expertise": "Planning",
+      "speciality": "[RSA — fill speciality]",
+      "expertise": "Commercial",
       "yearCalled": 2005,
       "callRange": "2000-2009",
-      "chambers": "Leeds",
-      "bio": "Robert is an experienced planning barrister regularly appearing at planning inquiries, hearings and in the High Court. He acts for developers, landowners and local planning authorities across a wide range of development types."
+      "chambers": "Jaipur",
+      "bio": "[RSA — fill bio for Rahul Gupta]"
     },
     {
-      "name": "Andrew Patterson",
+      "name": "Avadhesh Saini",
       "kc": false,
-      "speciality": "Property",
-      "expertise": "Property",
-      "yearCalled": 2007,
-      "callRange": "2000-2009",
-      "chambers": "Newcastle",
-      "bio": "Andrew has a broad property practice covering landlord and tenant, boundary disputes, easements, covenants, co-ownership and all aspects of residential and commercial property litigation."
-    },
-    {
-      "name": "Catherine Hughes",
-      "kc": false,
-      "speciality": "Family – Public Law & Children",
+      "speciality": "[RSA — fill speciality]",
       "expertise": "Family",
       "yearCalled": 2008,
       "callRange": "2000-2009",
-      "chambers": "Newcastle",
-      "bio": "Catherine specialises in public law children cases, representing local authorities, parents and children. She is regularly instructed in complex care proceedings and cases involving non-accidental injury."
+      "chambers": "Kotputali",
+      "bio": "[RSA — fill bio for Avadhesh Saini]"
     },
     {
-      "name": "Rebecca Walsh",
+      "name": "Monu Sharma",
       "kc": false,
-      "speciality": "Family – Finance & Property",
-      "expertise": "Family",
+      "speciality": "[RSA — fill speciality]",
+      "expertise": "Criminal",
       "yearCalled": 2010,
       "callRange": "2010-2019",
-      "chambers": "Leeds",
-      "bio": "Rebecca has a busy family finance practice, acting in financial remedy proceedings following divorce. She is experienced in cases involving business assets, trusts, pensions and international elements."
-    },
-    {
-      "name": "Laura Jenkins",
-      "kc": false,
-      "speciality": "Court of Protection & Adult Care",
-      "expertise": "Court of Protection",
-      "yearCalled": 2012,
-      "callRange": "2010-2019",
-      "chambers": "Middlesbrough",
-      "bio": "Laura is a specialist Court of Protection practitioner acting in welfare and property/financial affairs proceedings involving adults who lack mental capacity."
-    },
-    {
-      "name": "Priya Sharma",
-      "kc": false,
-      "speciality": "Employment",
-      "expertise": "Employment",
-      "yearCalled": 2015,
-      "callRange": "2010-2019",
-      "chambers": "Newcastle",
-      "bio": "Priya has developed a strong employment law practice acting for both claimants and respondents across all areas of employment law with particular expertise in race, sex and disability discrimination."
-    },
-    {
-      "name": "Emma Thompson",
-      "kc": false,
-      "speciality": "Immigration",
-      "expertise": "Immigration",
-      "yearCalled": 2015,
-      "callRange": "2010-2019",
-      "chambers": "Leeds",
-      "bio": "Emma has a busy immigration practice covering asylum, human rights and deportation appeals. She is regularly instructed in complex cases before the First-tier and Upper Tribunals."
-    },
-    {
-      "name": "Jason Patel",
-      "kc": false,
-      "speciality": "Immigration",
-      "expertise": "Immigration",
-      "yearCalled": 2016,
-      "callRange": "2010-2019",
-      "chambers": "Leeds",
-      "bio": "Jason acts in a wide range of immigration matters including asylum, leave to remain, deportation and nationality cases. He is known for his thorough preparation and clear written submissions."
-    },
-    {
-      "name": "Sophie Williams",
-      "kc": false,
-      "speciality": "Education",
-      "expertise": "Education",
-      "yearCalled": 2019,
-      "callRange": "2010-2019",
-      "chambers": "Newcastle",
-      "bio": "Sophie has a developing practice in education law, acting for schools, local authorities and parents in exclusion appeals, SEN matters and employment disputes in the education sector."
+      "chambers": "Jaipur",
+      "bio": "[RSA — fill bio for Monu Sharma]"
     }
   ],
   "clerks": [
     {
-      "initial": "G",
-      "name": "Gary Thompson",
+      "initial": "R",
+      "name": "[RSA — fill clerk name]",
       "title": "Senior Clerk",
-      "phone": "0191 232 1927",
-      "tel": "01912321927"
+      "phone": "[RSA — fill phone]",
+      "tel": ""
     },
     {
       "initial": "S",
-      "name": "Sarah Baines",
-      "title": "Deputy Senior Clerk",
-      "phone": "0191 232 1927",
-      "tel": "01912321927"
-    },
-    {
-      "initial": "M",
-      "name": "Mark Whitfield",
-      "title": "Senior Clerk – Leeds",
-      "phone": "0113 223 5105",
-      "tel": "01132235105"
-    },
-    {
-      "initial": "J",
-      "name": "Jackie Pearson",
-      "title": "Clerk – Middlesbrough",
-      "phone": "01642 247 589",
-      "tel": "01642247589"
+      "name": "[RSA — fill clerk name]",
+      "title": "Clerk – Kotputali",
+      "phone": "[RSA — fill phone]",
+      "tel": ""
     }
   ],
   "offices": [
     {
-      "city": "Newcastle",
-      "address": "The Custom House, Quayside\nNewcastle upon Tyne, NE1 3DE",
-      "phone": "0191 232 1927",
-      "tel": "01912321927",
-      "fax": "0191 232 7574",
-      "email": "info@trinitychambers.co.uk",
-      "hours": "Mon–Fri: 8:30am – 6:00pm"
+      "city": "Jaipur",
+      "address": "[RSA — fill address]\nJaipur, Rajasthan",
+      "phone": "[RSA — fill phone]",
+      "tel": "",
+      "fax": "",
+      "email": "info@rsachambers.in",
+      "hours": "Mon–Sat: 10:00am – 6:00pm"
     },
     {
-      "city": "Middlesbrough",
-      "address": "Cleveland Business Centre\nWatson Street, Middlesbrough, TS1 2RQ",
-      "phone": "01642 247 589",
-      "tel": "01642247589",
+      "city": "Kotputali",
+      "address": "[RSA — fill address]\nKotputali, Rajasthan",
+      "phone": "[RSA — fill phone]",
+      "tel": "",
       "fax": "",
-      "email": "info@trinitychambers.co.uk",
-      "hours": "Mon–Fri: 8:30am – 6:00pm"
-    },
-    {
-      "city": "Leeds",
-      "address": "Syron House, 12 Park Place\nLeeds, LS1 2RU",
-      "phone": "0113 223 5105",
-      "tel": "01132235105",
-      "fax": "",
-      "email": "info@trinitychambers.co.uk",
-      "hours": "Mon–Fri: 8:30am – 6:00pm"
+      "email": "info@rsachambers.in",
+      "hours": "Mon–Sat: 10:00am – 6:00pm"
     }
   ],
   "news": [
     {
       "id": 1,
-      "date": "27th Mar 2025",
-      "title": "Trinity's Pupil Barristers Start Second Six of Pupillage",
-      "excerpt": "Trinity Chambers' current pupil barristers will shortly be accepting instructions on their own cases as they commence the second half of their pupillage.",
+      "date": "1st Sep 2026",
+      "title": "[RSA — fill news headline]",
+      "excerpt": "[RSA — fill news excerpt]",
       "category": "news",
       "href": "knowledge.html"
     },
     {
       "id": 2,
-      "date": "1st Apr 2025",
-      "title": "Managing Cancer in the Workplace: A Legal Guide for Employers",
-      "excerpt": "Helen Hogben examines the legal obligations employers face when an employee receives a cancer diagnosis, including reasonable adjustments and disability discrimination.",
-      "category": "employment",
+      "date": "15th Aug 2026",
+      "title": "[RSA — fill news headline]",
+      "excerpt": "[RSA — fill news excerpt]",
+      "category": "news",
       "href": "knowledge.html"
     },
     {
       "id": 3,
-      "date": "18th Mar 2025",
-      "title": "The Sentencing Council: New Guidelines for Serious Violence Offences",
-      "excerpt": "Michael Foster KC reviews the Sentencing Council's updated guidelines for serious violence, exploring their impact on sentencing outcomes.",
-      "category": "criminal",
-      "href": "knowledge.html"
-    },
-    {
-      "id": 4,
-      "date": "10th Mar 2025",
-      "title": "Asylum Seekers and the Safety of Third Countries: Post-Rwanda Update",
-      "excerpt": "Emma Thompson provides an update on the legal landscape for asylum seekers following the Supreme Court ruling and subsequent legislative changes.",
-      "category": "immigration",
-      "href": "knowledge.html"
-    },
-    {
-      "id": 5,
-      "date": "5th Mar 2025",
-      "title": "Fundamental Dishonesty: Recent Developments and Practical Implications",
-      "excerpt": "Thomas Clarke KC analyses recent court decisions on fundamental dishonesty under s.57 of the Criminal Justice and Courts Act 2015.",
-      "category": "personal-injury",
-      "href": "knowledge.html"
-    },
-    {
-      "id": 6,
-      "date": "28th Feb 2025",
-      "title": "The Planning and Infrastructure Bill: Key Changes for Developers",
-      "excerpt": "Robert Davies examines the most significant provisions of the Planning and Infrastructure Bill 2025 and what they mean for developers.",
-      "category": "planning",
+      "date": "1st Aug 2026",
+      "title": "[RSA — fill news headline]",
+      "excerpt": "[RSA — fill news excerpt]",
+      "category": "news",
       "href": "knowledge.html"
     }
   ],
@@ -286,119 +131,111 @@
         {
           "badge": "EXPERT",
           "title": "LEGAL ADVICE &amp;<br>REPRESENTATION",
-          "text": "With Chambers in Newcastle, Middlesbrough and Leeds, the experienced and approachable barristers offer the most appropriate and cost-effective representation for your needs.",
-          "bg": "url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&q=80') center/cover no-repeat",
+          "text": "With Chambers in Jaipur and Kotputali, the experienced advocates at RSA Chambers offer expert legal advice and representation across Rajasthan.",
+          "bg": "linear-gradient(135deg, #0b1628 0%, #1a2e55 55%, #1a4a6e 100%)",
           "primaryLabel": "LEARN MORE", "primaryHref": "about.html",
           "secLabel": "GET IN TOUCH", "secHref": "contact.html",
           "exploreHref": "expertise.html"
         },
         {
           "badge": "TRUSTED",
-          "title": "BARRISTERS OF<br>THE HIGHEST CALIBRE",
-          "text": "Regularly recommended in the Legal 500 and Chambers &amp; Partners, our silks and junior barristers handle cases of the highest complexity across the UK.",
+          "title": "ADVOCATES OF<br>THE HIGHEST CALIBRE",
+          "text": "RSA Chambers provides skilled and dedicated legal representation, with a proven track record across civil, criminal, family and constitutional matters.",
           "bg": "linear-gradient(135deg, #0d1a35 0%, #1a3a5c 100%)",
-          "primaryLabel": "OUR BARRISTERS", "primaryHref": "barristers.html",
-          "secLabel": "OUR EXPERTISE", "secHref": "expertise.html",
+          "primaryLabel": "OUR ADVOCATES", "primaryHref": "barristers.html",
+          "secLabel": "OUR EXPERTISE",    "secHref": "expertise.html",
           "exploreHref": "barristers.html"
         },
         {
-          "badge": "ACROSS THE NORTH",
-          "title": "SERVING CLIENTS<br>ACROSS THE UK",
-          "text": "From complex commercial disputes and serious crime to family matters and public law, Trinity Chambers has the depth and breadth to handle your case.",
+          "badge": "ACROSS RAJASTHAN",
+          "title": "SERVING CLIENTS<br>ACROSS INDIA",
+          "text": "From Jaipur to Kotputali and beyond, RSA Chambers has the depth and breadth of experience to handle your case with diligence and integrity.",
           "bg": "linear-gradient(135deg, #1a2744 0%, #1a5060 100%)",
           "primaryLabel": "OUR EXPERTISE", "primaryHref": "expertise.html",
-          "secLabel": "JOIN US", "secHref": "join.html",
+          "secLabel": "JOIN US",          "secHref": "join.html",
           "exploreHref": "knowledge.html"
         }
       ],
       "testimonials": [
         {
-          "quote": "\"An excellent chambers and clerking service: they are always attentive and can offer a very wide range of expertise. The clients are very approachable and user-friendly, readily available and efficient with invoicing. You really feel you know where you stand with them.\"",
-          "source": "Chambers &amp; Partners"
+          "quote": "\"[RSA — add client testimonial here]\"",
+          "source": "[RSA — source]"
         },
         {
-          "quote": "\"Trinity Chambers is a genuinely impressive set. The clerking is excellent and the barristers are consistently of the highest calibre. Instructing them is always a pleasure — they are responsive, commercial and thoroughly prepared.\"",
-          "source": "Legal 500, 2025"
+          "quote": "\"[RSA — add second client testimonial here]\"",
+          "source": "[RSA — source]"
         }
       ]
     },
     "about": {
       "introParas": [
-        "Trinity Chambers is proud of its reputation as being one of the leading sets of barristers' chambers in the North of England.",
-        "Endorsed by the leading legal directories:",
-        "This is a reputation we have won by investing in staff, services and facilities, by implementing a robust administration and clerking structure, and crucially, by supplying high quality legal advice and advocacy.",
-        "Trinity was the first chambers north of London, and only the fourth in the country, to be awarded the General Council of the Bar's BarMark involving an annual review of all aspects of practice management, client care and regulatory compliance as assessed and reported upon by the Bar Standards Institution. Trinity Chambers has the Cyber Essentials Plus accreditation.",
-        "Since our establishment in 1954, we have consistently grown so that we now offer a broad spectrum of specialisation, expertise and experience, with consistently high quality across the board.",
-        "Trinity Chambers is a trading name of Trinity Chambers Services Ltd, a Private Company Limited by Guarantee Registered in England No: 15846284. Registered Office Address: The Custom House, 39 Quayside, Newcastle Upon Tyne, England, NE1 3DE."
+        "RSA Chambers is a leading set of advocates based in Jaipur and Kotputali, Rajasthan, committed to delivering expert legal advice and fearless representation.",
+        "Our advocates are experienced across a broad range of practice areas including criminal, civil, family, revenue and constitutional law.",
+        "[RSA — add further details about the chambers history, founding, values and achievements]",
+        "RSA Chambers is regulated in accordance with the Bar Council of India rules and the Advocates Act, 1961. All members of chambers are enrolled advocates in good standing."
       ],
       "quotes": [
         {
-          "text": "All clients within the Chambers are extremely friendly and will try to accommodate any specific requests. There is often a wide selection of Counsel available and they are happy to take the time to discuss the needs of individual cases and advise on Counsel they consider most suited. They are prompt in responding to communications and will forward on information which they consider may be of interest.",
-          "source": "Legal 500"
-        },
-        {
-          "text": "An excellent chambers and clerking service: they are always attentive and can offer a very wide range of expertise. The clients are very approachable and user-friendly, readily available and efficient with invoicing. You really feel you know where you stand with them.",
-          "source": "Chambers &amp; Partners"
+          "text": "[RSA — add testimonial or directory quote]",
+          "source": "[RSA — source]"
         }
       ],
       "facilities": [
-        "In Trinity (Newcastle) there are 7 conference rooms with a capacity of 4 to 12 people that are available in and out of published working hours. All rooms have internet access and telephone. Trinity (Teesside) has 1 conference room. These rooms, subject to availability, can be hired at a nominal rate through Chambers' Chief Executive.",
-        "Conferences can be arranged through the clerks at an appropriate venue and time.",
-        "Trinity's premises in Newcastle, Teesside and Leeds have audio conferencing facilities. Trinity (Newcastle) also has a video conferencing suite with seating for either 8 or 30 people. These facilities can be hired through the clerks (info@trinitychambers.co.uk) or 0191 232 1927.",
-        "Trinity (Newcastle) has seminar rooms with a capacity for 40 people."
+        "[RSA — describe conference/meeting room facilities at the Jaipur office]",
+        "[RSA — describe Kotputali office facilities]",
+        "Conferences can be arranged at a time and venue convenient to the client.",
+        "[RSA — describe any audio/video conferencing or other facilities]"
       ],
       "policies": [
-        { "title": "Equality & Diversity", "content": "Trinity Chambers is committed to equality and diversity in all aspects of its work. We do not discriminate on the grounds of age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, or sexual orientation. Our Equality and Diversity policy is reviewed annually and applies to all members of Chambers, pupils, employees and those seeking to join Chambers." },
-        { "title": "Race Equality Statement", "content": "Trinity Chambers is opposed to all forms of unlawful discrimination. We are committed to promoting racial equality and diversity within Chambers. We recognise that discrimination may be direct or indirect, conscious or unconscious, and we take all reasonable steps to ensure that our practices do not disadvantage individuals from any racial group." },
-        { "title": "Legal Services", "content": "All barristers at Trinity Chambers are regulated by the Bar Standards Board and are subject to the Code of Conduct of the Bar of England and Wales. Our barristers provide independent, specialist legal advice and advocacy. We are committed to providing high quality, cost-effective legal services to all clients, whether instructed by solicitors or directly under the Direct Access scheme." },
-        { "title": "General Services", "content": "Trinity Chambers provides a wide range of general services to instructing solicitors and direct access clients. Our clerks team is available Monday to Friday, 8:30am to 6:00pm, to assist with all aspects of instructing counsel, including obtaining quotes, managing listings, and arranging conferences. Out-of-hours urgent assistance is available on 0191 245 0110." },
-        { "title": "Response Times", "content": "We aim to respond to all enquiries within 24 hours on business days. For urgent matters, our clerks team will endeavour to respond as quickly as possible. Written advice and settled documents will be delivered within the agreed timescale. If any delay is anticipated, the instructing solicitor or client will be informed as soon as possible." },
-        { "title": "Clerking", "content": "Trinity Chambers operates a professional clerking service with dedicated senior clerks for each of our three offices. Our clerks have extensive experience matching the right barrister to your case and ensuring the efficient running of your matter. All clerks are trained to the highest professional standards and are committed to providing an outstanding service." },
-        { "title": "Fees, Billing & Price Transparency", "content": "Trinity Chambers is committed to transparency in all matters relating to fees and billing. Fee quotes are provided before work commences wherever possible. Fees are agreed with the relevant barrister and Chambers' clerks before instructions are accepted. Where fees cannot be fixed in advance, an estimate will be given. Invoices are issued promptly following the completion of work. Full details of our pricing structure are available from the clerks." },
-        { "title": "Complaints", "content": "Trinity Chambers has a formal complaints procedure. If you are unhappy with any aspect of the service you have received, please contact our Chief Executive in the first instance. All complaints are investigated thoroughly and we aim to resolve them within 28 days. If you remain dissatisfied, you may refer your complaint to the Bar Standards Board or the Legal Ombudsman." }
+        { "title": "Equality & Diversity", "content": "RSA Chambers is committed to equality and diversity in all aspects of its work. We do not discriminate on any grounds and our policies apply to all members, pupils, staff and those seeking to join Chambers." },
+        { "title": "Legal Services", "content": "All advocates at RSA Chambers are regulated by the Bar Council of India and are subject to the Professional Standards applicable to the legal profession. Our advocates provide independent, specialist legal advice and representation." },
+        { "title": "General Services", "content": "RSA Chambers provides a wide range of services to clients and instructing solicitors. Our team is available Monday to Saturday, 10:00am to 6:00pm, to assist with all aspects of instructing an advocate, including obtaining quotes and arranging conferences." },
+        { "title": "Response Times", "content": "We aim to respond to all enquiries within 24 hours on working days. For urgent matters, our team will endeavour to respond as quickly as possible. If any delay is anticipated, the client will be informed promptly." },
+        { "title": "Fees & Billing", "content": "RSA Chambers is committed to transparency in all matters relating to fees and billing. Fee quotes are provided before work commences wherever possible. Fees are agreed with the relevant advocate before instructions are accepted." },
+        { "title": "Complaints", "content": "RSA Chambers has a formal complaints procedure. If you are unhappy with any aspect of the service you have received, please contact the head of chambers in the first instance. All complaints are investigated thoroughly and we aim to resolve them promptly." }
       ]
     },
     "expertise": {
       "cards": [
-        { "title": "Administrative & Public Law", "description": "We advise and represent clients in judicial review proceedings, statutory appeals and all matters involving public bodies and government decision-making.", "link": "contact.html" },
-        { "title": "Agriculture & Rural Affairs", "description": "Our barristers handle disputes and regulatory matters involving farming, land use, rural tenancies and agri-environment schemes.", "link": "contact.html" },
-        { "title": "Alternative Dispute Resolution", "description": "We offer experienced advocates for mediation, arbitration and adjudication across all commercial and civil disputes, providing cost-effective resolution.", "link": "contact.html" },
-        { "title": "Business & Commercial Litigation", "description": "From contract disputes to shareholder conflicts and professional negligence, our commercial barristers deliver incisive and strategic advocacy.", "link": "contact.html" },
-        { "title": "Civil Liberties & Human Rights", "description": "We represent individuals whose fundamental rights have been infringed, including cases under the Human Rights Act and before the European courts.", "link": "contact.html" },
-        { "title": "Consumer Law & Professional Negligence", "description": "Our team handles claims against professionals — solicitors, doctors, accountants and others — as well as consumer protection disputes.", "link": "contact.html" },
-        { "title": "Costs", "description": "Specialist costs barristers advise on costs budgeting, detailed assessments and appeals in both civil and family proceedings.", "link": "contact.html" },
-        { "title": "Court of Protection & Adult Care", "description": "We act in proceedings relating to adults who lack mental capacity, including deputyship, welfare and serious medical treatment cases.", "link": "contact.html" },
-        { "title": "Criminal", "description": "Our criminal barristers represent defendants and prosecution in the most serious and complex cases, from fraud to serious violence.", "link": "contact.html" },
-        { "title": "Education", "description": "We advise schools, local authorities, parents and pupils on exclusions, admissions, special educational needs, and employment in the education sector.", "link": "contact.html" },
-        { "title": "Employment", "description": "Our employment team is ranked in the top tier by the Legal 500, covering unfair dismissal, discrimination, TUPE, whistleblowing and complex injunctions.", "link": "contact.html" },
-        { "title": "Family – Finance & Property", "description": "Experienced in all aspects of financial remedy proceedings on divorce, including big money cases, trusts, business assets and international elements.", "link": "contact.html" },
-        { "title": "Family – Public Law & Children", "description": "We represent local authorities, parents and children in care proceedings, adoption, and all matters relating to the welfare of children.", "link": "contact.html" },
-        { "title": "Immigration", "description": "Comprehensive immigration advice including asylum, human rights claims, deportation appeals, and complex nationality issues.", "link": "contact.html" },
-        { "title": "Inheritance, Probate & Trusts", "description": "Disputes over wills, contested estates, trust litigation and claims under the Inheritance Act, including complex multi-jurisdictional matters.", "link": "contact.html" },
-        { "title": "Inquests", "description": "We represent bereaved families, public bodies and commercial organisations at inquests and public inquiries, including Article 2 inquests.", "link": "contact.html" },
-        { "title": "Insolvency & Restructuring", "description": "Advisory and advocacy work across corporate and personal insolvency, including administration, liquidation and bankruptcy proceedings.", "link": "contact.html" },
-        { "title": "International & Offshore", "description": "Cross-border disputes, international arbitration, offshore trusts and asset tracing with a global dimension.", "link": "contact.html" },
-        { "title": "Licensing", "description": "Applications, reviews and appeals for alcohol, entertainment, gambling and taxi licences before licensing authorities and courts.", "link": "contact.html" },
-        { "title": "Personal Injury & Clinical Negligence", "description": "From catastrophic injury claims to complex clinical negligence, our barristers have an outstanding record in maximising compensation for clients.", "link": "contact.html" },
-        { "title": "Planning", "description": "Planning appeals, inquiries, enforcement, judicial review and infrastructure projects including nationally significant infrastructure projects.", "link": "contact.html" },
-        { "title": "Private Prosecutions", "description": "We advise and represent clients bringing private prosecutions in cases ranging from fraud and theft to regulatory breaches.", "link": "contact.html" },
-        { "title": "Property", "description": "Landlord and tenant disputes, boundary disputes, easements, covenants and all aspects of real property litigation.", "link": "contact.html" },
-        { "title": "Regulatory", "description": "Professional disciplinary proceedings, health and safety prosecutions, environmental regulation and financial services regulation.", "link": "contact.html" },
-        { "title": "Social Housing", "description": "Acting for social landlords, local authorities and tenants in possession proceedings, anti-social behaviour matters and homelessness appeals.", "link": "contact.html" },
-        { "title": "Sports Law", "description": "Disciplinary hearings, contract disputes, regulatory matters and employment issues across professional and amateur sport.", "link": "contact.html" }
+        { "title": "Criminal Law", "description": "Representation in Sessions Courts, High Court and Supreme Court across the full range of criminal matters from bail applications to complex trials.", "link": "contact.html" },
+        { "title": "Civil Litigation", "description": "Disputes involving contracts, property, torts and other civil matters before district courts, civil courts and appellate forums.", "link": "contact.html" },
+        { "title": "Family & Matrimonial", "description": "Divorce, custody, maintenance, adoption and all matrimonial disputes handled with sensitivity and expertise.", "link": "contact.html" },
+        { "title": "Constitutional & Public Law", "description": "Writ petitions, judicial review and public interest litigation before the Rajasthan High Court and Supreme Court of India.", "link": "contact.html" },
+        { "title": "Revenue & Land", "description": "Land acquisition, revenue disputes, tenancy matters and all land-related litigation before revenue courts and civil courts.", "link": "contact.html" },
+        { "title": "Labour & Employment", "description": "Industrial disputes, service matters, wrongful termination and employment law before labour courts and tribunals.", "link": "contact.html" },
+        { "title": "Motor Accident Claims", "description": "Representation for claimants and insurers in motor accident tribunal proceedings to secure maximum just compensation.", "link": "contact.html" },
+        { "title": "Consumer Protection", "description": "Claims before District, State and National Consumer Disputes Redressal Commissions on behalf of aggrieved consumers.", "link": "contact.html" },
+        { "title": "Property & Real Estate", "description": "Title disputes, partition suits, easements, injunctions and all matters relating to immovable property.", "link": "contact.html" },
+        { "title": "Matrimonial Property", "description": "Matrimonial property rights, dowry matters, domestic violence cases and protection orders under applicable law.", "link": "contact.html" },
+        { "title": "Bail & Anticipatory Bail", "description": "Expert representation in bail and anticipatory bail applications before Sessions Courts, High Court and Supreme Court.", "link": "contact.html" },
+        { "title": "Arbitration & ADR", "description": "Representation in domestic and international arbitration, mediation and conciliation proceedings as an alternative to court litigation.", "link": "contact.html" }
       ]
     },
     "knowledge": {
-      "supportingText": "The combination of the large number of barristers and silks at Trinity and the diverse range of expertise they offer across Chambers' practice groups, means that they regularly provide insight and commentary on current legal matters. They also provide CPD accredited training and other resources, both on and offline through seminars, webinars and livestream events.",
+      "supportingText": "RSA Chambers advocates regularly provide insight and commentary on current legal matters affecting our clients. We also provide guidance and resources on recent developments in Indian law.",
       "articles": [
-        { "title": "Managing Cancer in the Workplace: A Legal Guide for Employers", "category": "Employment", "date": "1st Apr 2025", "excerpt": "Helen Hogben examines the legal obligations employers face when an employee receives a cancer diagnosis, including reasonable adjustments and disability discrimination.", "author": "Helen Hogben" },
-        { "title": "Changes to Financial Remedy Proceedings in 2025", "category": "Family", "date": "27th Mar 2025", "excerpt": "Rebecca Walsh outlines the key procedural changes affecting financial remedy proceedings following the Family Procedure (Amendment) Rules 2025.", "author": "Rebecca Walsh" },
-        { "title": "The Sentencing Council: New Guidelines for Serious Violence Offences", "category": "Criminal", "date": "18th Mar 2025", "excerpt": "Michael Foster KC reviews the Sentencing Council's updated guidelines for serious violence, exploring their impact on sentencing outcomes across the Northern Circuit.", "author": "Michael Foster KC" },
-        { "title": "Asylum Seekers and the Safety of Third Countries: Post-Rwanda Update", "category": "Immigration", "date": "10th Mar 2025", "excerpt": "Emma Thompson provides an update on the legal landscape for asylum seekers following the Supreme Court's Rwanda ruling and subsequent legislative changes.", "author": "Emma Thompson" },
-        { "title": "Fundamental Dishonesty: Recent Developments and Practical Implications", "category": "Personal Injury", "date": "5th Mar 2025", "excerpt": "Thomas Clarke KC analyses recent court decisions on fundamental dishonesty under s.57 of the Criminal Justice and Courts Act 2015 and their impact on personal injury claims.", "author": "Thomas Clarke KC" },
-        { "title": "The Planning and Infrastructure Bill: Key Changes for Developers", "category": "Planning", "date": "28th Feb 2025", "excerpt": "Robert Davies examines the most significant provisions of the Planning and Infrastructure Bill 2025 and what they mean for developers and local authorities.", "author": "Robert Davies" },
-        { "title": "AI in the Workplace: Discrimination Risks Employers Must Know", "category": "Employment", "date": "20th Feb 2025", "excerpt": "Priya Sharma examines the discrimination and data protection risks arising from the use of AI tools in recruitment, performance management and redundancy processes.", "author": "Priya Sharma" },
-        { "title": "Trinity Chambers Pupil Barristers Start Second Six of Pupillage", "category": "Family", "date": "27th Mar 2025", "excerpt": "Trinity Chambers' current pupil barristers will shortly be accepting instructions on their own cases as they commence the second half of their pupillage.", "author": "Trinity Chambers" }
+        { "title": "[RSA — fill article title]", "category": "Criminal", "date": "1st Sep 2026", "excerpt": "[RSA — fill article excerpt]", "author": "Ravindra Saini" },
+        { "title": "[RSA — fill article title]", "category": "Civil", "date": "15th Aug 2026", "excerpt": "[RSA — fill article excerpt]", "author": "Rahul Gupta" },
+        { "title": "[RSA — fill article title]", "category": "Family", "date": "1st Aug 2026", "excerpt": "[RSA — fill article excerpt]", "author": "Avadhesh Saini" },
+        { "title": "[RSA — fill article title]", "category": "Criminal", "date": "15th Jul 2026", "excerpt": "[RSA — fill article excerpt]", "author": "Monu Sharma" }
+      ]
+    },
+    "join": {
+      "introText": "As a growing set of chambers, RSA Chambers welcomes applications from advocates who share our commitment to excellence and client service.\n\nWith offices in Jaipur and Kotputali, we have opportunities for advocates at all stages of their careers.\n\nRSA Chambers is committed to equality and diversity in all its practices.",
+      "pupillageIntro": "[RSA — fill pupillage / apprenticeship details]",
+      "pupillageCta": "[RSA — fill pupillage application details]",
+      "tenancyIntro": "We welcome applications from established advocates wishing to join RSA Chambers.",
+      "tenancyCta": "If you are interested in joining RSA Chambers, please contact us in confidence.",
+      "vacanciesIntro": "We are currently looking for advocates in the following areas.",
+      "vacancies": [
+        {
+          "title": "[RSA — fill vacancy title]",
+          "description": "[RSA — fill vacancy description]",
+          "tags": ["[RSA — fill]", "Jaipur / Kotputali"],
+          "btnLabel": "ENQUIRE",
+          "btnHref": "contact.html",
+          "btnExternal": false
+        }
       ]
     }
   }
