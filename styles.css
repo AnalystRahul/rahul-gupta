@@ -199,7 +199,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   background:
-    linear-gradient(135deg, #0b1628 0%, #1a2e55 55%, #1a4a6e 100%);
+    linear-gradient(to bottom, #D94020 0%, #8B1E08 45%, #1a2744 100%);
   overflow: hidden;
 }
 .hero-overlay {
