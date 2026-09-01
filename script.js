@@ -336,26 +336,26 @@ mainNav?.querySelectorAll('a').forEach(link => {
     {
       badge: 'EXPERT',
       title: 'LEGAL ADVICE &amp;<br>REPRESENTATION',
-      text: 'With Chambers in Newcastle, Middlesbrough and Leeds, the experienced and approachable barristers offer the most appropriate and cost-effective representation for your needs.',
-      bg: "url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&q=80') center/cover no-repeat",
+      text: 'With Chambers in Jaipur and Kotputali, the experienced advocates at RSA Chambers offer expert legal advice and representation across Rajasthan.',
+      bg: "url('https://images.unsplash.com/photo-LgQoL6eOdHs?w=1400&q=80') center/cover no-repeat, linear-gradient(135deg, #0b1628 0%, #1a2e55 55%, #1a4a6e 100%)",
       primaryLabel: 'LEARN MORE', primaryHref: 'about.html',
       secLabel: 'GET IN TOUCH',  secHref: 'contact.html',
       exploreHref: 'expertise.html'
     },
     {
       badge: 'TRUSTED',
-      title: 'BARRISTERS OF<br>THE HIGHEST CALIBRE',
-      text: 'Regularly recommended in the Legal 500 and Chambers &amp; Partners, our silks and junior barristers handle cases of the highest complexity across the UK.',
-      bg: "linear-gradient(135deg, #0d1a35 0%, #1a3a5c 100%)",
-      primaryLabel: 'OUR BARRISTERS', primaryHref: 'barristers.html',
+      title: 'ADVOCATES OF<br>THE HIGHEST CALIBRE',
+      text: 'RSA Chambers provides skilled and dedicated legal representation, with a proven track record across civil, criminal, family and constitutional matters.',
+      bg: "url('https://images.unsplash.com/photo-gQ2HORZRuoU?w=1400&q=80') center/cover no-repeat, linear-gradient(135deg, #0d1a35 0%, #1a3a5c 100%)",
+      primaryLabel: 'OUR ADVOCATES', primaryHref: 'barristers.html',
       secLabel: 'OUR EXPERTISE',    secHref: 'expertise.html',
       exploreHref: 'barristers.html'
     },
     {
-      badge: 'ACROSS THE NORTH',
-      title: 'SERVING CLIENTS<br>ACROSS THE UK',
-      text: 'From complex commercial disputes and serious crime to family matters and public law, Trinity Chambers has the depth and breadth to handle your case.',
-      bg: "linear-gradient(135deg, #1a2744 0%, #1a5060 100%)",
+      badge: 'ACROSS RAJASTHAN',
+      title: 'SERVING CLIENTS<br>ACROSS INDIA',
+      text: 'From Jaipur to Kotputali and beyond, RSA Chambers has the depth and breadth of experience to handle your case with diligence and integrity.',
+      bg: "url('https://images.unsplash.com/photo-fxVo2GBD7FA?w=1400&q=80') center/cover no-repeat, linear-gradient(135deg, #1a2744 0%, #1a5060 100%)",
       primaryLabel: 'OUR EXPERTISE', primaryHref: 'expertise.html',
       secLabel: 'JOIN US',          secHref: 'join.html',
       exploreHref: 'knowledge.html'
