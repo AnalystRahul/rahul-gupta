@@ -199,8 +199,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   background:
-    url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&q=80')
-    center center / cover no-repeat;
+    linear-gradient(135deg, #0b1628 0%, #1a2e55 55%, #1a4a6e 100%);
   overflow: hidden;
 }
 .hero-overlay {
