@@ -132,27 +132,33 @@
           "badge": "EXPERT",
           "title": "LEGAL ADVICE &amp;<br>REPRESENTATION",
           "text": "With Chambers in Jaipur and Kotputali, the experienced advocates at RSA Chambers offer expert legal advice and representation across Rajasthan.",
-          "bg": "linear-gradient(135deg, #0b1628 0%, #1a2e55 55%, #1a4a6e 100%)",
-          "primaryLabel": "LEARN MORE", "primaryHref": "about.html",
-          "secLabel": "GET IN TOUCH", "secHref": "contact.html",
+          "bg": "url('https://images.unsplash.com/photo-LgQoL6eOdHs?w=1400&q=80') center/cover no-repeat",
+          "primaryLabel": "LEARN MORE",
+          "primaryHref": "about.html",
+          "secLabel": "GET IN TOUCH",
+          "secHref": "contact.html",
           "exploreHref": "expertise.html"
         },
         {
           "badge": "TRUSTED",
           "title": "ADVOCATES OF<br>THE HIGHEST CALIBRE",
           "text": "RSA Chambers provides skilled and dedicated legal representation, with a proven track record across civil, criminal, family and constitutional matters.",
-          "bg": "linear-gradient(135deg, #0d1a35 0%, #1a3a5c 100%)",
-          "primaryLabel": "OUR ADVOCATES", "primaryHref": "barristers.html",
-          "secLabel": "OUR EXPERTISE",    "secHref": "expertise.html",
+          "bg": "url('https://images.unsplash.com/photo-gQ2HORZRuoU?w=1400&q=80') center/cover no-repeat",
+          "primaryLabel": "OUR ADVOCATES",
+          "primaryHref": "barristers.html",
+          "secLabel": "OUR EXPERTISE",
+          "secHref": "expertise.html",
           "exploreHref": "barristers.html"
         },
         {
           "badge": "ACROSS RAJASTHAN",
           "title": "SERVING CLIENTS<br>ACROSS INDIA",
           "text": "From Jaipur to Kotputali and beyond, RSA Chambers has the depth and breadth of experience to handle your case with diligence and integrity.",
-          "bg": "linear-gradient(135deg, #1a2744 0%, #1a5060 100%)",
-          "primaryLabel": "OUR EXPERTISE", "primaryHref": "expertise.html",
-          "secLabel": "JOIN US",          "secHref": "join.html",
+          "bg": "url('https://images.unsplash.com/photo-fxVo2GBD7FA?w=1400&q=80') center/cover no-repeat",
+          "primaryLabel": "OUR EXPERTISE",
+          "primaryHref": "expertise.html",
+          "secLabel": "JOIN US",
+          "secHref": "join.html",
           "exploreHref": "knowledge.html"
         }
       ],
@@ -187,37 +193,127 @@
         "[RSA — describe any audio/video conferencing or other facilities]"
       ],
       "policies": [
-        { "title": "Equality & Diversity", "content": "RSA Chambers is committed to equality and diversity in all aspects of its work. We do not discriminate on any grounds and our policies apply to all members, pupils, staff and those seeking to join Chambers." },
-        { "title": "Legal Services", "content": "All advocates at RSA Chambers are regulated by the Bar Council of India and are subject to the Professional Standards applicable to the legal profession. Our advocates provide independent, specialist legal advice and representation." },
-        { "title": "General Services", "content": "RSA Chambers provides a wide range of services to clients and instructing solicitors. Our team is available Monday to Saturday, 10:00am to 6:00pm, to assist with all aspects of instructing an advocate, including obtaining quotes and arranging conferences." },
-        { "title": "Response Times", "content": "We aim to respond to all enquiries within 24 hours on working days. For urgent matters, our team will endeavour to respond as quickly as possible. If any delay is anticipated, the client will be informed promptly." },
-        { "title": "Fees & Billing", "content": "RSA Chambers is committed to transparency in all matters relating to fees and billing. Fee quotes are provided before work commences wherever possible. Fees are agreed with the relevant advocate before instructions are accepted." },
-        { "title": "Complaints", "content": "RSA Chambers has a formal complaints procedure. If you are unhappy with any aspect of the service you have received, please contact the head of chambers in the first instance. All complaints are investigated thoroughly and we aim to resolve them promptly." }
+        {
+          "title": "Equality & Diversity",
+          "content": "RSA Chambers is committed to equality and diversity in all aspects of its work. We do not discriminate on any grounds and our policies apply to all members, pupils, staff and those seeking to join Chambers."
+        },
+        {
+          "title": "Legal Services",
+          "content": "All advocates at RSA Chambers are regulated by the Bar Council of India and are subject to the Professional Standards applicable to the legal profession. Our advocates provide independent, specialist legal advice and representation."
+        },
+        {
+          "title": "General Services",
+          "content": "RSA Chambers provides a wide range of services to clients and instructing solicitors. Our team is available Monday to Saturday, 10:00am to 6:00pm, to assist with all aspects of instructing an advocate, including obtaining quotes and arranging conferences."
+        },
+        {
+          "title": "Response Times",
+          "content": "We aim to respond to all enquiries within 24 hours on working days. For urgent matters, our team will endeavour to respond as quickly as possible. If any delay is anticipated, the client will be informed promptly."
+        },
+        {
+          "title": "Fees & Billing",
+          "content": "RSA Chambers is committed to transparency in all matters relating to fees and billing. Fee quotes are provided before work commences wherever possible. Fees are agreed with the relevant advocate before instructions are accepted."
+        },
+        {
+          "title": "Complaints",
+          "content": "RSA Chambers has a formal complaints procedure. If you are unhappy with any aspect of the service you have received, please contact the head of chambers in the first instance. All complaints are investigated thoroughly and we aim to resolve them promptly."
+        }
       ]
     },
     "expertise": {
       "cards": [
-        { "title": "Criminal Law", "description": "Representation in Sessions Courts, High Court and Supreme Court across the full range of criminal matters from bail applications to complex trials.", "link": "contact.html" },
-        { "title": "Civil Litigation", "description": "Disputes involving contracts, property, torts and other civil matters before district courts, civil courts and appellate forums.", "link": "contact.html" },
-        { "title": "Family & Matrimonial", "description": "Divorce, custody, maintenance, adoption and all matrimonial disputes handled with sensitivity and expertise.", "link": "contact.html" },
-        { "title": "Constitutional & Public Law", "description": "Writ petitions, judicial review and public interest litigation before the Rajasthan High Court and Supreme Court of India.", "link": "contact.html" },
-        { "title": "Revenue & Land", "description": "Land acquisition, revenue disputes, tenancy matters and all land-related litigation before revenue courts and civil courts.", "link": "contact.html" },
-        { "title": "Labour & Employment", "description": "Industrial disputes, service matters, wrongful termination and employment law before labour courts and tribunals.", "link": "contact.html" },
-        { "title": "Motor Accident Claims", "description": "Representation for claimants and insurers in motor accident tribunal proceedings to secure maximum just compensation.", "link": "contact.html" },
-        { "title": "Consumer Protection", "description": "Claims before District, State and National Consumer Disputes Redressal Commissions on behalf of aggrieved consumers.", "link": "contact.html" },
-        { "title": "Property & Real Estate", "description": "Title disputes, partition suits, easements, injunctions and all matters relating to immovable property.", "link": "contact.html" },
-        { "title": "Matrimonial Property", "description": "Matrimonial property rights, dowry matters, domestic violence cases and protection orders under applicable law.", "link": "contact.html" },
-        { "title": "Bail & Anticipatory Bail", "description": "Expert representation in bail and anticipatory bail applications before Sessions Courts, High Court and Supreme Court.", "link": "contact.html" },
-        { "title": "Arbitration & ADR", "description": "Representation in domestic and international arbitration, mediation and conciliation proceedings as an alternative to court litigation.", "link": "contact.html" }
+        {
+          "title": "Criminal Law",
+          "description": "Representation in Sessions Courts, High Court and Supreme Court across the full range of criminal matters from bail applications to complex trials.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Civil Litigation",
+          "description": "Disputes involving contracts, property, torts and other civil matters before district courts, civil courts and appellate forums.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Family & Matrimonial",
+          "description": "Divorce, custody, maintenance, adoption and all matrimonial disputes handled with sensitivity and expertise.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Constitutional & Public Law",
+          "description": "Writ petitions, judicial review and public interest litigation before the Rajasthan High Court and Supreme Court of India.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Revenue & Land",
+          "description": "Land acquisition, revenue disputes, tenancy matters and all land-related litigation before revenue courts and civil courts.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Labour & Employment",
+          "description": "Industrial disputes, service matters, wrongful termination and employment law before labour courts and tribunals.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Motor Accident Claims",
+          "description": "Representation for claimants and insurers in motor accident tribunal proceedings to secure maximum just compensation.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Consumer Protection",
+          "description": "Claims before District, State and National Consumer Disputes Redressal Commissions on behalf of aggrieved consumers.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Property & Real Estate",
+          "description": "Title disputes, partition suits, easements, injunctions and all matters relating to immovable property.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Matrimonial Property",
+          "description": "Matrimonial property rights, dowry matters, domestic violence cases and protection orders under applicable law.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Bail & Anticipatory Bail",
+          "description": "Expert representation in bail and anticipatory bail applications before Sessions Courts, High Court and Supreme Court.",
+          "link": "contact.html"
+        },
+        {
+          "title": "Arbitration & ADR",
+          "description": "Representation in domestic and international arbitration, mediation and conciliation proceedings as an alternative to court litigation.",
+          "link": "contact.html"
+        }
       ]
     },
     "knowledge": {
       "supportingText": "RSA Chambers advocates regularly provide insight and commentary on current legal matters affecting our clients. We also provide guidance and resources on recent developments in Indian law.",
       "articles": [
-        { "title": "[RSA — fill article title]", "category": "Criminal", "date": "1st Sep 2026", "excerpt": "[RSA — fill article excerpt]", "author": "Ravindra Saini" },
-        { "title": "[RSA — fill article title]", "category": "Civil", "date": "15th Aug 2026", "excerpt": "[RSA — fill article excerpt]", "author": "Rahul Gupta" },
-        { "title": "[RSA — fill article title]", "category": "Family", "date": "1st Aug 2026", "excerpt": "[RSA — fill article excerpt]", "author": "Avadhesh Saini" },
-        { "title": "[RSA — fill article title]", "category": "Criminal", "date": "15th Jul 2026", "excerpt": "[RSA — fill article excerpt]", "author": "Monu Sharma" }
+        {
+          "title": "[RSA — fill article title]",
+          "category": "Criminal",
+          "date": "1st Sep 2026",
+          "excerpt": "[RSA — fill article excerpt]",
+          "author": "Ravindra Saini"
+        },
+        {
+          "title": "[RSA — fill article title]",
+          "category": "Civil",
+          "date": "15th Aug 2026",
+          "excerpt": "[RSA — fill article excerpt]",
+          "author": "Rahul Gupta"
+        },
+        {
+          "title": "[RSA — fill article title]",
+          "category": "Family",
+          "date": "1st Aug 2026",
+          "excerpt": "[RSA — fill article excerpt]",
+          "author": "Avadhesh Saini"
+        },
+        {
+          "title": "[RSA — fill article title]",
+          "category": "Criminal",
+          "date": "15th Jul 2026",
+          "excerpt": "[RSA — fill article excerpt]",
+          "author": "Monu Sharma"
+        }
       ]
     },
     "join": {
@@ -231,7 +327,10 @@
         {
           "title": "[RSA — fill vacancy title]",
           "description": "[RSA — fill vacancy description]",
-          "tags": ["[RSA — fill]", "Jaipur / Kotputali"],
+          "tags": [
+            "[RSA — fill]",
+            "Jaipur / Kotputali"
+          ],
           "btnLabel": "ENQUIRE",
           "btnHref": "contact.html",
           "btnExternal": false
