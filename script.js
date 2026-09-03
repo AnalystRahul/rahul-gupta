@@ -337,7 +337,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       badge: 'EXPERT',
       title: 'LEGAL ADVICE &amp;<br>REPRESENTATION',
       text: 'With Chambers in Jaipur and Kotputali, the experienced advocates at RSA Chambers offer expert legal advice and representation across Rajasthan.',
-      bg: "linear-gradient(to bottom, #D94020 0%, #8B1E08 45%, #1a2744 100%)",
+      bg: "url('https://images.unsplash.com/photo-LgQoL6eOdHs?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center/cover no-repeat",
       primaryLabel: 'LEARN MORE', primaryHref: 'about.html',
       secLabel: 'GET IN TOUCH',  secHref: 'contact.html',
       exploreHref: 'expertise.html'
@@ -346,7 +346,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       badge: 'TRUSTED',
       title: 'ADVOCATES OF<br>THE HIGHEST CALIBRE',
       text: 'RSA Chambers provides skilled and dedicated legal representation, with a proven track record across civil, criminal, family and constitutional matters.',
-      bg: "linear-gradient(to bottom, #D07820 0%, #884410 45%, #0d1a35 100%)",
+      bg: "url('https://images.unsplash.com/photo-gQ2HORZRuoU?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center/cover no-repeat",
       primaryLabel: 'OUR ADVOCATES', primaryHref: 'barristers.html',
       secLabel: 'OUR EXPERTISE',    secHref: 'expertise.html',
       exploreHref: 'barristers.html'
@@ -355,7 +355,7 @@ mainNav?.querySelectorAll('a').forEach(link => {
       badge: 'ACROSS RAJASTHAN',
       title: 'SERVING CLIENTS<br>ACROSS INDIA',
       text: 'From Jaipur to Kotputali and beyond, RSA Chambers has the depth and breadth of experience to handle your case with diligence and integrity.',
-      bg: "linear-gradient(to bottom, #009EB0 0%, #005A6A 45%, #0b1628 100%)",
+      bg: "url('https://images.unsplash.com/photo-fxVo2GBD7FA?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center/cover no-repeat",
       primaryLabel: 'OUR EXPERTISE', primaryHref: 'expertise.html',
       secLabel: 'JOIN US',          secHref: 'join.html',
       exploreHref: 'knowledge.html'

@@ -1,7 +1,7 @@
 {
   "announcement": {
     "active": false,
-    "html": "<strong>Notice</strong> [RSA — add announcement text here if needed]"
+    "html": "<strong>Notice</strong> [RSA \u2014 add announcement text here if needed]"
   },
   "contactForm": {
     "endpoint": "",
@@ -10,7 +10,7 @@
     "provider": "formspree"
   },
   "siteSettings": {
-    "outOfHoursPhone": "[RSA — fill OOH number]",
+    "outOfHoursPhone": "[RSA \u2014 fill OOH number]",
     "outOfHoursTel": "",
     "social": {
       "twitter": "https://twitter.com",
@@ -18,109 +18,109 @@
       "linkedin": "https://linkedin.com",
       "youtube": "https://youtube.com"
     },
-    "footerCopyright": "Advocates regulated by the Bar Council of India. Copyright © RSA Chambers 2026.",
-    "footerLegal": "RSA Chambers | Jaipur & Kotputali, Rajasthan, India | [RSA — fill registration details]"
+    "footerCopyright": "Advocates regulated by the Bar Council of India. Copyright \u00a9 RSA Chambers 2026.",
+    "footerLegal": "RSA Chambers | Jaipur & Kotputali, Rajasthan, India | [RSA \u2014 fill registration details]"
   },
   "barristers": [
     {
       "name": "Ravindra Saini",
       "kc": false,
-      "speciality": "[RSA — fill speciality]",
+      "speciality": "[RSA \u2014 fill speciality]",
       "expertise": "Criminal",
       "yearCalled": 2000,
       "callRange": "2000-2009",
       "chambers": "Jaipur",
-      "bio": "[RSA — fill bio for Ravindra Saini]"
+      "bio": "[RSA \u2014 fill bio for Ravindra Saini]"
     },
     {
       "name": "Rahul Gupta",
       "kc": false,
-      "speciality": "[RSA — fill speciality]",
+      "speciality": "[RSA \u2014 fill speciality]",
       "expertise": "Commercial",
       "yearCalled": 2005,
       "callRange": "2000-2009",
       "chambers": "Jaipur",
-      "bio": "[RSA — fill bio for Rahul Gupta]"
+      "bio": "[RSA \u2014 fill bio for Rahul Gupta]"
     },
     {
       "name": "Avadhesh Saini",
       "kc": false,
-      "speciality": "[RSA — fill speciality]",
+      "speciality": "[RSA \u2014 fill speciality]",
       "expertise": "Family",
       "yearCalled": 2008,
       "callRange": "2000-2009",
       "chambers": "Kotputali",
-      "bio": "[RSA — fill bio for Avadhesh Saini]"
+      "bio": "[RSA \u2014 fill bio for Avadhesh Saini]"
     },
     {
       "name": "Monu Sharma",
       "kc": false,
-      "speciality": "[RSA — fill speciality]",
+      "speciality": "[RSA \u2014 fill speciality]",
       "expertise": "Criminal",
       "yearCalled": 2010,
       "callRange": "2010-2019",
       "chambers": "Jaipur",
-      "bio": "[RSA — fill bio for Monu Sharma]"
+      "bio": "[RSA \u2014 fill bio for Monu Sharma]"
     }
   ],
   "clerks": [
     {
       "initial": "R",
-      "name": "[RSA — fill clerk name]",
+      "name": "[RSA \u2014 fill clerk name]",
       "title": "Senior Clerk",
-      "phone": "[RSA — fill phone]",
+      "phone": "[RSA \u2014 fill phone]",
       "tel": ""
     },
     {
       "initial": "S",
-      "name": "[RSA — fill clerk name]",
-      "title": "Clerk – Kotputali",
-      "phone": "[RSA — fill phone]",
+      "name": "[RSA \u2014 fill clerk name]",
+      "title": "Clerk \u2013 Kotputali",
+      "phone": "[RSA \u2014 fill phone]",
       "tel": ""
     }
   ],
   "offices": [
     {
       "city": "Jaipur",
-      "address": "[RSA — fill address]\nJaipur, Rajasthan",
-      "phone": "[RSA — fill phone]",
+      "address": "[RSA \u2014 fill address]\nJaipur, Rajasthan",
+      "phone": "[RSA \u2014 fill phone]",
       "tel": "",
       "fax": "",
       "email": "info@rsachambers.in",
-      "hours": "Mon–Sat: 10:00am – 6:00pm"
+      "hours": "Mon\u2013Sat: 10:00am \u2013 6:00pm"
     },
     {
       "city": "Kotputali",
-      "address": "[RSA — fill address]\nKotputali, Rajasthan",
-      "phone": "[RSA — fill phone]",
+      "address": "[RSA \u2014 fill address]\nKotputali, Rajasthan",
+      "phone": "[RSA \u2014 fill phone]",
       "tel": "",
       "fax": "",
       "email": "info@rsachambers.in",
-      "hours": "Mon–Sat: 10:00am – 6:00pm"
+      "hours": "Mon\u2013Sat: 10:00am \u2013 6:00pm"
     }
   ],
   "news": [
     {
       "id": 1,
       "date": "1st Sep 2026",
-      "title": "[RSA — fill news headline]",
-      "excerpt": "[RSA — fill news excerpt]",
+      "title": "[RSA \u2014 fill news headline]",
+      "excerpt": "[RSA \u2014 fill news excerpt]",
       "category": "news",
       "href": "knowledge.html"
     },
     {
       "id": 2,
       "date": "15th Aug 2026",
-      "title": "[RSA — fill news headline]",
-      "excerpt": "[RSA — fill news excerpt]",
+      "title": "[RSA \u2014 fill news headline]",
+      "excerpt": "[RSA \u2014 fill news excerpt]",
       "category": "news",
       "href": "knowledge.html"
     },
     {
       "id": 3,
       "date": "1st Aug 2026",
-      "title": "[RSA — fill news headline]",
-      "excerpt": "[RSA — fill news excerpt]",
+      "title": "[RSA \u2014 fill news headline]",
+      "excerpt": "[RSA \u2014 fill news excerpt]",
       "category": "news",
       "href": "knowledge.html"
     }
@@ -132,7 +132,7 @@
           "badge": "EXPERT",
           "title": "LEGAL ADVICE &amp;<br>REPRESENTATION",
           "text": "With Chambers in Jaipur and Kotputali, the experienced advocates at RSA Chambers offer expert legal advice and representation across Rajasthan.",
-          "bg": "linear-gradient(to bottom, #D94020 0%, #8B1E08 45%, #1a2744 100%)",
+          "bg": "url('https://images.unsplash.com/photo-LgQoL6eOdHs?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center/cover no-repeat",
           "primaryLabel": "LEARN MORE",
           "primaryHref": "about.html",
           "secLabel": "GET IN TOUCH",
@@ -143,7 +143,7 @@
           "badge": "TRUSTED",
           "title": "ADVOCATES OF<br>THE HIGHEST CALIBRE",
           "text": "RSA Chambers provides skilled and dedicated legal representation, with a proven track record across civil, criminal, family and constitutional matters.",
-          "bg": "linear-gradient(to bottom, #D07820 0%, #884410 45%, #0d1a35 100%)",
+          "bg": "url('https://images.unsplash.com/photo-gQ2HORZRuoU?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center/cover no-repeat",
           "primaryLabel": "OUR ADVOCATES",
           "primaryHref": "barristers.html",
           "secLabel": "OUR EXPERTISE",
@@ -154,7 +154,7 @@
           "badge": "ACROSS RAJASTHAN",
           "title": "SERVING CLIENTS<br>ACROSS INDIA",
           "text": "From Jaipur to Kotputali and beyond, RSA Chambers has the depth and breadth of experience to handle your case with diligence and integrity.",
-          "bg": "linear-gradient(to bottom, #009EB0 0%, #005A6A 45%, #0b1628 100%)",
+          "bg": "url('https://images.unsplash.com/photo-fxVo2GBD7FA?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center/cover no-repeat",
           "primaryLabel": "OUR EXPERTISE",
           "primaryHref": "expertise.html",
           "secLabel": "JOIN US",
@@ -164,12 +164,12 @@
       ],
       "testimonials": [
         {
-          "quote": "\"[RSA — add client testimonial here]\"",
-          "source": "[RSA — source]"
+          "quote": "\"[RSA \u2014 add client testimonial here]\"",
+          "source": "[RSA \u2014 source]"
         },
         {
-          "quote": "\"[RSA — add second client testimonial here]\"",
-          "source": "[RSA — source]"
+          "quote": "\"[RSA \u2014 add second client testimonial here]\"",
+          "source": "[RSA \u2014 source]"
         }
       ]
     },
@@ -177,20 +177,20 @@
       "introParas": [
         "RSA Chambers is a leading set of advocates based in Jaipur and Kotputali, Rajasthan, committed to delivering expert legal advice and fearless representation.",
         "Our advocates are experienced across a broad range of practice areas including criminal, civil, family, revenue and constitutional law.",
-        "[RSA — add further details about the chambers history, founding, values and achievements]",
+        "[RSA \u2014 add further details about the chambers history, founding, values and achievements]",
         "RSA Chambers is regulated in accordance with the Bar Council of India rules and the Advocates Act, 1961. All members of chambers are enrolled advocates in good standing."
       ],
       "quotes": [
         {
-          "text": "[RSA — add testimonial or directory quote]",
-          "source": "[RSA — source]"
+          "text": "[RSA \u2014 add testimonial or directory quote]",
+          "source": "[RSA \u2014 source]"
         }
       ],
       "facilities": [
-        "[RSA — describe conference/meeting room facilities at the Jaipur office]",
-        "[RSA — describe Kotputali office facilities]",
+        "[RSA \u2014 describe conference/meeting room facilities at the Jaipur office]",
+        "[RSA \u2014 describe Kotputali office facilities]",
         "Conferences can be arranged at a time and venue convenient to the client.",
-        "[RSA — describe any audio/video conferencing or other facilities]"
+        "[RSA \u2014 describe any audio/video conferencing or other facilities]"
       ],
       "policies": [
         {
@@ -287,48 +287,48 @@
       "supportingText": "RSA Chambers advocates regularly provide insight and commentary on current legal matters affecting our clients. We also provide guidance and resources on recent developments in Indian law.",
       "articles": [
         {
-          "title": "[RSA — fill article title]",
+          "title": "[RSA \u2014 fill article title]",
           "category": "Criminal",
           "date": "1st Sep 2026",
-          "excerpt": "[RSA — fill article excerpt]",
+          "excerpt": "[RSA \u2014 fill article excerpt]",
           "author": "Ravindra Saini"
         },
         {
-          "title": "[RSA — fill article title]",
+          "title": "[RSA \u2014 fill article title]",
           "category": "Civil",
           "date": "15th Aug 2026",
-          "excerpt": "[RSA — fill article excerpt]",
+          "excerpt": "[RSA \u2014 fill article excerpt]",
           "author": "Rahul Gupta"
         },
         {
-          "title": "[RSA — fill article title]",
+          "title": "[RSA \u2014 fill article title]",
           "category": "Family",
           "date": "1st Aug 2026",
-          "excerpt": "[RSA — fill article excerpt]",
+          "excerpt": "[RSA \u2014 fill article excerpt]",
           "author": "Avadhesh Saini"
         },
         {
-          "title": "[RSA — fill article title]",
+          "title": "[RSA \u2014 fill article title]",
           "category": "Criminal",
           "date": "15th Jul 2026",
-          "excerpt": "[RSA — fill article excerpt]",
+          "excerpt": "[RSA \u2014 fill article excerpt]",
           "author": "Monu Sharma"
         }
       ]
     },
     "join": {
       "introText": "As a growing set of chambers, RSA Chambers welcomes applications from advocates who share our commitment to excellence and client service.\n\nWith offices in Jaipur and Kotputali, we have opportunities for advocates at all stages of their careers.\n\nRSA Chambers is committed to equality and diversity in all its practices.",
-      "pupillageIntro": "[RSA — fill pupillage / apprenticeship details]",
-      "pupillageCta": "[RSA — fill pupillage application details]",
+      "pupillageIntro": "[RSA \u2014 fill pupillage / apprenticeship details]",
+      "pupillageCta": "[RSA \u2014 fill pupillage application details]",
       "tenancyIntro": "We welcome applications from established advocates wishing to join RSA Chambers.",
       "tenancyCta": "If you are interested in joining RSA Chambers, please contact us in confidence.",
       "vacanciesIntro": "We are currently looking for advocates in the following areas.",
       "vacancies": [
         {
-          "title": "[RSA — fill vacancy title]",
-          "description": "[RSA — fill vacancy description]",
+          "title": "[RSA \u2014 fill vacancy title]",
+          "description": "[RSA \u2014 fill vacancy description]",
           "tags": [
-            "[RSA — fill]",
+            "[RSA \u2014 fill]",
             "Jaipur / Kotputali"
           ],
           "btnLabel": "ENQUIRE",
