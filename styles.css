@@ -206,7 +206,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: rgba(15, 25, 55, 0.68);
+  background: rgba(15, 25, 55, 0.42);
 }
 .hero-content {
   position: relative;
@@ -707,7 +707,7 @@ img { max-width: 100%; display: block; }
 .page-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10,20,48,0.4) 0%, rgba(10,20,48,0.78) 100%);
+  background: linear-gradient(to bottom, rgba(10,20,48,0.25) 0%, rgba(10,20,48,0.55) 100%);
   pointer-events: none;
 }
 .page-hero-inner {
